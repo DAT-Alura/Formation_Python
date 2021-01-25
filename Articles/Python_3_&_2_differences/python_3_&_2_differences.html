@@ -1,542 +1,1211 @@
 <!DOCTYPE html>
 <!-- saved from url=(0073)https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/ -->
-<html lang="pt-BR" style="" class=" js csstransforms3d csstransitions"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="pt-BR" style="" class=" js csstransforms3d csstransitions">
 
-<title>Quais as diferenças entre Python 2 e Python 3? - Blog da Caelum: desenvolvimento, web, mobile, UX e ScrumBlog da Caelum: desenvolvimento, web, mobile, UX e Scrum</title>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<link rel="pingback" href="https://blog.caelum.com.br/xmlrpc.php">
+	<title>Quais as diferenças entre Python 2 e Python 3? - Blog da Caelum: desenvolvimento, web, mobile, UX e ScrumBlog
+		da Caelum: desenvolvimento, web, mobile, UX e Scrum</title>
+
+	<link rel="pingback" href="https://blog.caelum.com.br/xmlrpc.php">
 
 	<!-- This site is optimized with the Yoast SEO plugin v14.7 - https://yoast.com/wordpress/plugins/seo/ -->
-	<title>Quais as diferenças entre Python 2 e Python 3? - Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum</title>
-	<meta name="description" content="Se você conhece a linguagem Python, deve saber que há duas versões maiores da linguagem - Python 2 e Python 3. Mas quais as diferenças entre cada uma? Além disso, qual devemos aprender e qual devemos usar? Aprenda mais sobre isso com esse post!">
+	<title>Quais as diferenças entre Python 2 e Python 3? - Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum
+	</title>
+	<meta name="description"
+		content="Se você conhece a linguagem Python, deve saber que há duas versões maiores da linguagem - Python 2 e Python 3. Mas quais as diferenças entre cada uma? Além disso, qual devemos aprender e qual devemos usar? Aprenda mais sobre isso com esse post!">
 	<meta name="robots" content="index, follow">
 	<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 	<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 	<link rel="canonical" href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/">
 	<meta property="og:locale" content="pt_BR">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="Quais as diferenças entre Python 2 e Python 3? - Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum">
-	<meta property="og:description" content="Se você conhece a linguagem Python, deve saber que há duas versões maiores da linguagem - Python 2 e Python 3. Mas quais as diferenças entre cada uma? Além disso, qual devemos aprender e qual devemos usar? Aprenda mais sobre isso com esse post!">
+	<meta property="og:title"
+		content="Quais as diferenças entre Python 2 e Python 3? - Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum">
+	<meta property="og:description"
+		content="Se você conhece a linguagem Python, deve saber que há duas versões maiores da linguagem - Python 2 e Python 3. Mas quais as diferenças entre cada uma? Além disso, qual devemos aprender e qual devemos usar? Aprenda mais sobre isso com esse post!">
 	<meta property="og:url" content="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/">
 	<meta property="og:site_name" content="Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum">
 	<meta property="article:published_time" content="2018-06-20T12:00:10+00:00">
 	<meta property="article:modified_time" content="2019-03-11T19:33:53+00:00">
-	<meta property="og:image" content="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/roaddecision.jpg?fit=1920%2C1440&amp;ssl=1">
+	<meta property="og:image"
+		content="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/roaddecision.jpg?fit=1920%2C1440&amp;ssl=1">
 	<meta property="og:image:width" content="1920">
 	<meta property="og:image:height" content="1440">
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:creator" content="@yanorestes">
-	<div class="fit-vids-style">­<style>               .fluid-width-video-wrapper {                 width: 100%;                              position: relative;                       padding: 0;                            }                                                                                   .fluid-width-video-wrapper iframe,        .fluid-width-video-wrapper object,        .fluid-width-video-wrapper embed {           position: absolute;                       top: 0;                                   left: 0;                                  width: 100%;                              height: 100%;                          }                                       </style></div><script type="text/javascript" async="" src="./python_3_&amp;_2_differences_files/analytics.js.download"></script><script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://blog.caelum.com.br/#website","url":"https://blog.caelum.com.br/","name":"Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum","description":"Aprenda sobre tecnologia com a Caelum. Artigos de programa\u00e7\u00e3o, web, mobile, ux e agile","potentialAction":[{"@type":"SearchAction","target":"https://blog.caelum.com.br/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"pt-BR"},{"@type":"ImageObject","@id":"https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#primaryimage","inLanguage":"pt-BR","url":"https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/roaddecision.jpg?fit=1920%2C1440&ssl=1","width":1920,"height":1440,"caption":"Decis\u00e3o"},{"@type":"WebPage","@id":"https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#webpage","url":"https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/","name":"Quais as diferen\u00e7as entre Python 2 e Python 3? - Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum","isPartOf":{"@id":"https://blog.caelum.com.br/#website"},"primaryImageOfPage":{"@id":"https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#primaryimage"},"datePublished":"2018-06-20T12:00:10+00:00","dateModified":"2019-03-11T19:33:53+00:00","author":{"@id":"https://blog.caelum.com.br/#/schema/person/afb09ea3bc85c6cf1ef70278d61e0e99"},"description":"Se voc\u00ea conhece a linguagem Python, deve saber que h\u00e1 duas vers\u00f5es maiores da linguagem - Python 2 e Python 3. Mas quais as diferen\u00e7as entre cada uma? Al\u00e9m disso, qual devemos aprender e qual devemos usar? Aprenda mais sobre isso com esse post!","inLanguage":"pt-BR","potentialAction":[{"@type":"ReadAction","target":["https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/"]}]},{"@type":["Person"],"@id":"https://blog.caelum.com.br/#/schema/person/afb09ea3bc85c6cf1ef70278d61e0e99","name":"Yan Orestes","image":{"@type":"ImageObject","@id":"https://blog.caelum.com.br/#personlogo","inLanguage":"pt-BR","url":"https://secure.gravatar.com/avatar/5ec17c8a1987776b1bcf33c6dcb8927e?s=96&r=g","caption":"Yan Orestes"},"description":"Desenvolvedor Python apaixonado por educa\u00e7\u00e3o e seguran\u00e7a. Explicit is better than implicit.","sameAs":["https://twitter.com/yanorestes"]}]}</script>
+	<div class="fit-vids-style">­<style>
+			.fluid-width-video-wrapper {
+				width: 100%;
+				position: relative;
+				padding: 0;
+			}
+
+			.fluid-width-video-wrapper iframe,
+			.fluid-width-video-wrapper object,
+			.fluid-width-video-wrapper embed {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</div>
+	<script type="text/javascript" async="" src="./python_3_&amp;_2_differences_files/analytics.js.download"></script>
+	<script type="application/ld+json"
+		class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://blog.caelum.com.br/#website","url":"https://blog.caelum.com.br/","name":"Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum","description":"Aprenda sobre tecnologia com a Caelum. Artigos de programa\u00e7\u00e3o, web, mobile, ux e agile","potentialAction":[{"@type":"SearchAction","target":"https://blog.caelum.com.br/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"pt-BR"},{"@type":"ImageObject","@id":"https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#primaryimage","inLanguage":"pt-BR","url":"https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/roaddecision.jpg?fit=1920%2C1440&ssl=1","width":1920,"height":1440,"caption":"Decis\u00e3o"},{"@type":"WebPage","@id":"https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#webpage","url":"https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/","name":"Quais as diferen\u00e7as entre Python 2 e Python 3? - Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum","isPartOf":{"@id":"https://blog.caelum.com.br/#website"},"primaryImageOfPage":{"@id":"https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#primaryimage"},"datePublished":"2018-06-20T12:00:10+00:00","dateModified":"2019-03-11T19:33:53+00:00","author":{"@id":"https://blog.caelum.com.br/#/schema/person/afb09ea3bc85c6cf1ef70278d61e0e99"},"description":"Se voc\u00ea conhece a linguagem Python, deve saber que h\u00e1 duas vers\u00f5es maiores da linguagem - Python 2 e Python 3. Mas quais as diferen\u00e7as entre cada uma? Al\u00e9m disso, qual devemos aprender e qual devemos usar? Aprenda mais sobre isso com esse post!","inLanguage":"pt-BR","potentialAction":[{"@type":"ReadAction","target":["https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/"]}]},{"@type":["Person"],"@id":"https://blog.caelum.com.br/#/schema/person/afb09ea3bc85c6cf1ef70278d61e0e99","name":"Yan Orestes","image":{"@type":"ImageObject","@id":"https://blog.caelum.com.br/#personlogo","inLanguage":"pt-BR","url":"https://secure.gravatar.com/avatar/5ec17c8a1987776b1bcf33c6dcb8927e?s=96&r=g","caption":"Yan Orestes"},"description":"Desenvolvedor Python apaixonado por educa\u00e7\u00e3o e seguran\u00e7a. Explicit is better than implicit.","sameAs":["https://twitter.com/yanorestes"]}]}</script>
 	<!-- / Yoast SEO plugin. -->
 
 
-<link rel="dns-prefetch" href="https://secure.gravatar.com/">
-<link rel="dns-prefetch" href="https://s.w.org/">
-<link rel="dns-prefetch" href="https://v0.wordpress.com/">
-<link rel="dns-prefetch" href="https://i0.wp.com/">
-<link rel="dns-prefetch" href="https://i1.wp.com/">
-<link rel="dns-prefetch" href="https://i2.wp.com/">
-<link rel="alternate" type="application/rss+xml" title="Feed para Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum »" href="https://blog.caelum.com.br/feed/">
-<link rel="alternate" type="application/rss+xml" title="Feed de comentários para Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum »" href="https://blog.caelum.com.br/comments/feed/">
-<link rel="alternate" type="application/rss+xml" title="Feed de comentários para Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum » Quais as diferenças entre Python 2 e Python 3?" href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/feed/">
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/blog.caelum.com.br\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.3"}};
-			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script><script src="./python_3_&amp;_2_differences_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
-		<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
-}
-</style>
-	<link rel="stylesheet" id="wp-block-library-css" href="./python_3_&amp;_2_differences_files/style.min.css" type="text/css" media="all">
-<style id="wp-block-library-inline-css" type="text/css">
-.has-text-align-justify{text-align:justify;}
-</style>
-<link rel="stylesheet" id="theme-stylesheet-css" href="./python_3_&amp;_2_differences_files/style.css" type="text/css" media="all">
-<link rel="stylesheet" id="woo-layout-css" href="./python_3_&amp;_2_differences_files/layout.css" type="text/css" media="all">
-<link rel="stylesheet" id="prism-theme-css" href="./python_3_&amp;_2_differences_files/prism-css.min.css" type="text/css" media="all">
-<link rel="stylesheet" id="social-logos-css" href="./python_3_&amp;_2_differences_files/social-logos.min.css" type="text/css" media="all">
-<link rel="stylesheet" id="jetpack_css-css" href="./python_3_&amp;_2_differences_files/jetpack.css" type="text/css" media="all">
-<script type="text/javascript" src="./python_3_&amp;_2_differences_files/jquery.js.download" id="jquery-core-js"></script>
-<script type="text/javascript" id="jetpack_related-posts-js-extra">
-/* <![CDATA[ */
-var related_posts_js_options = {"post_heading":"h4"};
+	<link rel="dns-prefetch" href="https://secure.gravatar.com/">
+	<link rel="dns-prefetch" href="https://s.w.org/">
+	<link rel="dns-prefetch" href="https://v0.wordpress.com/">
+	<link rel="dns-prefetch" href="https://i0.wp.com/">
+	<link rel="dns-prefetch" href="https://i1.wp.com/">
+	<link rel="dns-prefetch" href="https://i2.wp.com/">
+	<link rel="alternate" type="application/rss+xml"
+		title="Feed para Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum »"
+		href="https://blog.caelum.com.br/feed/">
+	<link rel="alternate" type="application/rss+xml"
+		title="Feed de comentários para Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum »"
+		href="https://blog.caelum.com.br/comments/feed/">
+	<link rel="alternate" type="application/rss+xml"
+		title="Feed de comentários para Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum » Quais as diferenças entre Python 2 e Python 3?"
+		href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/feed/">
+	<script type="text/javascript">
+		window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "https:\/\/blog.caelum.com.br\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.3" } };
+		!function (e, a, t) { var r, n, o, i, p = a.createElement("canvas"), s = p.getContext && p.getContext("2d"); function c(e, t) { var a = String.fromCharCode; s.clearRect(0, 0, p.width, p.height), s.fillText(a.apply(this, e), 0, 0); var r = p.toDataURL(); return s.clearRect(0, 0, p.width, p.height), s.fillText(a.apply(this, t), 0, 0), r === p.toDataURL() } function l(e) { if (!s || !s.fillText) return !1; switch (s.textBaseline = "top", s.font = "600 32px Arial", e) { case "flag": return !c([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) && (!c([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819]) && !c([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447])); case "emoji": return !c([55357, 56424, 8205, 55356, 57212], [55357, 56424, 8203, 55356, 57212]) }return !1 } function d(e) { var t = a.createElement("script"); t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t) } for (i = Array("flag", "emoji"), t.supports = { everything: !0, everythingExceptFlag: !0 }, o = 0; o < i.length; o++)t.supports[i[o]] = l(i[o]), t.supports.everything = t.supports.everything && t.supports[i[o]], "flag" !== i[o] && (t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[i[o]]); t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t.readyCallback = function () { t.DOMReady = !0 }, t.supports.everything || (n = function () { t.readyCallback() }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () { "complete" === a.readyState && t.readyCallback() })), (r = t.source || {}).concatemoji ? d(r.concatemoji) : r.wpemoji && r.twemoji && (d(r.twemoji), d(r.wpemoji))) }(window, document, window._wpemojiSettings);
+	</script>
+	<script src="./python_3_&amp;_2_differences_files/wp-emoji-release.min.js.download" type="text/javascript"
+		defer=""></script>
+	<style type="text/css">
+		img.wp-smiley,
+		img.emoji {
+			display: inline !important;
+			border: none !important;
+			box-shadow: none !important;
+			height: 1em !important;
+			width: 1em !important;
+			margin: 0 .07em !important;
+			vertical-align: -0.1em !important;
+			background: none !important;
+			padding: 0 !important;
+		}
+	</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="./python_3_&amp;_2_differences_files/style.min.css"
+		type="text/css" media="all">
+	<style id="wp-block-library-inline-css" type="text/css">
+		.has-text-align-justify {
+			text-align: justify;
+		}
+	</style>
+	<link rel="stylesheet" id="theme-stylesheet-css" href="./python_3_&amp;_2_differences_files/style.css"
+		type="text/css" media="all">
+	<link rel="stylesheet" id="woo-layout-css" href="./python_3_&amp;_2_differences_files/layout.css" type="text/css"
+		media="all">
+	<link rel="stylesheet" id="prism-theme-css" href="./python_3_&amp;_2_differences_files/prism-css.min.css"
+		type="text/css" media="all">
+	<link rel="stylesheet" id="social-logos-css" href="./python_3_&amp;_2_differences_files/social-logos.min.css"
+		type="text/css" media="all">
+	<link rel="stylesheet" id="jetpack_css-css" href="./python_3_&amp;_2_differences_files/jetpack.css" type="text/css"
+		media="all">
+	<script type="text/javascript" src="./python_3_&amp;_2_differences_files/jquery.js.download"
+		id="jquery-core-js"></script>
+	<script type="text/javascript" id="jetpack_related-posts-js-extra">
+		/* <![CDATA[ */
+		var related_posts_js_options = { "post_heading": "h4" };
 /* ]]> */
-</script>
-<script type="text/javascript" src="./python_3_&amp;_2_differences_files/related-posts.min.js.download" id="jetpack_related-posts-js"></script>
-<script type="text/javascript" src="./python_3_&amp;_2_differences_files/fitvids.min.js.download" id="fitvids-js"></script>
-<script type="text/javascript" src="./python_3_&amp;_2_differences_files/modernizr.min.js.download" id="modernizr-js"></script>
-<script type="text/javascript" src="./python_3_&amp;_2_differences_files/general.js.download" id="general-js"></script>
-<link rel="https://api.w.org/" href="https://blog.caelum.com.br/wp-json/"><link rel="alternate" type="application/json" href="https://blog.caelum.com.br/wp-json/wp/v2/posts/10407"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blog.caelum.com.br/xmlrpc.php?rsd">
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blog.caelum.com.br/wp-includes/wlwmanifest.xml"> 
-<meta name="generator" content="WordPress 5.5.3">
-<link rel="shortlink" href="https://wp.me/p8tqQy-2HR">
-<link rel="alternate" type="application/json+oembed" href="https://blog.caelum.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblog.caelum.com.br%2Fquais-as-diferencas-entre-python-2-e-python-3%2F">
-<link rel="alternate" type="text/xml+oembed" href="https://blog.caelum.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblog.caelum.com.br%2Fquais-as-diferencas-entre-python-2-e-python-3%2F&amp;format=xml">
-<link rel="stylesheet" type="text/css" href="./python_3_&amp;_2_differences_files/all.css"><!--[if IE]><link rel="stylesheet" type="text/css" href="https://blog.caelum.com.br/wp-content/plugins/highlight-source-pro/ie.css" /><![endif]--><script type="text/javascript" data-cfasync="false">var _mmunch = {'front': false, 'page': false, 'post': false, 'category': false, 'author': false, 'search': false, 'attachment': false, 'tag': false};_mmunch['post'] = true; _mmunch['postData'] = {"ID":10407,"post_name":"quais-as-diferencas-entre-python-2-e-python-3","post_title":"Quais as diferen\u00e7as entre Python 2 e Python 3?","post_type":"post","post_author":"116","post_status":"publish"}; _mmunch['postCategories'] = [{"term_id":1367,"name":"Programa\u00e7\u00e3o","slug":"programacao","term_group":0,"term_taxonomy_id":1440,"taxonomy":"category","description":"","parent":0,"count":301,"filter":"raw","cat_ID":1367,"category_count":301,"category_description":"","cat_name":"Programa\u00e7\u00e3o","category_nicename":"programacao","category_parent":0}]; _mmunch['postTags'] = false; _mmunch['postAuthor'] = {"name":"Yan Orestes","ID":116};</script><script data-cfasync="false" src="./python_3_&amp;_2_differences_files/site.js.download" id="mailmunch-script" data-plugin="mc_mm" data-mailmunch-site-id="400098" async=""></script><style type="text/css">img#wpstats{display:none}</style>
-<!-- Theme version -->
-<meta name="generator" content="On Topic 1.1.2">
-<meta name="generator" content="WooFramework 5.5.5">
+	</script>
+	<script type="text/javascript" src="./python_3_&amp;_2_differences_files/related-posts.min.js.download"
+		id="jetpack_related-posts-js"></script>
+	<script type="text/javascript" src="./python_3_&amp;_2_differences_files/fitvids.min.js.download"
+		id="fitvids-js"></script>
+	<script type="text/javascript" src="./python_3_&amp;_2_differences_files/modernizr.min.js.download"
+		id="modernizr-js"></script>
+	<script type="text/javascript" src="./python_3_&amp;_2_differences_files/general.js.download"
+		id="general-js"></script>
+	<link rel="https://api.w.org/" href="https://blog.caelum.com.br/wp-json/">
+	<link rel="alternate" type="application/json" href="https://blog.caelum.com.br/wp-json/wp/v2/posts/10407">
+	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blog.caelum.com.br/xmlrpc.php?rsd">
+	<link rel="wlwmanifest" type="application/wlwmanifest+xml"
+		href="https://blog.caelum.com.br/wp-includes/wlwmanifest.xml">
+	<meta name="generator" content="WordPress 5.5.3">
+	<link rel="shortlink" href="https://wp.me/p8tqQy-2HR">
+	<link rel="alternate" type="application/json+oembed"
+		href="https://blog.caelum.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblog.caelum.com.br%2Fquais-as-diferencas-entre-python-2-e-python-3%2F">
+	<link rel="alternate" type="text/xml+oembed"
+		href="https://blog.caelum.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblog.caelum.com.br%2Fquais-as-diferencas-entre-python-2-e-python-3%2F&amp;format=xml">
+	<link rel="stylesheet" type="text/css" href="./python_3_&amp;_2_differences_files/all.css">
+	<!--[if IE]><link rel="stylesheet" type="text/css" href="https://blog.caelum.com.br/wp-content/plugins/highlight-source-pro/ie.css" /><![endif]-->
+	<script type="text/javascript"
+		data-cfasync="false">var _mmunch = { 'front': false, 'page': false, 'post': false, 'category': false, 'author': false, 'search': false, 'attachment': false, 'tag': false }; _mmunch['post'] = true; _mmunch['postData'] = { "ID": 10407, "post_name": "quais-as-diferencas-entre-python-2-e-python-3", "post_title": "Quais as diferen\u00e7as entre Python 2 e Python 3?", "post_type": "post", "post_author": "116", "post_status": "publish" }; _mmunch['postCategories'] = [{ "term_id": 1367, "name": "Programa\u00e7\u00e3o", "slug": "programacao", "term_group": 0, "term_taxonomy_id": 1440, "taxonomy": "category", "description": "", "parent": 0, "count": 301, "filter": "raw", "cat_ID": 1367, "category_count": 301, "category_description": "", "cat_name": "Programa\u00e7\u00e3o", "category_nicename": "programacao", "category_parent": 0 }]; _mmunch['postTags'] = false; _mmunch['postAuthor'] = { "name": "Yan Orestes", "ID": 116 };</script>
+	<script data-cfasync="false" src="./python_3_&amp;_2_differences_files/site.js.download" id="mailmunch-script"
+		data-plugin="mc_mm" data-mailmunch-site-id="400098" async=""></script>
+	<style type="text/css">
+		img#wpstats {
+			display: none
+		}
+	</style>
+	<!-- Theme version -->
+	<meta name="generator" content="On Topic 1.1.2">
+	<meta name="generator" content="WooFramework 5.5.5">
 
-<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-<!--  Mobile viewport scale | Disable user zooming as the layout is optimised -->
-<meta content="initial-scale=1.0; maximum-scale=1.0; user-scalable=no" name="viewport">
-<!--[if lt IE 9]>
+	<!--  Mobile viewport scale | Disable user zooming as the layout is optimised -->
+	<meta content="initial-scale=1.0; maximum-scale=1.0; user-scalable=no" name="viewport">
+	<!--[if lt IE 9]>
 <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-		<link rel="amphtml" href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/amp/">			<style type="text/css" id="wp-custom-css">
-				/*
+	<link rel="amphtml" href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/amp/">
+	<style type="text/css" id="wp-custom-css">
+		/*
 Você pode adicionar seu próprio CSS aqui.
 
 Clique no ícone de ajuda acima para saber mais.
 */
 
-/* author Alex feat Mairo ajuste no blockquote */
-.post .entry blockquote {
-    border-left: 5px solid #ccc;
-    padding-left: 25px;
-		padding-top: 15px;
-		padding-bottom: 15px;
-}
+		/* author Alex feat Mairo ajuste no blockquote */
+		.post .entry blockquote {
+			border-left: 5px solid #ccc;
+			padding-left: 25px;
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
 
-.post .entry blockquote:before {
-	display: none;
-}
+		.post .entry blockquote:before {
+			display: none;
+		}
 
-.post .entry blockquote p {
-	margin: 0px
-}
-			</style>
-		
-<!-- Woo Custom Styling -->
-<style type="text/css">
-body { background: #ffffff !important; }
-.entry a, .home-tabber li a { color: #7D95A5 !important; }
-.entry a:hover, .home-tabber li a:hover { color: #5A7C92 !important; }
-a.button, a.comment-reply-link, #commentform #submit, #contact-page .submit { background: #7D95A5 !important; }
-a.button:hover, a.button.hover, a.button.active, a.comment-reply-link:hover, #commentform #submit:hover, #contact-page .submit:hover { background: #7D95A5 !important; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
-</style>
+		.post .entry blockquote p {
+			margin: 0px
+		}
+	</style>
 
-<!-- Google Webfonts -->
-<link href="./python_3_&amp;_2_differences_files/css" rel="stylesheet" type="text/css">
+	<!-- Woo Custom Styling -->
+	<style type="text/css">
+		body {
+			background: #ffffff !important;
+		}
 
-<!-- Woo Custom Typography -->
-<style type="text/css">
-body { font:normal 1.6em/1.9em 'Merriweather', arial, sans-serif;color:#1c1c1c; }
-#navigation ul.nav > li > a { font:300 1.1em/1em 'Varela', arial, sans-serif;color:#FFFFFF; }
-.page header h1 { font:bold italic 3.5em/1em 'Open Sans', arial, sans-serif;color:#000000; }
-.post header h1, .post header h1 a:link, .post header h1 a:visited { font:bold 3em/1em 'PT Sans', arial, sans-serif;color:#25343F; }
-.post header h1 a:link, .post header h1 a:visited { font:bold 0.7em/1em 'PT Sans', arial, sans-serif;color:#000000; }
-.post-meta { font:300 0.9em/1em 'Merriweather', arial, sans-serif;color:#828282; }
-.entry, .entry p { font:300 1em/1.5em 'Merriweather', arial, sans-serif;color:#1c1c1c; } h1, h2, h3, h4, h5, h6 { font-family: Merriweather, arial, sans-serif; }
-</style>
+		.entry a,
+		.home-tabber li a {
+			color: #7D95A5 !important;
+		}
 
-<!-- Alt Stylesheet -->
-<link href="./python_3_&amp;_2_differences_files/default.css" rel="stylesheet" type="text/css">
+		.entry a:hover,
+		.home-tabber li a:hover {
+			color: #5A7C92 !important;
+		}
 
-<!-- Custom Favicon -->
-<link rel="shortcut icon" href="https://blog.caelum.com.br/wp-content/uploads/2006/08/favicon.ico">
-<!-- Options Panel Custom CSS -->
-<style type="text/css">
-.entry a, .home-tabber li a { color:#068AE0 !important; }
+		a.button,
+		a.comment-reply-link,
+		#commentform #submit,
+		#contact-page .submit {
+			background: #7D95A5 !important;
+		}
 
-</style>
+		a.button:hover,
+		a.button.hover,
+		a.button.active,
+		a.comment-reply-link:hover,
+		#commentform #submit:hover,
+		#contact-page .submit:hover {
+			background: #7D95A5 !important;
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			box-shadow: none;
+		}
+	</style>
+
+	<!-- Google Webfonts -->
+	<link href="./python_3_&amp;_2_differences_files/css" rel="stylesheet" type="text/css">
+
+	<!-- Woo Custom Typography -->
+	<style type="text/css">
+		body {
+			font: normal 1.6em/1.9em 'Merriweather', arial, sans-serif;
+			color: #1c1c1c;
+		}
+
+		#navigation ul.nav>li>a {
+			font: 300 1.1em/1em 'Varela', arial, sans-serif;
+			color: #FFFFFF;
+		}
+
+		.page header h1 {
+			font: bold italic 3.5em/1em 'Open Sans', arial, sans-serif;
+			color: #000000;
+		}
+
+		.post header h1,
+		.post header h1 a:link,
+		.post header h1 a:visited {
+			font: bold 3em/1em 'PT Sans', arial, sans-serif;
+			color: #25343F;
+		}
+
+		.post header h1 a:link,
+		.post header h1 a:visited {
+			font: bold 0.7em/1em 'PT Sans', arial, sans-serif;
+			color: #000000;
+		}
+
+		.post-meta {
+			font: 300 0.9em/1em 'Merriweather', arial, sans-serif;
+			color: #828282;
+		}
+
+		.entry,
+		.entry p {
+			font: 300 1em/1.5em 'Merriweather', arial, sans-serif;
+			color: #1c1c1c;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-family: Merriweather, arial, sans-serif;
+		}
+	</style>
+
+	<!-- Alt Stylesheet -->
+	<link href="./python_3_&amp;_2_differences_files/default.css" rel="stylesheet" type="text/css">
+
+	<!-- Custom Favicon -->
+	<link rel="shortcut icon" href="https://blog.caelum.com.br/wp-content/uploads/2006/08/favicon.ico">
+	<!-- Options Panel Custom CSS -->
+	<style type="text/css">
+		.entry a,
+		.home-tabber li a {
+			color: #068AE0 !important;
+		}
+	</style>
 
 
-<!-- Woo Shortcodes CSS -->
-<link href="./python_3_&amp;_2_differences_files/shortcodes.css" rel="stylesheet" type="text/css">
+	<!-- Woo Shortcodes CSS -->
+	<link href="./python_3_&amp;_2_differences_files/shortcodes.css" rel="stylesheet" type="text/css">
 
-<!-- Custom Stylesheet -->
-<link href="./python_3_&amp;_2_differences_files/custom.css" rel="stylesheet" type="text/css">
+	<!-- Custom Stylesheet -->
+	<link href="./python_3_&amp;_2_differences_files/custom.css" rel="stylesheet" type="text/css">
 
 
 	<style>
-	
-		
-		#header  {
-			
-							background-color: #081c27;
-						
-							background-image: url(https://blog.caelum.com.br/wp-content/uploads/2006/08/bg-02.jpg);
-						
-							background-position: top left;
-						
+		#header {
+
+			background-color: #081c27;
+
+			background-image: url(https://blog.caelum.com.br/wp-content/uploads/2006/08/bg-02.jpg);
+
+			background-position: top left;
+
 			background-repeat: no-repeat;
 			background-size: cover;
-			
+
 		}
-	
-				
-			@media only screen and (min-width: 768px) {
-				
-				.page #post-entries a, .single-post #post-entries a, .single-product #post-entries a  {
-					background-color: #081c27;
-				}
-				
+
+
+		@media only screen and (min-width: 768px) {
+
+			.page #post-entries a,
+			.single-post #post-entries a,
+			.single-product #post-entries a {
+				background-color: #081c27;
 			}
-			
-			
+
+		}
 	</style>
-	
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async="" src="./python_3_&amp;_2_differences_files/js"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-270161-5');
-</script>
-<link rel="stylesheet" type="text/css" href="./python_3_&amp;_2_differences_files/styles.css"></head>
-<body class="post-template-default single single-post postid-10407 single-format-standard chrome alt-style-default layout-default" id="error-page">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async="" src="./python_3_&amp;_2_differences_files/js"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
 
-<div id="wrapper" class="loaded">
-	<div id="inner-wrapper">
+		gtag('config', 'UA-270161-5');
+	</script>
+	<link rel="stylesheet" type="text/css" href="./python_3_&amp;_2_differences_files/styles.css">
+</head>
 
-    
-	<header id="header">
-		
-	<a id="logo" href="https://blog.caelum.com.br/" title="Aprenda sobre tecnologia com a Caelum. Artigos de programação, web, mobile, ux e agile">
-						<img src="./python_3_&amp;_2_differences_files/caelum-logo.png" alt="Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum">
-			
-	</a>
+<body
+	class="post-template-default single single-post postid-10407 single-format-standard chrome alt-style-default layout-default"
+	id="error-page">
+
+	<div id="wrapper" class="loaded">
+		<div id="inner-wrapper">
 
 
+			<header id="header">
 
-		<span class="nav-toggle"><a href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#navigation"><span>Navigation</span></a></span>
-		
-		<!--
+				<a id="logo" href="https://blog.caelum.com.br/"
+					title="Aprenda sobre tecnologia com a Caelum. Artigos de programação, web, mobile, ux e agile">
+					<img src="./python_3_&amp;_2_differences_files/caelum-logo.png"
+						alt="Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum">
+
+				</a>
+
+
+
+				<span class="nav-toggle"><a
+						href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#navigation"><span>Navigation</span></a></span>
+
+				<!--
 	    <hgroup>
 			<h1 class="site-title"><a href="https://blog.caelum.com.br/">Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum</a></h1>
 			<h2 class="site-description">Aprenda sobre tecnologia com a Caelum. Artigos de programação, web, mobile, ux e agile</h2>
 		</hgroup>
 		-->
 
-                
-        
-        <div class="search_main fix"><form role="search" class="searchform" method="get" id="searchform" action="https://blog.caelum.com.br/">
-				<div>
-					<label class="screen-reader-text" for="s">Pesquisar por:</label>
-					<input type="text" value="" name="s" class="field s" placeholder="Busca..." id="s">
-					<input type="submit" class="search-submit" id="searchsubmit" value="Pesquisar">
+
+
+				<div class="search_main fix">
+					<form role="search" class="searchform" method="get" id="searchform"
+						action="https://blog.caelum.com.br/">
+						<div>
+							<label class="screen-reader-text" for="s">Pesquisar por:</label>
+							<input type="text" value="" name="s" class="field s" placeholder="Busca..." id="s">
+							<input type="submit" class="search-submit" id="searchsubmit" value="Pesquisar">
+						</div>
+					</form>
 				</div>
-			</form></div>
-		<nav id="navigation" class="col-full" role="navigation">
+				<nav id="navigation" class="col-full" role="navigation">
 
-			<section class="menus">
+					<section class="menus">
 
-			<a href="https://blog.caelum.com.br/" class="nav-home"><span>Home</span></a>
-			
-			<div class="menu-toggle"><h3>Categorias</h3><ul id="menu-categorias" class="nav main-nav"><li id="menu-item-8609" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-8609"><a href="https://blog.caelum.com.br/category/programacao/">Programação</a></li>
-<li id="menu-item-4145" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4145"><a href="https://blog.caelum.com.br/category/front-end/">Front-end</a></li>
-<li id="menu-item-8610" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8610"><a href="https://blog.caelum.com.br/category/mobile/">Mobile</a></li>
-<li id="menu-item-7474" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7474"><a href="https://blog.caelum.com.br/category/design-ux/">Design &amp; UX</a></li>
-<li id="menu-item-4143" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4143"><a href="https://blog.caelum.com.br/category/agile/">Agile</a></li>
-<li id="menu-item-4142" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4142"><a href="https://blog.caelum.com.br/category/arquitetura/">Arquitetura</a></li>
-<li id="menu-item-4141" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4141"><a href="https://blog.caelum.com.br/category/inovacao/">Inovação</a></li>
-</ul></div><div class="menu-toggle"><h3>Conheça também</h3><ul id="menu-sec-menu" class="nav main-nav"><li id="menu-item-6142" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6142"><a href="https://www.caelum.com.br/">Cursos Caelum</a></li>
-<li id="menu-item-6143" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6143"><a href="https://www.alura.com.br/">Cursos online Alura</a></li>
-<li id="menu-item-6144" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6144"><a href="https://www.casadocodigo.com.br/">Editora Casa do Código</a></li>
-</ul></div>	        <ul class="nav rss">
-	            
-				
-	        </ul>
+						<a href="https://blog.caelum.com.br/" class="nav-home"><span>Home</span></a>
 
-	    	</section><!--/.menus-->
+						<div class="menu-toggle">
+							<h3>Categorias</h3>
+							<ul id="menu-categorias" class="nav main-nav">
+								<li id="menu-item-8609"
+									class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-8609">
+									<a href="https://blog.caelum.com.br/category/programacao/">Programação</a></li>
+								<li id="menu-item-4145"
+									class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4145">
+									<a href="https://blog.caelum.com.br/category/front-end/">Front-end</a></li>
+								<li id="menu-item-8610"
+									class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8610">
+									<a href="https://blog.caelum.com.br/category/mobile/">Mobile</a></li>
+								<li id="menu-item-7474"
+									class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7474">
+									<a href="https://blog.caelum.com.br/category/design-ux/">Design &amp; UX</a></li>
+								<li id="menu-item-4143"
+									class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4143">
+									<a href="https://blog.caelum.com.br/category/agile/">Agile</a></li>
+								<li id="menu-item-4142"
+									class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4142">
+									<a href="https://blog.caelum.com.br/category/arquitetura/">Arquitetura</a></li>
+								<li id="menu-item-4141"
+									class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4141">
+									<a href="https://blog.caelum.com.br/category/inovacao/">Inovação</a></li>
+							</ul>
+						</div>
+						<div class="menu-toggle">
+							<h3>Conheça também</h3>
+							<ul id="menu-sec-menu" class="nav main-nav">
+								<li id="menu-item-6142"
+									class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6142"><a
+										href="https://www.caelum.com.br/">Cursos Caelum</a></li>
+								<li id="menu-item-6143"
+									class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6143"><a
+										href="https://www.alura.com.br/">Cursos online Alura</a></li>
+								<li id="menu-item-6144"
+									class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6144"><a
+										href="https://www.casadocodigo.com.br/">Editora Casa do Código</a></li>
+							</ul>
+						</div>
+						<ul class="nav rss">
 
-	    	 <div id="connect">
-<div class="social">
-<a href="https://blog.caelum.com.br/feed/" title="Subscribe to our RSS feed" class="subscribe"><span>Subscribe to our RSS feed</span></a>
-<a href="https://twitter.com/caelum" title="Follow Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum on Twitter" class="twitter"><span>Follow Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum on Twitter</span></a>
-<a href="https://www.facebook.com/caelumbr" title="Like Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum on Facebook" class="facebook"><span>Like Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum on Facebook</span></a>
-</div>
-</div>
 
-	        <!-- <a href="#top" class="nav-close"><span>Return to Content</span></a> -->
+						</ul>
 
-		</nav><!-- /#navigation -->
+					</section>
+					<!--/.menus-->
 
-				
-	</header><!-- /#header -->
+					<div id="connect">
+						<div class="social">
+							<a href="https://blog.caelum.com.br/feed/" title="Subscribe to our RSS feed"
+								class="subscribe"><span>Subscribe to our RSS feed</span></a>
+							<a href="https://twitter.com/caelum"
+								title="Follow Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum on Twitter"
+								class="twitter"><span>Follow Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum on
+									Twitter</span></a>
+							<a href="https://www.facebook.com/caelumbr"
+								title="Like Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum on Facebook"
+								class="facebook"><span>Like Blog da Caelum: desenvolvimento, web, mobile, UX e Scrum on
+									Facebook</span></a>
+						</div>
+					</div>
 
-	
-    <div id="content" class="col-full">
+					<!-- <a href="#top" class="nav-close"><span>Return to Content</span></a> -->
 
-    	
-		<section id="main">
-        			<article class="post-10407 post type-post status-publish format-standard has-post-thumbnail hentry category-programacao">
+				</nav><!-- /#navigation -->
 
-				
-                <header style="background-image: url(https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/roaddecision.jpg?fit=1920%2C1440&amp;ssl=1); background-size: cover; background-position: center center;">
-                
-                	<section class="header-content">
 
-	                	<h1>Quais as diferenças entre Python 2 e Python 3?</h1>
-                		<aside class="post-meta">
-	<span class="post-date">Postado dia 20/06/2018</span>
-	<span class="post-author">por Yan Orestes</span>
-	<span class="post-category">em <a href="https://blog.caelum.com.br/category/programacao/" rel="category tag">Programação</a></span>
-	<span class="post-comments"><a href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#comments">15</a></span>
-	</aside>
+			</header><!-- /#header -->
 
-                	</section>
-                	
-                	<!--
+
+			<div id="content" class="col-full">
+
+
+				<section id="main">
+					<article
+						class="post-10407 post type-post status-publish format-standard has-post-thumbnail hentry category-programacao">
+
+
+						<header
+							style="background-image: url(https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/roaddecision.jpg?fit=1920%2C1440&amp;ssl=1); background-size: cover; background-position: center center;">
+
+							<section class="header-content">
+
+								<h1>Quais as diferenças entre Python 2 e Python 3?</h1>
+								<aside class="post-meta">
+									<span class="post-date">Postado dia 20/06/2018</span>
+									<span class="post-author">por Yan Orestes</span>
+									<span class="post-category">em <a
+											href="https://blog.caelum.com.br/category/programacao/"
+											rel="category tag">Programação</a></span>
+									<span class="post-comments"><a
+											href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#comments">15</a></span>
+								</aside>
+
+							</section>
+
+							<!--
                 	<nav id="post-entries" class="fix">
 	        		    <div class="nav-prev fl"><a href="https://blog.caelum.com.br/a-historia-da-caelum-alura-e-casa-do-codigo-hipsters-numero-100/" rel="prev">A história da Caelum, Alura e Casa do Código &#8211; Hipsters número 100</a></div>
 	        		    <div class="nav-next fr"><a href="https://blog.caelum.com.br/dicas-politicas-de-senha/" rel="next">Algumas dicas importantes sobre políticas de senha</a></div>
 	        		</nav>
 	        	-->
-                	
-                	                	
-<!--                 	<a href="#" title="#"><img src="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/roaddecision.jpg?fit=1920%2C1440&#038;ssl=1" alt="" /></a> -->
 
-                </header>
 
-                <section class="entry fix">
-					
-                	<div class="mailmunch-forms-before-post" style="display: none !important;"></div><p>Antes de se iniciar no Python, surge sempre a dúvida – <strong>qual versão da linguagem devo aprender?</strong> Talvez mais difícil que esta é a dúvida que vem de quem já programa em Python – <strong>devo fazer meus programas em qual versão do Python?</strong></p>
-<p>Tratando de algumas outras linguagens de programação, esta dúvida pode parecer menos usual, porque o que funciona em uma versão geralmente funciona também na próxima.</p>
-<p>O ponto é que as duas maiores versões <em>major</em> do Python (<strong>2</strong> e <strong>3</strong>, as únicas em uso) têm diferenças cruciais. <strong>O Python 3 não é retrocompatível</strong>, e isso acaba trazendo algumas confusões e dúvidas para nós desenvolvedores. É a versão que utilizamos no <a href="https://www.caelum.com.br/curso-python-orientacao-objetos">curso de Python da Caelum</a>.</p>
-<p>Mas o que essa “retro<strong>in</strong>compatibilidade” significa? Basicamente, indica que código escrito em Python 2 <strong>pode</strong> não funcionar rodando no interpretador do Python 3.</p>
-<p>O Python 3 foi lançado no final de 2008, pouco mais de 8 anos depois do Python 2, e veio com intenções claras – <strong>retificar as falhas de design que a linguagem trazia</strong>.</p>
-<p>Mas e aí? Sabendo disso, o que a gente faz? Temos agora um dilema, o que aprender? E, ainda, o que usar? Nesse post vamos tentar debater isso, apresentando pontos explicativos das diferenças entre as versões e argumentando em prol de um código mais pythônico.</p>
-<h2>Principais diferenças entre Python 2 e Python 3</h2>
-<p>Antes de tudo, precisamos entender de fato o que muda de uma versão para outra. Assim, deixamos um índice separando cada tópico, para facilitar a leitura do post.</p>
-<ul>
-<li><strong>Diferenças entre as duas versões</strong>
-<ul>
-<li><a href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#mudancas-sutis">Mudanças sutis</a></li>
-<li><a href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#programacao-preguicosa">Programação preguiçosa</a></li>
-<li><a href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#comparacao">Comparação</a></li>
-<li><a href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#numeros">Números</a>
-<ul>
-<li><a href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#divisao">Divisão de números inteiros</a></li>
-</ul>
-</li>
-<li><a href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#tipos-texto">Tipos de texto</a></li>
-<li><a href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#sintaxe">Sintaxe</a>
-<ul>
-<li><a href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#excecoes">Tratamento de exceções</a></li>
-<li><a href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#indentacao">Indentação</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>A decisão</strong>
-<ul>
-<li><a href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#qual-aprender">Qual versão aprender? (E, ainda, qual versão ensinar?)</a></li>
-<li><a href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#qual-programar">Para qual versão programar?</a></li>
-<li><a href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#programa-portavel">Tornando seu programa compatível com as duas versões</a>
-<ul>
-<li><a href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#codigo-portavel">Escrevendo código compatível com as duas versões</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#conclusao"><strong>Conclusão</strong></a></li>
-</ul>
-<h2 id="mudancas-sutis">Mudanças sutis</h2>
-<p>As primeiras diferenças entre as duas versões em uso do Python são simples e, ao mesmo tempo, muito problemáticas.</p>
-<p>O primeiro exemplo é o clássico da confusão já discutida por nós, <a href="http://blog.alura.com.br/a-diferenca-das-funcoes-input-e-raw_input-no-python">a diferença das funções <code>raw_input()</code> e <code>input()</code></a>, que, para um desenvolvedor desatento com a mudança de versão, pode até causar um problema de segurança grave.</p>
-<p>Além deste, temos os casos da função <code>print()</code> e do tipo <code>file</code>. No Python 2, <code>print</code> <strong>não é uma função</strong>, mas sim uma declaração, ou, tecnicamente, um <em><a href="https://docs.python.org/3/glossary.html#term-statement">statement</a></em>. Assim, podíamos usá-la dessa forma, sem os parênteses:</p>
-<pre><code class="language-python">
+							<!--                 	<a href="#" title="#"><img src="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/roaddecision.jpg?fit=1920%2C1440&#038;ssl=1" alt="" /></a> -->
+
+						</header>
+
+						<section class="entry fix">
+
+							<div class="mailmunch-forms-before-post" style="display: none !important;"></div>
+							<p>Antes de se iniciar no Python, surge sempre a dúvida – <strong>qual versão da linguagem
+									devo aprender?</strong> Talvez mais difícil que esta é a dúvida que vem de quem já
+								programa em Python – <strong>devo fazer meus programas em qual versão do
+									Python?</strong></p>
+							<p>Tratando de algumas outras linguagens de programação, esta dúvida pode parecer menos
+								usual, porque o que funciona em uma versão geralmente funciona também na próxima.</p>
+							<p>O ponto é que as duas maiores versões <em>major</em> do Python (<strong>2</strong> e
+								<strong>3</strong>, as únicas em uso) têm diferenças cruciais. <strong>O Python 3 não é
+									retrocompatível</strong>, e isso acaba trazendo algumas confusões e dúvidas para nós
+								desenvolvedores. É a versão que utilizamos no <a
+									href="https://www.caelum.com.br/curso-python-orientacao-objetos">curso de Python da
+									Caelum</a>.</p>
+							<p>Mas o que essa “retro<strong>in</strong>compatibilidade” significa? Basicamente, indica
+								que código escrito em Python 2 <strong>pode</strong> não funcionar rodando no
+								interpretador do Python 3.</p>
+							<p>O Python 3 foi lançado no final de 2008, pouco mais de 8 anos depois do Python 2, e veio
+								com intenções claras – <strong>retificar as falhas de design que a linguagem
+									trazia</strong>.</p>
+							<p>Mas e aí? Sabendo disso, o que a gente faz? Temos agora um dilema, o que aprender? E,
+								ainda, o que usar? Nesse post vamos tentar debater isso, apresentando pontos
+								explicativos das diferenças entre as versões e argumentando em prol de um código mais
+								pythônico.</p>
+							<h2>Principais diferenças entre Python 2 e Python 3</h2>
+							<p>Antes de tudo, precisamos entender de fato o que muda de uma versão para outra. Assim,
+								deixamos um índice separando cada tópico, para facilitar a leitura do post.</p>
+							<ul>
+								<li><strong>Diferenças entre as duas versões</strong>
+									<ul>
+										<li><a
+												href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#mudancas-sutis">Mudanças
+												sutis</a></li>
+										<li><a
+												href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#programacao-preguicosa">Programação
+												preguiçosa</a></li>
+										<li><a
+												href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#comparacao">Comparação</a>
+										</li>
+										<li><a
+												href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#numeros">Números</a>
+											<ul>
+												<li><a
+														href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#divisao">Divisão
+														de números inteiros</a></li>
+											</ul>
+										</li>
+										<li><a
+												href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#tipos-texto">Tipos
+												de texto</a></li>
+										<li><a
+												href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#sintaxe">Sintaxe</a>
+											<ul>
+												<li><a
+														href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#excecoes">Tratamento
+														de exceções</a></li>
+												<li><a
+														href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#indentacao">Indentação</a>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li><strong>A decisão</strong>
+									<ul>
+										<li><a
+												href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#qual-aprender">Qual
+												versão aprender? (E, ainda, qual versão ensinar?)</a></li>
+										<li><a
+												href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#qual-programar">Para
+												qual versão programar?</a></li>
+										<li><a
+												href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#programa-portavel">Tornando
+												seu programa compatível com as duas versões</a>
+											<ul>
+												<li><a
+														href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#codigo-portavel">Escrevendo
+														código compatível com as duas versões</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li><a
+										href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/#conclusao"><strong>Conclusão</strong></a>
+								</li>
+							</ul>
+							<h2 id="mudancas-sutis">Mudanças sutis</h2>
+							<p>As primeiras diferenças entre as duas versões em uso do Python são simples e, ao mesmo
+								tempo, muito problemáticas.</p>
+							<p>O primeiro exemplo é o clássico da confusão já discutida por nós, <a
+									href="http://blog.alura.com.br/a-diferenca-das-funcoes-input-e-raw_input-no-python">a
+									diferença das funções <code>raw_input()</code> e <code>input()</code></a>, que, para
+								um desenvolvedor desatento com a mudança de versão, pode até causar um problema de
+								segurança grave.</p>
+							<p>Além deste, temos os casos da função <code>print()</code> e do tipo <code>file</code>. No
+								Python 2, <code>print</code> <strong>não é uma função</strong>, mas sim uma declaração,
+								ou, tecnicamente, um <em><a
+										href="https://docs.python.org/3/glossary.html#term-statement">statement</a></em>.
+								Assim, podíamos usá-la dessa forma, sem os parênteses:</p>
+							<pre><code class="language-python">
 print ‘Olá, mundo!’
 </code></pre>
-<p>E tudo funcionaria bem! No Python 3, entretanto, o <code>print()</code> <strong>vira de fato uma função</strong>, necessitando os parênteses para ser chamada. Vamos ver o que acontece quando tentamos usar o <code>print</code> como usávamos no Python 2:</p>
-<p><a href="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/1printfail.png"><img data-attachment-id="10408" data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/1printfail/" data-orig-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/1printfail.png?fit=802%2C135&amp;ssl=1" data-orig-size="802,135" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="1printfail" data-image-description="" data-medium-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/1printfail.png?fit=300%2C50&amp;ssl=1" data-large-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/1printfail.png?fit=802%2C135&amp;ssl=1" loading="lazy" src="./python_3_&amp;_2_differences_files/1printfail.png" alt="Erro na chamada de print sem parênteses no Python 3" width="802" height="135" class="alignnone size-full wp-image-10408" srcset="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/1printfail.png?w=802&amp;ssl=1 802w, https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/1printfail.png?resize=300%2C50&amp;ssl=1 300w, https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/1printfail.png?resize=768%2C129&amp;ssl=1 768w" sizes="(max-width: 802px) 100vw, 802px" data-recalc-dims="1"></a></p>
-<p>Uma exceção nos indicando a falta dos parênteses! Felizmente, essa questão é muito simples de ser resolvida, porque <em>statements</em> também funcionam com parênteses. Dessa forma, podemos fazer isso:</p>
-<pre><code class="language-python">
+							<p>E tudo funcionaria bem! No Python 3, entretanto, o <code>print()</code> <strong>vira de
+									fato uma função</strong>, necessitando os parênteses para ser chamada. Vamos ver o
+								que acontece quando tentamos usar o <code>print</code> como usávamos no Python 2:</p>
+							<p><a href="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/1printfail.png"><img
+										data-attachment-id="10408"
+										data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/1printfail/"
+										data-orig-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/1printfail.png?fit=802%2C135&amp;ssl=1"
+										data-orig-size="802,135" data-comments-opened="1"
+										data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
+										data-image-title="1printfail" data-image-description=""
+										data-medium-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/1printfail.png?fit=300%2C50&amp;ssl=1"
+										data-large-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/1printfail.png?fit=802%2C135&amp;ssl=1"
+										loading="lazy" src="./python_3_&amp;_2_differences_files/1printfail.png"
+										alt="Erro na chamada de print sem parênteses no Python 3" width="802"
+										height="135" class="alignnone size-full wp-image-10408"
+										srcset="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/1printfail.png?w=802&amp;ssl=1 802w, https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/1printfail.png?resize=300%2C50&amp;ssl=1 300w, https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/1printfail.png?resize=768%2C129&amp;ssl=1 768w"
+										sizes="(max-width: 802px) 100vw, 802px" data-recalc-dims="1"></a></p>
+							<p>Uma exceção nos indicando a falta dos parênteses! Felizmente, essa questão é muito
+								simples de ser resolvida, porque <em>statements</em> também funcionam com parênteses.
+								Dessa forma, podemos fazer isso:</p>
+							<pre><code class="language-python">
 print(‘Olá, mundo!’)
 </code></pre>
-<p>Que é válido tanto no Python 2 quanto no Python 3.</p>
-<p>Por último, mas não menos importante, temos <a href="https://docs.python.org/2/library/functions.html#file">o construtor <code>file</code></a>, conhecido no Python 2 com seu uso para abrir arquivos quaisquer. No Python 3, <strong>esse construtor foi simplesmente removido</strong>. A recomendação que fica é, portanto, usar <a href="https://docs.python.org/3/library/functions.html#open">a função <code>open()</code></a>, <strong>independente da versão do Python</strong>, justamente por questões de compatibilidade.</p>
-<h2 id="programacao-preguicosa">Programação preguiçosa</h2>
-<p>Já vimos o que são <a href="http://blog.alura.com.br/o-que-sao-iteradores-no-python/">iteradores no Python</a> e como eles podem ser vantajosos quando comparados a listas comuns. Assumindo isso, os desenvolvedores do Python e a própria comunidade começaram a dar maior suporte e preferência nativa aos iteradores do que às listas.</p>
-<p>Apresentamos alguns exemplos disso quando falamos sobre <a href="http://blog.caelum.com.br/programacao-funcional-no-python/">programação funcional em Python</a>, com a alteração das funções <code>map()</code> e <code>filter()</code> para retornarem iteradores em vez de listas. O que mais temos além disso?</p>
-<p>Como outro exemplo interessante, que pode causar confusão para desenvolvedores acostumados com uma dessas duas versões do Python, temos <strong>a função <code>range()</code></strong>.</p>
-<p>No Python 2, <a href="https://docs.python.org/2/library/functions.html#range">a função <code>range()</code> retorna uma <strong>lista</strong> representando uma progressão aritmética</a>. Assim, ela era claramente limitada, por questões da memória do computador. Vamos testá-la:</p>
-<p><a href="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/2rangelista.png"><img data-attachment-id="10409" data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/2rangelista/" data-orig-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/2rangelista.png?fit=245%2C136&amp;ssl=1" data-orig-size="245,136" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="2rangelista" data-image-description="" data-medium-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/2rangelista.png?fit=245%2C136&amp;ssl=1" data-large-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/2rangelista.png?fit=245%2C136&amp;ssl=1" loading="lazy" src="./python_3_&amp;_2_differences_files/2rangelista.png" alt="Demonstração da função range() no Python 2" width="245" height="136" class="alignnone size-full wp-image-10409" data-recalc-dims="1"></a></p>
-<p>Além dela, tínhamos <a href="https://docs.python.org/2/library/functions.html#xrange">a classe <code>xrange()</code>, que fazia o mesmo, mas de maneira preguiçosa, isto é, um valor por vez</a>.</p>
-<p>No Python 3, <a href="https://docs.python.org/3/library/functions.html#func-range">o tipo <code>xrange()</code> foi renomeado para <code>range()</code></a> e o comportamento original da função <code>range()</code> perdeu sua função nativa própria (podendo ser facilmente simulado com <code>list(range())</code>):</p>
-<p><a href="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/3rangeppp.png"><img data-attachment-id="10410" data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/3rangeppp/" data-orig-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/3rangeppp.png?fit=236%2C176&amp;ssl=1" data-orig-size="236,176" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="3rangeppp" data-image-description="" data-medium-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/3rangeppp.png?fit=236%2C176&amp;ssl=1" data-large-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/3rangeppp.png?fit=236%2C176&amp;ssl=1" loading="lazy" src="./python_3_&amp;_2_differences_files/3rangeppp.png" alt="Demonstração do range() no Python 3" width="236" height="176" class="alignnone size-full wp-image-10410" data-recalc-dims="1"></a></p>
-<p>Assim, utilizar métodos de lista com o <code>range()</code> ou assumir uma segurança na memória podem causar problemas na portabilidade do código para cada versão.</p>
-<h2 id="comparacao">Comparação</h2>
-<p>A maneira clássica de comparação, que já estava sendo mudada no Python a partir da versão 2.1, com a chegada da <a href="http://blog.alura.com.br/como-comparar-objetos-no-python/">comparação rica</a>, tem seu estilo delimitado de vez no Python 3, com a remoção da <a href="https://docs.python.org/2/library/functions.html#cmp">função nativa <code>cmp()</code></a> e do <a href="https://docs.python.org/2/reference/datamodel.html#object.__cmp__">método especial <code>__cmp__()</code></a>.</p>
-<p>Essas antigas funcionalidades eram baseadas no comportamento tradicional de comparação que vemos na maioria das linguagens de programação, como Java, em que se tem três tipos de retorno – <strong>-1</strong>, <strong>0</strong> e <strong>1</strong>, para, respectivamente, um objeto menor, igual, ou maior que outro.</p>
-<p>Quanto à comparação rica, ainda tivemos uma mudança importante no Python 3. <a href="https://docs.python.org/2/reference/datamodel.html#object.__lt__">A documentação dos métodos de comparação rica do Python 2</a> deixa claro que nenhum operador está ligado a outro. Assim, <strong><code>==</code> não é naturalmente o oposto de <code>!=</code></strong>:</p>
-<p><a href="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/4eq.png"><img data-attachment-id="10411" data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/4eq/" data-orig-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/4eq.png?fit=323%2C251&amp;ssl=1" data-orig-size="323,251" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="4eq" data-image-description="" data-medium-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/4eq.png?fit=300%2C233&amp;ssl=1" data-large-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/4eq.png?fit=323%2C251&amp;ssl=1" loading="lazy" src="./python_3_&amp;_2_differences_files/4eq.png" alt="No Python 2, comparações não tem conexão" width="323" height="251" class="alignnone size-full wp-image-10411" srcset="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/4eq.png?w=323&amp;ssl=1 323w, https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/4eq.png?resize=300%2C233&amp;ssl=1 300w" sizes="(max-width: 323px) 100vw, 323px" data-recalc-dims="1"></a></p>
-<p>Entretanto, no Python 3 isso é alterado para que o operador <code>!=</code> resulte, nativamente, no oposto do operador <code>==</code>. Dessa forma:</p>
-<p><a href="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/5eqneq.png"><img data-attachment-id="10412" data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/5eqneq/" data-orig-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/5eqneq.png?fit=334%2C248&amp;ssl=1" data-orig-size="334,248" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="5eqneq" data-image-description="" data-medium-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/5eqneq.png?fit=300%2C223&amp;ssl=1" data-large-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/5eqneq.png?fit=334%2C248&amp;ssl=1" loading="lazy" src="./python_3_&amp;_2_differences_files/5eqneq.png" alt="No Python 3, != é o oposto de ==" width="334" height="248" class="alignnone size-full wp-image-10412" srcset="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/5eqneq.png?w=334&amp;ssl=1 334w, https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/5eqneq.png?resize=300%2C223&amp;ssl=1 300w" sizes="(max-width: 334px) 100vw, 334px" data-recalc-dims="1"></a></p>
-<p>Em relação à comparação, também tivemos outra significativa mudança no Python 3, que acabou com um comportamento estranho que ainda era mantido no Python 2.</p>
-<p>Na segunda versão, <strong>todos os objetos eram comparáveis ordinalmente entre si</strong>. Sim, todos. Isto significa que comparar se uma string é maior que um inteiro, ou que um float é menor que uma lista, <strong>tudo isso funcionaria</strong>, retornando <strong>True</strong> ou <strong>False</strong> dependendo do teste.</p>
-<p>Claro, a lógica não era aleatória, o que não significa que era justificável, afinal dá margem para erros do desenvolvedor passarem despercebido.</p>
-<p>A primeira regra desse tipo de comparação era que qualquer instância de uma classe definida pelo usuário era <strong>sempre menor</strong> que qualquer outro objeto nativo. Podemos facilmente testar isso no interpretador do Python:</p>
-<p><a href="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/6classcomparison.png"><img data-attachment-id="10413" data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/6classcomparison/" data-orig-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/6classcomparison.png?fit=303%2C250&amp;ssl=1" data-orig-size="303,250" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="6classcomparison" data-image-description="" data-medium-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/6classcomparison.png?fit=300%2C248&amp;ssl=1" data-large-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/6classcomparison.png?fit=303%2C250&amp;ssl=1" loading="lazy" src="./python_3_&amp;_2_differences_files/6classcomparison.png" alt="No Python 2, instâncias de classes do usuário são consideradas menores que quaisquer outros objetos." width="303" height="250" class="alignnone size-full wp-image-10413" srcset="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/6classcomparison.png?w=303&amp;ssl=1 303w, https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/6classcomparison.png?resize=300%2C248&amp;ssl=1 300w" sizes="(max-width: 303px) 100vw, 303px" data-recalc-dims="1"></a></p>
-<p>A segunda regra era que tipos númericos eram <strong>sempre menores</strong> que os outros objetos. Vamos comprovar com testes:</p>
-<p><a href="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/7numcmp.png"><img data-attachment-id="10414" data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/7numcmp/" data-orig-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/7numcmp.png?fit=199%2C155&amp;ssl=1" data-orig-size="199,155" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="7numcmp" data-image-description="" data-medium-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/7numcmp.png?fit=199%2C155&amp;ssl=1" data-large-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/7numcmp.png?fit=199%2C155&amp;ssl=1" loading="lazy" src="./python_3_&amp;_2_differences_files/7numcmp.png" alt="No Python 2, tipos numéricos são considerados menores que outros objetos" width="199" height="155" class="alignnone size-full wp-image-10414" data-recalc-dims="1"></a></p>
-<p>A última regra principal era que, com objetos de outros tipos (que não criados pelo usuário nem numéricos), <strong>a comparação de ordem era alfabética com base nos nomes dos tipos</strong>. Dessa forma:</p>
-<p><a href="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/8anycmp.png"><img data-attachment-id="10415" data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/8anycmp/" data-orig-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/8anycmp.png?fit=164%2C77&amp;ssl=1" data-orig-size="164,77" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="8anycmp" data-image-description="" data-medium-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/8anycmp.png?fit=164%2C77&amp;ssl=1" data-large-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/8anycmp.png?fit=164%2C77&amp;ssl=1" loading="lazy" src="./python_3_&amp;_2_differences_files/8anycmp.png" alt="No Python 2, comparações sem relação comparam as strings que representam os tipos dos objetos comparados" width="164" height="77" class="alignnone size-full wp-image-10415" data-recalc-dims="1"></a></p>
-<p>O resultado era <strong>True</strong> porque esse teste era equivalente a uma comparação de duas strings:</p>
-<p><a href="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/9typecmp.png"><img data-attachment-id="10416" data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/9typecmp/" data-orig-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/9typecmp.png?fit=173%2C37&amp;ssl=1" data-orig-size="173,37" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="9typecmp" data-image-description="" data-medium-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/9typecmp.png?fit=173%2C37&amp;ssl=1" data-large-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/9typecmp.png?fit=173%2C37&amp;ssl=1" loading="lazy" src="./python_3_&amp;_2_differences_files/9typecmp.png" alt="&#39;str&#39; &gt; &#39;list&#39;" width="173" height="37" class="alignnone size-full wp-image-10416" data-recalc-dims="1"></a></p>
-<p>Como isso acaba causando resultados inesperados no código, esse comportamento foi removido do Python 3 e, agora, uma tentativa de comparação ordinal entre dois objetos que não têm uma ordem natural causa uma exceção do tipo <code>TypeError</code>.</p>
-<h2 id="numeros">Números</h2>
-<p>Na mudança de versão, tivemos algumas mudanças estruturais em relação aos tipos numéricos. A primeira, em relação aos próprios tipos em si, é a remoção da classe <code>long</code> no Python 3.</p>
-<p>No Python 2, <a href="https://docs.python.org/2/library/sys.html#sys.maxint">o tipo <code>int</code> era limitado</a>, ou seja, tinha um valor máximo que podia chegar. Além desse valor, o tipo já era outro – <a href="https://docs.python.org/2/library/functions.html#long">o <code>long</code></a>, representado com um <strong>L</strong> após os dígitos numéricos:</p>
-<p><a href="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/10maxint.png"><img data-attachment-id="10417" data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/10maxint/" data-orig-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/10maxint.png?fit=244%2C305&amp;ssl=1" data-orig-size="244,305" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="10maxint" data-image-description="" data-medium-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/10maxint.png?fit=240%2C300&amp;ssl=1" data-large-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/10maxint.png?fit=244%2C305&amp;ssl=1" loading="lazy" src="./python_3_&amp;_2_differences_files/10maxint.png" alt="No Python 2, o tipo int era limitado. Acima desse limite, o número era considerado long" width="244" height="305" class="alignnone size-full wp-image-10417" srcset="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/10maxint.png?w=244&amp;ssl=1 244w, https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/10maxint.png?resize=240%2C300&amp;ssl=1 240w" sizes="(max-width: 244px) 100vw, 244px" data-recalc-dims="1"></a></p>
-<p>No Python 3 essa diferença, por fim, acaba, unificando os dois tipos em um só – <a href="https://docs.python.org/3/library/functions.html#int">o próprio <code>int</code></a>. Assim, o <code>int</code> perde seu limite e um número mais longo não é mais identificado com o sufixo <strong>L</strong>.</p>
-<h3 id="divisao">Divisão de números inteiros</h3>
-<p>Em relação aos números ainda temos uma mudança fundamental de ser entendida, pois pode acabar causando sérios problemas no funcionamento de um programa. Essa mudança se dá, mais especificamente, na divisão de números inteiros.</p>
-<p>No Python 2, toda divisão envolvendo dois números inteiros resultava em um terceiro número inteiro:</p>
-<p><a href="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/11pyintdiv.png"><img data-attachment-id="10418" data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/11pyintdiv/" data-orig-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/11pyintdiv.png?fit=153%2C116&amp;ssl=1" data-orig-size="153,116" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="11pyintdiv" data-image-description="" data-medium-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/11pyintdiv.png?fit=153%2C116&amp;ssl=1" data-large-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/11pyintdiv.png?fit=153%2C116&amp;ssl=1" loading="lazy" src="./python_3_&amp;_2_differences_files/11pyintdiv.png" alt="Divisão de números inteiros no Python 2" width="153" height="116" class="alignnone size-full wp-image-10418" data-recalc-dims="1"></a></p>
-<p>No Python 3, porém, esse comportamento é bastante modificado – toda divisão envolvendo dois números inteiros agora resulta em um número float:</p>
-<p><a href="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/12pyintdivfloat.png"><img data-attachment-id="10419" data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/12pyintdivfloat/" data-orig-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/12pyintdivfloat.png?fit=165%2C115&amp;ssl=1" data-orig-size="165,115" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="12pyintdivfloat" data-image-description="" data-medium-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/12pyintdivfloat.png?fit=165%2C115&amp;ssl=1" data-large-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/12pyintdivfloat.png?fit=165%2C115&amp;ssl=1" loading="lazy" src="./python_3_&amp;_2_differences_files/12pyintdivfloat.png" alt="Divisão de números inteiros no Python 3" width="165" height="115" class="alignnone size-full wp-image-10419" data-recalc-dims="1"></a></p>
-<p>Nas duas versões do Python ainda temos um outro operador, <code>//</code>, que vai seguir o comportamento de divisão do Python 2:</p>
-<p><a href="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/13rounddiv.png"><img data-attachment-id="10420" data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/13rounddiv/" data-orig-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/13rounddiv.png?fit=101%2C79&amp;ssl=1" data-orig-size="101,79" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="13rounddiv" data-image-description="" data-medium-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/13rounddiv.png?fit=101%2C79&amp;ssl=1" data-large-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/13rounddiv.png?fit=101%2C79&amp;ssl=1" loading="lazy" src="./python_3_&amp;_2_differences_files/13rounddiv.png" alt="Divisão de números inteiros arredondada" width="101" height="79" class="alignnone size-full wp-image-10420" data-recalc-dims="1"></a></p>
-<p>Dessa forma, é recomendado seguir um padrão que funcione da mesma forma nas duas versões do Python, seja com o uso do operador <code>//</code>, resultando em um int, seja com a conversão de um dos inteiros para float, resultando em um float:</p>
-<p><a href="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/14floatdiv.png"><img data-attachment-id="10421" data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/14floatdiv/" data-orig-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/14floatdiv.png?fit=118%2C78&amp;ssl=1" data-orig-size="118,78" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="14floatdiv" data-image-description="" data-medium-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/14floatdiv.png?fit=118%2C78&amp;ssl=1" data-large-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/14floatdiv.png?fit=118%2C78&amp;ssl=1" loading="lazy" src="./python_3_&amp;_2_differences_files/14floatdiv.png" alt="Divisão de números de ponto flutuante" width="118" height="78" class="alignnone size-full wp-image-10421" data-recalc-dims="1"></a></p>
-<h2 id="tipos-texto">Tipos de texto</h2>
-<p>Uma das mudanças mais importantes na terceira grande versão do Python está nos tipos disponíveis para armazenar “texto”.</p>
-<blockquote><p>
-  “<em>Mas por que <strong>texto</strong> entre aspas?”</em>
-</p>
-</blockquote>
-<p>Já vamos entender isso!</p>
-<p>No Python 2, temos dois tipos principais para armazenamento de texto. O tipo padrão string (<code>str</code>) e o tipo unicode, identificado com o prefixo <code>u</code> antes das aspas:</p>
-<p><a href="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/15unicode.png"><img data-attachment-id="10422" data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/15unicode/" data-orig-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/15unicode.png?fit=330%2C175&amp;ssl=1" data-orig-size="330,175" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="15unicode" data-image-description="" data-medium-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/15unicode.png?fit=300%2C159&amp;ssl=1" data-large-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/15unicode.png?fit=330%2C175&amp;ssl=1" loading="lazy" src="./python_3_&amp;_2_differences_files/15unicode.png" alt="Unicode no Python 2" width="330" height="175" class="alignnone size-full wp-image-10422" srcset="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/15unicode.png?w=330&amp;ssl=1 330w, https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/15unicode.png?resize=300%2C159&amp;ssl=1 300w" sizes="(max-width: 330px) 100vw, 330px" data-recalc-dims="1"></a></p>
-<p>Isso tudo indica duas coisas fundamentais: a primeira é que <strong>o tipo padrão string</strong> <strong>não suporta caracteres não-<a href="https://pt.wikipedia.org/wiki/ASCII">ASCII</a></strong> (<a href="https://pt.wikipedia.org/wiki/Unicode">unicode</a>); a segunda, que <strong>não há um tipo próprio para armazenamento de bytes</strong>.</p>
-<p>Por conta disso, costumava-se dizer, na comunidade Python, que o tipo string armazenava bytes, enquanto o tipo unicode era quem de fato armazenava texto.</p>
-<p>Acreditar no potencial da string como texto de fato podia acabar causando problemas nos funcionamentos mais simples de uma aplicação, como é no caso de se imprimir um texto acentuado:</p>
-<pre><code class="language-python">
+							<p>Que é válido tanto no Python 2 quanto no Python 3.</p>
+							<p>Por último, mas não menos importante, temos <a
+									href="https://docs.python.org/2/library/functions.html#file">o construtor
+									<code>file</code></a>, conhecido no Python 2 com seu uso para abrir arquivos
+								quaisquer. No Python 3, <strong>esse construtor foi simplesmente removido</strong>. A
+								recomendação que fica é, portanto, usar <a
+									href="https://docs.python.org/3/library/functions.html#open">a função
+									<code>open()</code></a>, <strong>independente da versão do Python</strong>,
+								justamente por questões de compatibilidade.</p>
+							<h2 id="programacao-preguicosa">Programação preguiçosa</h2>
+							<p>Já vimos o que são <a
+									href="http://blog.alura.com.br/o-que-sao-iteradores-no-python/">iteradores no
+									Python</a> e como eles podem ser vantajosos quando comparados a listas comuns.
+								Assumindo isso, os desenvolvedores do Python e a própria comunidade começaram a dar
+								maior suporte e preferência nativa aos iteradores do que às listas.</p>
+							<p>Apresentamos alguns exemplos disso quando falamos sobre <a
+									href="http://blog.caelum.com.br/programacao-funcional-no-python/">programação
+									funcional em Python</a>, com a alteração das funções <code>map()</code> e
+								<code>filter()</code> para retornarem iteradores em vez de listas. O que mais temos além
+								disso?</p>
+							<p>Como outro exemplo interessante, que pode causar confusão para desenvolvedores
+								acostumados com uma dessas duas versões do Python, temos <strong>a função
+									<code>range()</code></strong>.</p>
+							<p>No Python 2, <a href="https://docs.python.org/2/library/functions.html#range">a função
+									<code>range()</code> retorna uma <strong>lista</strong> representando uma progressão
+									aritmética</a>. Assim, ela era claramente limitada, por questões da memória do
+								computador. Vamos testá-la:</p>
+							<p><a
+									href="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/2rangelista.png"><img
+										data-attachment-id="10409"
+										data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/2rangelista/"
+										data-orig-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/2rangelista.png?fit=245%2C136&amp;ssl=1"
+										data-orig-size="245,136" data-comments-opened="1"
+										data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
+										data-image-title="2rangelista" data-image-description=""
+										data-medium-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/2rangelista.png?fit=245%2C136&amp;ssl=1"
+										data-large-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/2rangelista.png?fit=245%2C136&amp;ssl=1"
+										loading="lazy" src="./python_3_&amp;_2_differences_files/2rangelista.png"
+										alt="Demonstração da função range() no Python 2" width="245" height="136"
+										class="alignnone size-full wp-image-10409" data-recalc-dims="1"></a></p>
+							<p>Além dela, tínhamos <a href="https://docs.python.org/2/library/functions.html#xrange">a
+									classe <code>xrange()</code>, que fazia o mesmo, mas de maneira preguiçosa, isto é,
+									um valor por vez</a>.</p>
+							<p>No Python 3, <a href="https://docs.python.org/3/library/functions.html#func-range">o tipo
+									<code>xrange()</code> foi renomeado para <code>range()</code></a> e o comportamento
+								original da função <code>range()</code> perdeu sua função nativa própria (podendo ser
+								facilmente simulado com <code>list(range())</code>):</p>
+							<p><a href="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/3rangeppp.png"><img
+										data-attachment-id="10410"
+										data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/3rangeppp/"
+										data-orig-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/3rangeppp.png?fit=236%2C176&amp;ssl=1"
+										data-orig-size="236,176" data-comments-opened="1"
+										data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
+										data-image-title="3rangeppp" data-image-description=""
+										data-medium-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/3rangeppp.png?fit=236%2C176&amp;ssl=1"
+										data-large-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/3rangeppp.png?fit=236%2C176&amp;ssl=1"
+										loading="lazy" src="./python_3_&amp;_2_differences_files/3rangeppp.png"
+										alt="Demonstração do range() no Python 3" width="236" height="176"
+										class="alignnone size-full wp-image-10410" data-recalc-dims="1"></a></p>
+							<p>Assim, utilizar métodos de lista com o <code>range()</code> ou assumir uma segurança na
+								memória podem causar problemas na portabilidade do código para cada versão.</p>
+							<h2 id="comparacao">Comparação</h2>
+							<p>A maneira clássica de comparação, que já estava sendo mudada no Python a partir da versão
+								2.1, com a chegada da <a
+									href="http://blog.alura.com.br/como-comparar-objetos-no-python/">comparação
+									rica</a>, tem seu estilo delimitado de vez no Python 3, com a remoção da <a
+									href="https://docs.python.org/2/library/functions.html#cmp">função nativa
+									<code>cmp()</code></a> e do <a
+									href="https://docs.python.org/2/reference/datamodel.html#object.__cmp__">método
+									especial <code>__cmp__()</code></a>.</p>
+							<p>Essas antigas funcionalidades eram baseadas no comportamento tradicional de comparação
+								que vemos na maioria das linguagens de programação, como Java, em que se tem três tipos
+								de retorno – <strong>-1</strong>, <strong>0</strong> e <strong>1</strong>, para,
+								respectivamente, um objeto menor, igual, ou maior que outro.</p>
+							<p>Quanto à comparação rica, ainda tivemos uma mudança importante no Python 3. <a
+									href="https://docs.python.org/2/reference/datamodel.html#object.__lt__">A
+									documentação dos métodos de comparação rica do Python 2</a> deixa claro que nenhum
+								operador está ligado a outro. Assim, <strong><code>==</code> não é naturalmente o oposto
+									de <code>!=</code></strong>:</p>
+							<p><a href="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/4eq.png"><img
+										data-attachment-id="10411"
+										data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/4eq/"
+										data-orig-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/4eq.png?fit=323%2C251&amp;ssl=1"
+										data-orig-size="323,251" data-comments-opened="1"
+										data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
+										data-image-title="4eq" data-image-description=""
+										data-medium-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/4eq.png?fit=300%2C233&amp;ssl=1"
+										data-large-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/4eq.png?fit=323%2C251&amp;ssl=1"
+										loading="lazy" src="./python_3_&amp;_2_differences_files/4eq.png"
+										alt="No Python 2, comparações não tem conexão" width="323" height="251"
+										class="alignnone size-full wp-image-10411"
+										srcset="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/4eq.png?w=323&amp;ssl=1 323w, https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/4eq.png?resize=300%2C233&amp;ssl=1 300w"
+										sizes="(max-width: 323px) 100vw, 323px" data-recalc-dims="1"></a></p>
+							<p>Entretanto, no Python 3 isso é alterado para que o operador <code>!=</code> resulte,
+								nativamente, no oposto do operador <code>==</code>. Dessa forma:</p>
+							<p><a href="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/5eqneq.png"><img
+										data-attachment-id="10412"
+										data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/5eqneq/"
+										data-orig-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/5eqneq.png?fit=334%2C248&amp;ssl=1"
+										data-orig-size="334,248" data-comments-opened="1"
+										data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
+										data-image-title="5eqneq" data-image-description=""
+										data-medium-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/5eqneq.png?fit=300%2C223&amp;ssl=1"
+										data-large-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/5eqneq.png?fit=334%2C248&amp;ssl=1"
+										loading="lazy" src="./python_3_&amp;_2_differences_files/5eqneq.png"
+										alt="No Python 3, != é o oposto de ==" width="334" height="248"
+										class="alignnone size-full wp-image-10412"
+										srcset="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/5eqneq.png?w=334&amp;ssl=1 334w, https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/5eqneq.png?resize=300%2C223&amp;ssl=1 300w"
+										sizes="(max-width: 334px) 100vw, 334px" data-recalc-dims="1"></a></p>
+							<p>Em relação à comparação, também tivemos outra significativa mudança no Python 3, que
+								acabou com um comportamento estranho que ainda era mantido no Python 2.</p>
+							<p>Na segunda versão, <strong>todos os objetos eram comparáveis ordinalmente entre
+									si</strong>. Sim, todos. Isto significa que comparar se uma string é maior que um
+								inteiro, ou que um float é menor que uma lista, <strong>tudo isso funcionaria</strong>,
+								retornando <strong>True</strong> ou <strong>False</strong> dependendo do teste.</p>
+							<p>Claro, a lógica não era aleatória, o que não significa que era justificável, afinal dá
+								margem para erros do desenvolvedor passarem despercebido.</p>
+							<p>A primeira regra desse tipo de comparação era que qualquer instância de uma classe
+								definida pelo usuário era <strong>sempre menor</strong> que qualquer outro objeto
+								nativo. Podemos facilmente testar isso no interpretador do Python:</p>
+							<p><a
+									href="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/6classcomparison.png"><img
+										data-attachment-id="10413"
+										data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/6classcomparison/"
+										data-orig-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/6classcomparison.png?fit=303%2C250&amp;ssl=1"
+										data-orig-size="303,250" data-comments-opened="1"
+										data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
+										data-image-title="6classcomparison" data-image-description=""
+										data-medium-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/6classcomparison.png?fit=300%2C248&amp;ssl=1"
+										data-large-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/6classcomparison.png?fit=303%2C250&amp;ssl=1"
+										loading="lazy" src="./python_3_&amp;_2_differences_files/6classcomparison.png"
+										alt="No Python 2, instâncias de classes do usuário são consideradas menores que quaisquer outros objetos."
+										width="303" height="250" class="alignnone size-full wp-image-10413"
+										srcset="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/6classcomparison.png?w=303&amp;ssl=1 303w, https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/6classcomparison.png?resize=300%2C248&amp;ssl=1 300w"
+										sizes="(max-width: 303px) 100vw, 303px" data-recalc-dims="1"></a></p>
+							<p>A segunda regra era que tipos númericos eram <strong>sempre menores</strong> que os
+								outros objetos. Vamos comprovar com testes:</p>
+							<p><a href="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/7numcmp.png"><img
+										data-attachment-id="10414"
+										data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/7numcmp/"
+										data-orig-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/7numcmp.png?fit=199%2C155&amp;ssl=1"
+										data-orig-size="199,155" data-comments-opened="1"
+										data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
+										data-image-title="7numcmp" data-image-description=""
+										data-medium-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/7numcmp.png?fit=199%2C155&amp;ssl=1"
+										data-large-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/7numcmp.png?fit=199%2C155&amp;ssl=1"
+										loading="lazy" src="./python_3_&amp;_2_differences_files/7numcmp.png"
+										alt="No Python 2, tipos numéricos são considerados menores que outros objetos"
+										width="199" height="155" class="alignnone size-full wp-image-10414"
+										data-recalc-dims="1"></a></p>
+							<p>A última regra principal era que, com objetos de outros tipos (que não criados pelo
+								usuário nem numéricos), <strong>a comparação de ordem era alfabética com base nos nomes
+									dos tipos</strong>. Dessa forma:</p>
+							<p><a href="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/8anycmp.png"><img
+										data-attachment-id="10415"
+										data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/8anycmp/"
+										data-orig-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/8anycmp.png?fit=164%2C77&amp;ssl=1"
+										data-orig-size="164,77" data-comments-opened="1"
+										data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
+										data-image-title="8anycmp" data-image-description=""
+										data-medium-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/8anycmp.png?fit=164%2C77&amp;ssl=1"
+										data-large-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/8anycmp.png?fit=164%2C77&amp;ssl=1"
+										loading="lazy" src="./python_3_&amp;_2_differences_files/8anycmp.png"
+										alt="No Python 2, comparações sem relação comparam as strings que representam os tipos dos objetos comparados"
+										width="164" height="77" class="alignnone size-full wp-image-10415"
+										data-recalc-dims="1"></a></p>
+							<p>O resultado era <strong>True</strong> porque esse teste era equivalente a uma comparação
+								de duas strings:</p>
+							<p><a href="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/9typecmp.png"><img
+										data-attachment-id="10416"
+										data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/9typecmp/"
+										data-orig-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/9typecmp.png?fit=173%2C37&amp;ssl=1"
+										data-orig-size="173,37" data-comments-opened="1"
+										data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
+										data-image-title="9typecmp" data-image-description=""
+										data-medium-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/9typecmp.png?fit=173%2C37&amp;ssl=1"
+										data-large-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/9typecmp.png?fit=173%2C37&amp;ssl=1"
+										loading="lazy" src="./python_3_&amp;_2_differences_files/9typecmp.png"
+										alt="&#39;str&#39; &gt; &#39;list&#39;" width="173" height="37"
+										class="alignnone size-full wp-image-10416" data-recalc-dims="1"></a></p>
+							<p>Como isso acaba causando resultados inesperados no código, esse comportamento foi
+								removido do Python 3 e, agora, uma tentativa de comparação ordinal entre dois objetos
+								que não têm uma ordem natural causa uma exceção do tipo <code>TypeError</code>.</p>
+							<h2 id="numeros">Números</h2>
+							<p>Na mudança de versão, tivemos algumas mudanças estruturais em relação aos tipos
+								numéricos. A primeira, em relação aos próprios tipos em si, é a remoção da classe
+								<code>long</code> no Python 3.</p>
+							<p>No Python 2, <a href="https://docs.python.org/2/library/sys.html#sys.maxint">o tipo
+									<code>int</code> era limitado</a>, ou seja, tinha um valor máximo que podia chegar.
+								Além desse valor, o tipo já era outro – <a
+									href="https://docs.python.org/2/library/functions.html#long">o
+									<code>long</code></a>, representado com um <strong>L</strong> após os dígitos
+								numéricos:</p>
+							<p><a href="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/10maxint.png"><img
+										data-attachment-id="10417"
+										data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/10maxint/"
+										data-orig-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/10maxint.png?fit=244%2C305&amp;ssl=1"
+										data-orig-size="244,305" data-comments-opened="1"
+										data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
+										data-image-title="10maxint" data-image-description=""
+										data-medium-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/10maxint.png?fit=240%2C300&amp;ssl=1"
+										data-large-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/10maxint.png?fit=244%2C305&amp;ssl=1"
+										loading="lazy" src="./python_3_&amp;_2_differences_files/10maxint.png"
+										alt="No Python 2, o tipo int era limitado. Acima desse limite, o número era considerado long"
+										width="244" height="305" class="alignnone size-full wp-image-10417"
+										srcset="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/10maxint.png?w=244&amp;ssl=1 244w, https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/10maxint.png?resize=240%2C300&amp;ssl=1 240w"
+										sizes="(max-width: 244px) 100vw, 244px" data-recalc-dims="1"></a></p>
+							<p>No Python 3 essa diferença, por fim, acaba, unificando os dois tipos em um só – <a
+									href="https://docs.python.org/3/library/functions.html#int">o próprio
+									<code>int</code></a>. Assim, o <code>int</code> perde seu limite e um número mais
+								longo não é mais identificado com o sufixo <strong>L</strong>.</p>
+							<h3 id="divisao">Divisão de números inteiros</h3>
+							<p>Em relação aos números ainda temos uma mudança fundamental de ser entendida, pois pode
+								acabar causando sérios problemas no funcionamento de um programa. Essa mudança se dá,
+								mais especificamente, na divisão de números inteiros.</p>
+							<p>No Python 2, toda divisão envolvendo dois números inteiros resultava em um terceiro
+								número inteiro:</p>
+							<p><a href="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/11pyintdiv.png"><img
+										data-attachment-id="10418"
+										data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/11pyintdiv/"
+										data-orig-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/11pyintdiv.png?fit=153%2C116&amp;ssl=1"
+										data-orig-size="153,116" data-comments-opened="1"
+										data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
+										data-image-title="11pyintdiv" data-image-description=""
+										data-medium-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/11pyintdiv.png?fit=153%2C116&amp;ssl=1"
+										data-large-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/11pyintdiv.png?fit=153%2C116&amp;ssl=1"
+										loading="lazy" src="./python_3_&amp;_2_differences_files/11pyintdiv.png"
+										alt="Divisão de números inteiros no Python 2" width="153" height="116"
+										class="alignnone size-full wp-image-10418" data-recalc-dims="1"></a></p>
+							<p>No Python 3, porém, esse comportamento é bastante modificado – toda divisão envolvendo
+								dois números inteiros agora resulta em um número float:</p>
+							<p><a
+									href="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/12pyintdivfloat.png"><img
+										data-attachment-id="10419"
+										data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/12pyintdivfloat/"
+										data-orig-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/12pyintdivfloat.png?fit=165%2C115&amp;ssl=1"
+										data-orig-size="165,115" data-comments-opened="1"
+										data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
+										data-image-title="12pyintdivfloat" data-image-description=""
+										data-medium-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/12pyintdivfloat.png?fit=165%2C115&amp;ssl=1"
+										data-large-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/12pyintdivfloat.png?fit=165%2C115&amp;ssl=1"
+										loading="lazy" src="./python_3_&amp;_2_differences_files/12pyintdivfloat.png"
+										alt="Divisão de números inteiros no Python 3" width="165" height="115"
+										class="alignnone size-full wp-image-10419" data-recalc-dims="1"></a></p>
+							<p>Nas duas versões do Python ainda temos um outro operador, <code>//</code>, que vai seguir
+								o comportamento de divisão do Python 2:</p>
+							<p><a href="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/13rounddiv.png"><img
+										data-attachment-id="10420"
+										data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/13rounddiv/"
+										data-orig-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/13rounddiv.png?fit=101%2C79&amp;ssl=1"
+										data-orig-size="101,79" data-comments-opened="1"
+										data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
+										data-image-title="13rounddiv" data-image-description=""
+										data-medium-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/13rounddiv.png?fit=101%2C79&amp;ssl=1"
+										data-large-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/13rounddiv.png?fit=101%2C79&amp;ssl=1"
+										loading="lazy" src="./python_3_&amp;_2_differences_files/13rounddiv.png"
+										alt="Divisão de números inteiros arredondada" width="101" height="79"
+										class="alignnone size-full wp-image-10420" data-recalc-dims="1"></a></p>
+							<p>Dessa forma, é recomendado seguir um padrão que funcione da mesma forma nas duas versões
+								do Python, seja com o uso do operador <code>//</code>, resultando em um int, seja com a
+								conversão de um dos inteiros para float, resultando em um float:</p>
+							<p><a href="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/14floatdiv.png"><img
+										data-attachment-id="10421"
+										data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/14floatdiv/"
+										data-orig-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/14floatdiv.png?fit=118%2C78&amp;ssl=1"
+										data-orig-size="118,78" data-comments-opened="1"
+										data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
+										data-image-title="14floatdiv" data-image-description=""
+										data-medium-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/14floatdiv.png?fit=118%2C78&amp;ssl=1"
+										data-large-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/14floatdiv.png?fit=118%2C78&amp;ssl=1"
+										loading="lazy" src="./python_3_&amp;_2_differences_files/14floatdiv.png"
+										alt="Divisão de números de ponto flutuante" width="118" height="78"
+										class="alignnone size-full wp-image-10421" data-recalc-dims="1"></a></p>
+							<h2 id="tipos-texto">Tipos de texto</h2>
+							<p>Uma das mudanças mais importantes na terceira grande versão do Python está nos tipos
+								disponíveis para armazenar “texto”.</p>
+							<blockquote>
+								<p>
+									“<em>Mas por que <strong>texto</strong> entre aspas?”</em>
+								</p>
+							</blockquote>
+							<p>Já vamos entender isso!</p>
+							<p>No Python 2, temos dois tipos principais para armazenamento de texto. O tipo padrão
+								string (<code>str</code>) e o tipo unicode, identificado com o prefixo <code>u</code>
+								antes das aspas:</p>
+							<p><a href="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/15unicode.png"><img
+										data-attachment-id="10422"
+										data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/15unicode/"
+										data-orig-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/15unicode.png?fit=330%2C175&amp;ssl=1"
+										data-orig-size="330,175" data-comments-opened="1"
+										data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
+										data-image-title="15unicode" data-image-description=""
+										data-medium-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/15unicode.png?fit=300%2C159&amp;ssl=1"
+										data-large-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/15unicode.png?fit=330%2C175&amp;ssl=1"
+										loading="lazy" src="./python_3_&amp;_2_differences_files/15unicode.png"
+										alt="Unicode no Python 2" width="330" height="175"
+										class="alignnone size-full wp-image-10422"
+										srcset="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/15unicode.png?w=330&amp;ssl=1 330w, https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/15unicode.png?resize=300%2C159&amp;ssl=1 300w"
+										sizes="(max-width: 330px) 100vw, 330px" data-recalc-dims="1"></a></p>
+							<p>Isso tudo indica duas coisas fundamentais: a primeira é que <strong>o tipo padrão
+									string</strong> <strong>não suporta caracteres não-<a
+										href="https://pt.wikipedia.org/wiki/ASCII">ASCII</a></strong> (<a
+									href="https://pt.wikipedia.org/wiki/Unicode">unicode</a>); a segunda, que
+								<strong>não há um tipo próprio para armazenamento de bytes</strong>.</p>
+							<p>Por conta disso, costumava-se dizer, na comunidade Python, que o tipo string armazenava
+								bytes, enquanto o tipo unicode era quem de fato armazenava texto.</p>
+							<p>Acreditar no potencial da string como texto de fato podia acabar causando problemas nos
+								funcionamentos mais simples de uma aplicação, como é no caso de se imprimir um texto
+								acentuado:</p>
+							<pre><code class="language-python">
 ## Arquivo teste.py
 
 print(‘Meu nome não é José’)
 </code></pre>
-<p>Ao rodarmos esse arquivo com o interpretador do Python 2, olha o que acontece:</p><div class="mailmunch-forms-in-post-middle" style="display: none !important;"></div>
-<pre><code>
+							<p>Ao rodarmos esse arquivo com o interpretador do Python 2, olha o que acontece:</p>
+							<div class="mailmunch-forms-in-post-middle" style="display: none !important;"></div>
+							<pre><code>
   File "teste.py", line 1
 SyntaxError: Non-ASCII character '\xc3' in file foo.py on line 1, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
 </code></pre>
-<p>Uma exceção indicando que nenhum <em>encoding</em> foi definido. Ou seja, precisamos definir um padrão para codificar as strings no programa que contêm caracteres não-ASCII.</p>
-<p>No Python 3, as coisas mudam bastante. O tipo unicode se torna o tipo string (é renomeado para <code>str</code>) e um tipo nativo com o funcionamento da antiga string deixa de existir. Isso acaba permitindo algumas coisas muito interessantes no código, como o uso de caracteres unicode como nome de identificadores:</p>
-<p><a href="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/16unicodeidentifier.png"><img data-attachment-id="10423" data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/16unicodeidentifier/" data-orig-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/16unicodeidentifier.png?fit=197%2C174&amp;ssl=1" data-orig-size="197,174" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="16unicodeidentifier" data-image-description="" data-medium-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/16unicodeidentifier.png?fit=197%2C174&amp;ssl=1" data-large-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/16unicodeidentifier.png?fit=197%2C174&amp;ssl=1" loading="lazy" src="./python_3_&amp;_2_differences_files/16unicodeidentifier.png" alt="Suporte a nomes de identificadores em unicode no Python 3" width="197" height="174" class="alignnone size-full wp-image-10423" data-recalc-dims="1"></a></p>
-<blockquote><p>
-  Note que o uso de caracteres não-ASCII para nomes de identificadores, apesar de ser um comportamento interessante e divertido em alguns casos, não é recomendado se queremos compartilhar nosso programa, por conta do perigo de incompatibilidade com outros sistemas e ambientes.</p>
-</blockquote>
-<p>Além disso, é acrescentado um outro tipo específico para lidar com bytes, a <strong><a href="https://docs.python.org/3/library/stdtypes.html#bytes">própria classe bytes</a></strong>, representado pelo prefixo <code>b</code>:</p>
-<p><a href="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/17bytes.png"><img data-attachment-id="10424" data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/17bytes/" data-orig-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/17bytes.png?fit=352%2C173&amp;ssl=1" data-orig-size="352,173" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="17bytes" data-image-description="" data-medium-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/17bytes.png?fit=300%2C147&amp;ssl=1" data-large-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/17bytes.png?fit=352%2C173&amp;ssl=1" loading="lazy" src="./python_3_&amp;_2_differences_files/17bytes.png" alt="Tipo bytes no Python 3" width="352" height="173" class="alignnone size-full wp-image-10424" srcset="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/17bytes.png?w=352&amp;ssl=1 352w, https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/17bytes.png?resize=300%2C147&amp;ssl=1 300w" sizes="(max-width: 352px) 100vw, 352px" data-recalc-dims="1"></a></p>
-<p>Para um desenvolvedor que não conhece essa nova classe <code>bytes</code>, isso pode trazer alguns problemas, como por exemplo na identificação do tipo de um arquivo.</p>
-<p>Tomando como exemplo arquivos GIF, que (quase) sempre começam com <strong>GIF89a</strong>, vamos ver como fica um código de identificação de GIFs que funciona no Python 2, em que abrimos o arquivo como leitura de bytes e checamos o começo:</p>
-<pre><code class="language-python">
+							<p>Uma exceção indicando que nenhum <em>encoding</em> foi definido. Ou seja, precisamos
+								definir um padrão para codificar as strings no programa que contêm caracteres não-ASCII.
+							</p>
+							<p>No Python 3, as coisas mudam bastante. O tipo unicode se torna o tipo string (é renomeado
+								para <code>str</code>) e um tipo nativo com o funcionamento da antiga string deixa de
+								existir. Isso acaba permitindo algumas coisas muito interessantes no código, como o uso
+								de caracteres unicode como nome de identificadores:</p>
+							<p><a
+									href="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/16unicodeidentifier.png"><img
+										data-attachment-id="10423"
+										data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/16unicodeidentifier/"
+										data-orig-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/16unicodeidentifier.png?fit=197%2C174&amp;ssl=1"
+										data-orig-size="197,174" data-comments-opened="1"
+										data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
+										data-image-title="16unicodeidentifier" data-image-description=""
+										data-medium-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/16unicodeidentifier.png?fit=197%2C174&amp;ssl=1"
+										data-large-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/16unicodeidentifier.png?fit=197%2C174&amp;ssl=1"
+										loading="lazy"
+										src="./python_3_&amp;_2_differences_files/16unicodeidentifier.png"
+										alt="Suporte a nomes de identificadores em unicode no Python 3" width="197"
+										height="174" class="alignnone size-full wp-image-10423"
+										data-recalc-dims="1"></a></p>
+							<blockquote>
+								<p>
+									Note que o uso de caracteres não-ASCII para nomes de identificadores, apesar de ser
+									um comportamento interessante e divertido em alguns casos, não é recomendado se
+									queremos compartilhar nosso programa, por conta do perigo de incompatibilidade com
+									outros sistemas e ambientes.</p>
+							</blockquote>
+							<p>Além disso, é acrescentado um outro tipo específico para lidar com bytes, a <strong><a
+										href="https://docs.python.org/3/library/stdtypes.html#bytes">própria classe
+										bytes</a></strong>, representado pelo prefixo <code>b</code>:</p>
+							<p><a href="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/17bytes.png"><img
+										data-attachment-id="10424"
+										data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/17bytes/"
+										data-orig-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/17bytes.png?fit=352%2C173&amp;ssl=1"
+										data-orig-size="352,173" data-comments-opened="1"
+										data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
+										data-image-title="17bytes" data-image-description=""
+										data-medium-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/17bytes.png?fit=300%2C147&amp;ssl=1"
+										data-large-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/17bytes.png?fit=352%2C173&amp;ssl=1"
+										loading="lazy" src="./python_3_&amp;_2_differences_files/17bytes.png"
+										alt="Tipo bytes no Python 3" width="352" height="173"
+										class="alignnone size-full wp-image-10424"
+										srcset="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/17bytes.png?w=352&amp;ssl=1 352w, https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/17bytes.png?resize=300%2C147&amp;ssl=1 300w"
+										sizes="(max-width: 352px) 100vw, 352px" data-recalc-dims="1"></a></p>
+							<p>Para um desenvolvedor que não conhece essa nova classe <code>bytes</code>, isso pode
+								trazer alguns problemas, como por exemplo na identificação do tipo de um arquivo.</p>
+							<p>Tomando como exemplo arquivos GIF, que (quase) sempre começam com
+								<strong>GIF89a</strong>, vamos ver como fica um código de identificação de GIFs que
+								funciona no Python 2, em que abrimos o arquivo como leitura de bytes e checamos o
+								começo:</p>
+							<pre><code class="language-python">
 arquivo = open(‘meu-gif.gif’, ‘rb’)
 
 identificador = arquivo.read(6)
 print(identificador == ‘GIF89a’)
 </code></pre>
-<p>Quando rodamos o código no interpretador do Python 2:</p>
-<pre><code>
+							<p>Quando rodamos o código no interpretador do Python 2:</p>
+							<pre><code>
 True
 </code></pre>
-<p>Agora olha o que acontece quando rodamos o mesmo código no Python 3:</p>
-<pre><code>
+							<p>Agora olha o que acontece quando rodamos o mesmo código no Python 3:</p>
+							<pre><code>
 False
 </code></pre>
-<p>Ué! Aí que fica clara a diferença de como o Python 3 lida com bytes, com a nova classe. O que acontece é que estamos comparando o <code>identificador</code>, que é do tipo <strong>bytes</strong>, por conta da leitura de dados, com uma <strong>string</strong>, o que vai retornar em <strong>False</strong>. Se tratarmos essa string como byte, olha como fica:</p>
-<pre><code class="language-python">
+							<p>Ué! Aí que fica clara a diferença de como o Python 3 lida com bytes, com a nova classe. O
+								que acontece é que estamos comparando o <code>identificador</code>, que é do tipo
+								<strong>bytes</strong>, por conta da leitura de dados, com uma <strong>string</strong>,
+								o que vai retornar em <strong>False</strong>. Se tratarmos essa string como byte, olha
+								como fica:</p>
+							<pre><code class="language-python">
 print(identificador == b’GIF89a’)
 </code></pre>
-<p>E agora:</p>
-<pre><code>
+							<p>E agora:</p>
+							<pre><code>
 True
 </code></pre>
-<h2 id="sintaxe">Sintaxe</h2>
-<p>Além das mudanças na estrutura e lógica do código, tivemos algumas significativas mudanças na sintaxe do Python 2 para o Python 3. De algumas coisas adicionadas, outras removidas, vamos focar no que foi <strong>alterado</strong>.</p>
-<h3 id="excecoes">Tratamento de exceções</h3>
-<p>Um pouco da sintaxe do tratamento de exceções, mais especificamente com <code>raise</code> e o <code>except</code>, foi alterada. No Python 2, para chamarmos uma exceção com uma determinada mensagem, podemos usar a seguinte sintaxe:</p>
-<p><a href="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/18raise.png"><img data-attachment-id="10425" data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/18raise/" data-orig-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/18raise.png?fit=372%2C117&amp;ssl=1" data-orig-size="372,117" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="18raise" data-image-description="" data-medium-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/18raise.png?fit=300%2C94&amp;ssl=1" data-large-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/18raise.png?fit=372%2C117&amp;ssl=1" loading="lazy" src="./python_3_&amp;_2_differences_files/18raise.png" alt="raise no Python 2" width="372" height="117" class="alignnone size-full wp-image-10425" srcset="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/18raise.png?w=372&amp;ssl=1 372w, https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/18raise.png?resize=300%2C94&amp;ssl=1 300w" sizes="(max-width: 372px) 100vw, 372px" data-recalc-dims="1"></a></p>
-<p>No Python 3, olha o que acontece se tentarmos usar a mesma sintaxe:</p>
-<p><a href="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/19raisesyntaxerror.png"><img data-attachment-id="10426" data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/19raisesyntaxerror/" data-orig-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/19raisesyntaxerror.png?fit=394%2C136&amp;ssl=1" data-orig-size="394,136" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="19raisesyntaxerror" data-image-description="" data-medium-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/19raisesyntaxerror.png?fit=300%2C104&amp;ssl=1" data-large-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/19raisesyntaxerror.png?fit=394%2C136&amp;ssl=1" loading="lazy" src="./python_3_&amp;_2_differences_files/19raisesyntaxerror.png" alt="SyntaxError com raise no Python 3" width="394" height="136" class="alignnone size-full wp-image-10426" srcset="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/19raisesyntaxerror.png?w=394&amp;ssl=1 394w, https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/19raisesyntaxerror.png?resize=300%2C104&amp;ssl=1 300w" sizes="(max-width: 394px) 100vw, 394px" data-recalc-dims="1"></a></p>
-<p>Realmente recebemos uma exceção, mas nada a ver com o que tínhamos pedido! Foi um erro de sintaxe, porque essa maneira de usar o <code>raise</code> não é permitida no Python 3. Em vez disso, devemos tratar o tipo da exceção como uma função e passar a mensagem como parâmetro:</p>
-<p><a href="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/20raise3.png"><img data-attachment-id="10427" data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/20raise3/" data-orig-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/20raise3.png?fit=374%2C78&amp;ssl=1" data-orig-size="374,78" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="20raise3" data-image-description="" data-medium-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/20raise3.png?fit=300%2C63&amp;ssl=1" data-large-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/20raise3.png?fit=374%2C78&amp;ssl=1" loading="lazy" src="./python_3_&amp;_2_differences_files/20raise3.png" alt="Maneira correta de usar o raise" width="374" height="78" class="alignnone size-full wp-image-10427" srcset="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/20raise3.png?w=374&amp;ssl=1 374w, https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/20raise3.png?resize=300%2C63&amp;ssl=1 300w" sizes="(max-width: 374px) 100vw, 374px" data-recalc-dims="1"></a></p>
-<p>E agora sim funciona. Felizmente, essa sintaxe funciona tanto no Python 3 quanto no Python 2, então é <strong>recomendável</strong> usá-la sempre, independente da versão que estamos usando enquanto programamos, para ampliar a compatibilidade de nosso programa.</p>
-<p>Em relação ao <code>except</code>, a mudança também é bastante sutil. No Python 2, podíamos usar a seguinte sintaxe em um bloco <em>try/except</em>:</p>
-<pre><code class="language-python">
+							<h2 id="sintaxe">Sintaxe</h2>
+							<p>Além das mudanças na estrutura e lógica do código, tivemos algumas significativas
+								mudanças na sintaxe do Python 2 para o Python 3. De algumas coisas adicionadas, outras
+								removidas, vamos focar no que foi <strong>alterado</strong>.</p>
+							<h3 id="excecoes">Tratamento de exceções</h3>
+							<p>Um pouco da sintaxe do tratamento de exceções, mais especificamente com
+								<code>raise</code> e o <code>except</code>, foi alterada. No Python 2, para chamarmos
+								uma exceção com uma determinada mensagem, podemos usar a seguinte sintaxe:</p>
+							<p><a href="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/18raise.png"><img
+										data-attachment-id="10425"
+										data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/18raise/"
+										data-orig-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/18raise.png?fit=372%2C117&amp;ssl=1"
+										data-orig-size="372,117" data-comments-opened="1"
+										data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
+										data-image-title="18raise" data-image-description=""
+										data-medium-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/18raise.png?fit=300%2C94&amp;ssl=1"
+										data-large-file="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/18raise.png?fit=372%2C117&amp;ssl=1"
+										loading="lazy" src="./python_3_&amp;_2_differences_files/18raise.png"
+										alt="raise no Python 2" width="372" height="117"
+										class="alignnone size-full wp-image-10425"
+										srcset="https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/18raise.png?w=372&amp;ssl=1 372w, https://i0.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/18raise.png?resize=300%2C94&amp;ssl=1 300w"
+										sizes="(max-width: 372px) 100vw, 372px" data-recalc-dims="1"></a></p>
+							<p>No Python 3, olha o que acontece se tentarmos usar a mesma sintaxe:</p>
+							<p><a
+									href="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/19raisesyntaxerror.png"><img
+										data-attachment-id="10426"
+										data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/19raisesyntaxerror/"
+										data-orig-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/19raisesyntaxerror.png?fit=394%2C136&amp;ssl=1"
+										data-orig-size="394,136" data-comments-opened="1"
+										data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
+										data-image-title="19raisesyntaxerror" data-image-description=""
+										data-medium-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/19raisesyntaxerror.png?fit=300%2C104&amp;ssl=1"
+										data-large-file="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/19raisesyntaxerror.png?fit=394%2C136&amp;ssl=1"
+										loading="lazy" src="./python_3_&amp;_2_differences_files/19raisesyntaxerror.png"
+										alt="SyntaxError com raise no Python 3" width="394" height="136"
+										class="alignnone size-full wp-image-10426"
+										srcset="https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/19raisesyntaxerror.png?w=394&amp;ssl=1 394w, https://i2.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/19raisesyntaxerror.png?resize=300%2C104&amp;ssl=1 300w"
+										sizes="(max-width: 394px) 100vw, 394px" data-recalc-dims="1"></a></p>
+							<p>Realmente recebemos uma exceção, mas nada a ver com o que tínhamos pedido! Foi um erro de
+								sintaxe, porque essa maneira de usar o <code>raise</code> não é permitida no Python 3.
+								Em vez disso, devemos tratar o tipo da exceção como uma função e passar a mensagem como
+								parâmetro:</p>
+							<p><a href="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/20raise3.png"><img
+										data-attachment-id="10427"
+										data-permalink="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/20raise3/"
+										data-orig-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/20raise3.png?fit=374%2C78&amp;ssl=1"
+										data-orig-size="374,78" data-comments-opened="1"
+										data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
+										data-image-title="20raise3" data-image-description=""
+										data-medium-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/20raise3.png?fit=300%2C63&amp;ssl=1"
+										data-large-file="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/20raise3.png?fit=374%2C78&amp;ssl=1"
+										loading="lazy" src="./python_3_&amp;_2_differences_files/20raise3.png"
+										alt="Maneira correta de usar o raise" width="374" height="78"
+										class="alignnone size-full wp-image-10427"
+										srcset="https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/20raise3.png?w=374&amp;ssl=1 374w, https://i1.wp.com/blog.caelum.com.br/wp-content/uploads/2018/04/20raise3.png?resize=300%2C63&amp;ssl=1 300w"
+										sizes="(max-width: 374px) 100vw, 374px" data-recalc-dims="1"></a></p>
+							<p>E agora sim funciona. Felizmente, essa sintaxe funciona tanto no Python 3 quanto no
+								Python 2, então é <strong>recomendável</strong> usá-la sempre, independente da versão
+								que estamos usando enquanto programamos, para ampliar a compatibilidade de nosso
+								programa.</p>
+							<p>Em relação ao <code>except</code>, a mudança também é bastante sutil. No Python 2,
+								podíamos usar a seguinte sintaxe em um bloco <em>try/except</em>:</p>
+							<pre><code class="language-python">
 try:
     blablabla
 except NameError, erro:
     print(erro)
 </code></pre>
-<p>Se rodarmos esse código no interpretador do Python 2:</p>
-<pre><code>
+							<p>Se rodarmos esse código no interpretador do Python 2:</p>
+							<pre><code>
 name ‘blablabla’ is not defined
 </code></pre>
-<p>Certo! Mas se rodarmos esse código no Python 3, olha o que acontece:</p>
-<pre><code class="language-python">
+							<p>Certo! Mas se rodarmos esse código no Python 3, olha o que acontece:</p>
+							<pre><code class="language-python">
   File "testeexcept.py", line 3
     except NameError, erro:
                     ^
 SyntaxError: invalid syntax
 </code></pre>
-<p>Para o código funcionar no Python 3, devemos usar a palavra chave <code>as</code>:</p>
-<pre><code class="language-python">
+							<p>Para o código funcionar no Python 3, devemos usar a palavra chave <code>as</code>:</p>
+							<pre><code class="language-python">
 try:
     blablabla
 except NameError as erro:
     print(erro)
 </code></pre>
-<p>E agora:</p>
-<pre><code>
+							<p>E agora:</p>
+							<pre><code>
 name ‘blablabla’ is not defined
 </code></pre>
-<p>Certo! Esse código, assim como com o do <code>raise</code>, também funciona tanto no Python 3 quanto no Python 2, o que é ótimo para nós, desenvolvedores.</p>
-<h3 id="indentacao">Indentação</h3>
-<p>O Python, por padrão, já é bastante rigoroso quanto à indentação de nosso código. Não usamos identificadores de começo e fim de blocos de código, como chaves (<code>{}</code>), mas os identificamos através da própria indentação.</p>
-<p>Esse detalhe do Python acaba sendo muito vantajoso, por nos incentivar ao uso de boas práticas de design e indentação de código. Além dessa regra de sintaxe obrigatória, temos recomendações em relação a isso especificadas em nosso guia de estilo para código Python, <a href="https://www.python.org/dev/peps/pep-0008/">o PEP-8</a>.</p>
-<p>O PEP-8 indica que <strong>4 espaços</strong> são preferíveis a <strong>uma TAB</strong> para indentação. No final, é claro, fica a critério do desenvolvedor. Mas, acima de tudo, esse guia nos ensina que o melhor código é o código consistente. Isto é, é melhor só usar TABs para indentar, do que ficar mudando de TABs para espaços.</p>
-<p>Quanto a isso, entretanto, não havia restrição alguma no Python 2. Em um mesmo bloco de código, podia-se alterar de TABs para espaços. No Python 3, isso é mudado, e uma inconsistência desse tipo resulta em uma exceção:</p>
-<pre><code>
+							<p>Certo! Esse código, assim como com o do <code>raise</code>, também funciona tanto no
+								Python 3 quanto no Python 2, o que é ótimo para nós, desenvolvedores.</p>
+							<h3 id="indentacao">Indentação</h3>
+							<p>O Python, por padrão, já é bastante rigoroso quanto à indentação de nosso código. Não
+								usamos identificadores de começo e fim de blocos de código, como chaves
+								(<code>{}</code>), mas os identificamos através da própria indentação.</p>
+							<p>Esse detalhe do Python acaba sendo muito vantajoso, por nos incentivar ao uso de boas
+								práticas de design e indentação de código. Além dessa regra de sintaxe obrigatória,
+								temos recomendações em relação a isso especificadas em nosso guia de estilo para código
+								Python, <a href="https://www.python.org/dev/peps/pep-0008/">o PEP-8</a>.</p>
+							<p>O PEP-8 indica que <strong>4 espaços</strong> são preferíveis a <strong>uma TAB</strong>
+								para indentação. No final, é claro, fica a critério do desenvolvedor. Mas, acima de
+								tudo, esse guia nos ensina que o melhor código é o código consistente. Isto é, é melhor
+								só usar TABs para indentar, do que ficar mudando de TABs para espaços.</p>
+							<p>Quanto a isso, entretanto, não havia restrição alguma no Python 2. Em um mesmo bloco de
+								código, podia-se alterar de TABs para espaços. No Python 3, isso é mudado, e uma
+								inconsistência desse tipo resulta em uma exceção:</p>
+							<pre><code>
 TabError: inconsistent use of tabs and spaces in indentation
 </code></pre>
-<p>Essas são algumas das principais diferenças entre as duas versões que pode acabar atrapalhando mais um desenvolvedor que não as conhece.</p>
-<p>Se quiser ver a lista oficial, o Python apresenta <a href="https://docs.python.org/3.0/whatsnew/3.0.html">as novidades de cada versão</a> em uma página na documentação. Mas e agora?</p>
-<h2 id="qual-aprender">Qual versão aprender? (E, ainda, qual versão ensinar?)</h2>
-<p>Para alguém iniciando agora na linguagem, então, qual versão aprender? Qual versão focar?</p>
-<p>É certo que a terceira versão do Python é um avanço da linguagem, tendo surgido para melhorar a versão anterior. Pode-se, é claro, argumentar a favor do Python 2, afinal algumas de suas características eram de fato melhores para certas necessidades. Mesmo assim, é difícil negar o aprimoramento que o Python 3 trouxe.</p>
-<p>Além disso, ainda podemos ver o Python 3 como um conserto das falhas do Python 2. Assim, acaba sendo preferível para um iniciante que aprenda direto o Python 3, para não se atrapalhar com as falhas que a segunda versão tinha, evitando confusões de aprender algo já considerado errado e superado.</p>
-<p>Apesar disso, é fato que código em Python 2 existe aos montes e continuará existindo por bastante tempo, então é importante que um desenvolvedor Python tenha clareza das principais diferenças entre as duas versões, para saber lidar com ambas à medida que aparecem em sua vida.</p>
-<p>E agora, já tendo conhecimento em Python, qual versão eu devo escolher para desenvolver?</p>
-<h2 id="qual-programar">Para qual versão programar?</h2>
-<p>Pensando em qual versão programar, temos que ser realistas e considerar o mercado e o uso de Python que as empresas e os pontos de trabalho fazem atualmente. <a href="https://wiki.python.org/moin/2.x-vs-3.x-survey?action=AttachFile&amp;do=get&amp;target=2013-2014+Python+2.x-3.x+survey.pdf" rel="noopener noreferrer">Uma pesquisa realizada em 2014</a> destinada para desenvolvedores Python pode nos ajudar a entender a visão que prevalece, ou ao menos prevalecia, há 4 anos.</p>
-<p>O recomendado é que se priorize a última versão, quando possível. Sendo assim, se você está começando um projeto pessoal novo, prefira programar pensando no Python 3.</p>
-<p>Começar um novo projeto com Python 3 pode evitar possíveis problemas que a versão anterior carrega e que já foram consertados e conseguir maior suporte para próximos avanços, afinal é dito que a<a href="https://www.python.org/dev/peps/pep-0373/#id2"> partir de 2020 o Python 2 será descontinuado</a>, perdendo grande parte de seu suporte.</p>
-<p>Também é recomendado que código em Python 2 seja migrado para a terceira versão, e é o que grande parte dos importantes projetos em Python, inicialmente desenvolvidos na segunda versão, estão fazendo, como é o caso do <strong><a href="http://docs.python-requests.org/en/master/">Requests</a></strong> e <strong><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">BeautifulSoup</a></strong>.</p>
-<p>Mesmo assim, sabemos que essa migração pode não ser tão simples, tanto no quesito técnico quanto no quesito burocrático – nem sempre uma empresa vai apoiar a migração, que pode trazer certos problemas no começo.</p>
-<p>Dessa forma, a manutenção de código em Python 2 às vezes acaba sendo obrigatória e, além disso, pode ser vantajosa para os que já tem uma estabilidade garantida.</p>
-<p>De qualquer maneira, geralmente queremos que nosso código seja compatível com o maior número de sistemas possíveis, para alcançar um maior público.</p>
-<p>Assim, o ideal seria com que conseguíssemos fazer um código que funcione tanto para Python 2 quanto para Python 3, rodando com sucesso em qualquer um dos interpretadores. Será que conseguimos fazer isso?</p>
-<h2 id="programa-portavel">Tornando seu programa compatível com as duas versões</h2>
-<p>Antes de aprendermos como podemos aumentar a disponibilidade de nossos programas, precisamos concluir para quem queremos fazer isso? Afinal esse processo torna-se muito complicado à medida que incluímos mais e mais detalhes, sistemas e versões.</p>
-<p>Assim, <a href="https://docs.python.org/3/howto/pyporting.html#drop-support-for-python-2-6-and-older">a própria documentação do Python</a> recomenda que não nos importemos, se possível, com o suporte para qualquer versão do Python abaixo da <strong>2.7</strong>. Isso facilita muito a portabilidade de nosso código.</p>
-<p>Se isso não for uma opção, temos alguns projetos na comunidade, como o <strong><a href="https://pypi.python.org/pypi/six">six</a></strong>, que pode nos ajudar a manter um código compatível.</p>
-<p><strong>Com isso em mente, trabalharemos daqui pra frente considerando suporte para Python &gt;= 2.7.</strong></p>
-<p>Algumas ferramentas, técnicas e práticas podem nos auxiliar bastante na portabilidade de nosso código. Vamos entender e testar algumas delas para podermos decidir quais são as melhores opções.</p>
-<h3 id="codigo-portavel">Escrevendo código compatível com as duas versões</h3>
-<p>Muitas vezes ainda é perfeitamente possível escrever código que funcione com as duas versões, afinal a mudança não é total.</p>
-<p>Para isso, só temos que tomar cuidado com algumas práticas, lembrando sempre de usar, quando possível, uma funcionalidade ou sintaxe que funcione para Python 2 e 3. Um bom exemplo disso é com o <code>print</code>, que no Python 2 também pode ser usado com parênteses.</p>
-<p>O problema é que em alguns casos temos problemas realmente incompatíveis, como com o <code>input()</code> e o <code>raw_input()</code>. Como podemos lidar com isso?</p>
-<p>Uma abordagem seria checar qual versão do Python está rodando, e podemos fazer isso com o atributo <code>version_info.major</code> do módulo <code>sys</code>:</p>
-<pre><code class="language-python">
+							<p>Essas são algumas das principais diferenças entre as duas versões que pode acabar
+								atrapalhando mais um desenvolvedor que não as conhece.</p>
+							<p>Se quiser ver a lista oficial, o Python apresenta <a
+									href="https://docs.python.org/3.0/whatsnew/3.0.html">as novidades de cada versão</a>
+								em uma página na documentação. Mas e agora?</p>
+							<h2 id="qual-aprender">Qual versão aprender? (E, ainda, qual versão ensinar?)</h2>
+							<p>Para alguém iniciando agora na linguagem, então, qual versão aprender? Qual versão focar?
+							</p>
+							<p>É certo que a terceira versão do Python é um avanço da linguagem, tendo surgido para
+								melhorar a versão anterior. Pode-se, é claro, argumentar a favor do Python 2, afinal
+								algumas de suas características eram de fato melhores para certas necessidades. Mesmo
+								assim, é difícil negar o aprimoramento que o Python 3 trouxe.</p>
+							<p>Além disso, ainda podemos ver o Python 3 como um conserto das falhas do Python 2. Assim,
+								acaba sendo preferível para um iniciante que aprenda direto o Python 3, para não se
+								atrapalhar com as falhas que a segunda versão tinha, evitando confusões de aprender algo
+								já considerado errado e superado.</p>
+							<p>Apesar disso, é fato que código em Python 2 existe aos montes e continuará existindo por
+								bastante tempo, então é importante que um desenvolvedor Python tenha clareza das
+								principais diferenças entre as duas versões, para saber lidar com ambas à medida que
+								aparecem em sua vida.</p>
+							<p>E agora, já tendo conhecimento em Python, qual versão eu devo escolher para desenvolver?
+							</p>
+							<h2 id="qual-programar">Para qual versão programar?</h2>
+							<p>Pensando em qual versão programar, temos que ser realistas e considerar o mercado e o uso
+								de Python que as empresas e os pontos de trabalho fazem atualmente. <a
+									href="https://wiki.python.org/moin/2.x-vs-3.x-survey?action=AttachFile&amp;do=get&amp;target=2013-2014+Python+2.x-3.x+survey.pdf"
+									rel="noopener noreferrer">Uma pesquisa realizada em 2014</a> destinada para
+								desenvolvedores Python pode nos ajudar a entender a visão que prevalece, ou ao menos
+								prevalecia, há 4 anos.</p>
+							<p>O recomendado é que se priorize a última versão, quando possível. Sendo assim, se você
+								está começando um projeto pessoal novo, prefira programar pensando no Python 3.</p>
+							<p>Começar um novo projeto com Python 3 pode evitar possíveis problemas que a versão
+								anterior carrega e que já foram consertados e conseguir maior suporte para próximos
+								avanços, afinal é dito que a<a href="https://www.python.org/dev/peps/pep-0373/#id2">
+									partir de 2020 o Python 2 será descontinuado</a>, perdendo grande parte de seu
+								suporte.</p>
+							<p>Também é recomendado que código em Python 2 seja migrado para a terceira versão, e é o
+								que grande parte dos importantes projetos em Python, inicialmente desenvolvidos na
+								segunda versão, estão fazendo, como é o caso do <strong><a
+										href="http://docs.python-requests.org/en/master/">Requests</a></strong> e
+								<strong><a
+										href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">BeautifulSoup</a></strong>.
+							</p>
+							<p>Mesmo assim, sabemos que essa migração pode não ser tão simples, tanto no quesito técnico
+								quanto no quesito burocrático – nem sempre uma empresa vai apoiar a migração, que pode
+								trazer certos problemas no começo.</p>
+							<p>Dessa forma, a manutenção de código em Python 2 às vezes acaba sendo obrigatória e, além
+								disso, pode ser vantajosa para os que já tem uma estabilidade garantida.</p>
+							<p>De qualquer maneira, geralmente queremos que nosso código seja compatível com o maior
+								número de sistemas possíveis, para alcançar um maior público.</p>
+							<p>Assim, o ideal seria com que conseguíssemos fazer um código que funcione tanto para
+								Python 2 quanto para Python 3, rodando com sucesso em qualquer um dos interpretadores.
+								Será que conseguimos fazer isso?</p>
+							<h2 id="programa-portavel">Tornando seu programa compatível com as duas versões</h2>
+							<p>Antes de aprendermos como podemos aumentar a disponibilidade de nossos programas,
+								precisamos concluir para quem queremos fazer isso? Afinal esse processo torna-se muito
+								complicado à medida que incluímos mais e mais detalhes, sistemas e versões.</p>
+							<p>Assim, <a
+									href="https://docs.python.org/3/howto/pyporting.html#drop-support-for-python-2-6-and-older">a
+									própria documentação do Python</a> recomenda que não nos importemos, se possível,
+								com o suporte para qualquer versão do Python abaixo da <strong>2.7</strong>. Isso
+								facilita muito a portabilidade de nosso código.</p>
+							<p>Se isso não for uma opção, temos alguns projetos na comunidade, como o <strong><a
+										href="https://pypi.python.org/pypi/six">six</a></strong>, que pode nos ajudar a
+								manter um código compatível.</p>
+							<p><strong>Com isso em mente, trabalharemos daqui pra frente considerando suporte para
+									Python &gt;= 2.7.</strong></p>
+							<p>Algumas ferramentas, técnicas e práticas podem nos auxiliar bastante na portabilidade de
+								nosso código. Vamos entender e testar algumas delas para podermos decidir quais são as
+								melhores opções.</p>
+							<h3 id="codigo-portavel">Escrevendo código compatível com as duas versões</h3>
+							<p>Muitas vezes ainda é perfeitamente possível escrever código que funcione com as duas
+								versões, afinal a mudança não é total.</p>
+							<p>Para isso, só temos que tomar cuidado com algumas práticas, lembrando sempre de usar,
+								quando possível, uma funcionalidade ou sintaxe que funcione para Python 2 e 3. Um bom
+								exemplo disso é com o <code>print</code>, que no Python 2 também pode ser usado com
+								parênteses.</p>
+							<p>O problema é que em alguns casos temos problemas realmente incompatíveis, como com o
+								<code>input()</code> e o <code>raw_input()</code>. Como podemos lidar com isso?</p>
+							<p>Uma abordagem seria checar qual versão do Python está rodando, e podemos fazer isso com o
+								atributo <code>version_info.major</code> do módulo <code>sys</code>:</p>
+							<pre><code class="language-python">
 from sys import version_info
 
 if version_info.major == 3:
@@ -544,198 +1213,301 @@ if version_info.major == 3:
 else:
     nome = raw_input(‘Digite seu nome: ‘)
 </code></pre>
-<p>Certo, esse código aparentemente funciona. Mas e se o Python 4 for lançado? A versão não será igual a <strong>3</strong> e o programa tentará usar a função <code>raw_input()</code>, que muito provavelmente nem ao menos existirá. É melhor, então, basear nossa checagem na versão <strong>2</strong> do Python:</p>
-<pre><code class="language-python">
+							<p>Certo, esse código aparentemente funciona. Mas e se o Python 4 for lançado? A versão não
+								será igual a <strong>3</strong> e o programa tentará usar a função
+								<code>raw_input()</code>, que muito provavelmente nem ao menos existirá. É melhor,
+								então, basear nossa checagem na versão <strong>2</strong> do Python:</p>
+							<pre><code class="language-python">
 if version_info.major &gt; 2:
     nome = input(‘Digite seu nome: ‘)
 else:
     nome = raw_input(‘Digite seu nome: ‘)
 </code></pre>
-<p>Assim já temos um melhor funcionamento. Mesmo assim, usar checagem de versão em vez de checagem de funcionalidade pode ser um problema, pois as coisas podem mudar e voltar a ser como eram antes de uma versão para outra. Confiar na detecção de versão pode atrapalhar a compatibilidade com mudanças futuras na linguagem.</p>
-<p>Além do mais, é muito citada na comunidade Python uma frase de uma das mais importantes programadoras da história – <a href="https://pt.wikipedia.org/wiki/Grace_Hopper">Grace Hooper</a>. A frase pode ser traduzida como “<strong>às vezes é mais fácil pedir desculpas do que pedir permissão</strong>“.</p>
-<p>Com essa filosofia em mente, podemos considerar tratar a detecção de funcionalidade com tratamento de exceções no Python:</p>
-<pre><code class="language-python">
+							<p>Assim já temos um melhor funcionamento. Mesmo assim, usar checagem de versão em vez de
+								checagem de funcionalidade pode ser um problema, pois as coisas podem mudar e voltar a
+								ser como eram antes de uma versão para outra. Confiar na detecção de versão pode
+								atrapalhar a compatibilidade com mudanças futuras na linguagem.</p>
+							<p>Além do mais, é muito citada na comunidade Python uma frase de uma das mais importantes
+								programadoras da história – <a href="https://pt.wikipedia.org/wiki/Grace_Hopper">Grace
+									Hooper</a>. A frase pode ser traduzida como “<strong>às vezes é mais fácil pedir
+									desculpas do que pedir permissão</strong>“.</p>
+							<p>Com essa filosofia em mente, podemos considerar tratar a detecção de funcionalidade com
+								tratamento de exceções no Python:</p>
+							<pre><code class="language-python">
 try:
     nome = raw_input(‘Digite seu nome: ‘)
 except NameError:
     nome = input(‘Digite seu nome: ‘)
 </code></pre>
-<p>E agora temos o código ideal para esse tipo de situação!</p>
-<h2 id="conclusao">Conclusão</h2>
-<p>Nesse post, pudemos ver algumas das principais diferenças entre as versões 2 e 3 do Python, entendendo o porquê dessas diferenças e o que elas afetam.</p>
-<p>Além disso, discutimos qual versão devemos priorizar, concluindo que, no geral, Python 3 é preferível daqui pra frente.</p>
-<p>Também pudemos trabalhar algumas técnicas para aprimorar a compatibilidade de nosso código, tornando-o usável com as duas versões.</p>
-<p>E aí, gostou do conteúdo? Me diga aí qual sua opinião sobre isso e qual versão você costuma usar nos comentários!</p>
-<div class="mailmunch-forms-after-post" style="display: none !important;"></div><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Compartilhe isso:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-10407" class="share-twitter sd-button share-icon no-text" href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/?share=twitter" target="_blank" title="Clique para compartilhar no Twitter"><span></span><span class="sharing-screen-reader-text">Clique para compartilhar no Twitter(abre em nova janela)</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-10407" class="share-facebook sd-button share-icon no-text" href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/?share=facebook" target="_blank" title="Clique para compartilhar no Facebook"><span></span><span class="sharing-screen-reader-text">Clique para compartilhar no Facebook(abre em nova janela)</span></a></li><li class="share-end"></li></ul></div></div></div>
-<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
-	<h3 class="jp-relatedposts-headline"><em>Relacionado</em></h3>
-<div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid "><p class="jp-relatedposts-post jp-relatedposts-post0" data-post-id="5742" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://blog.caelum.com.br/comecar-a-programar-e-com-javascript/" title="Começar a programar é com JavaScript" data-origin="10407" data-position="0">Começar a programar é com JavaScript</a></span><span class="jp-relatedposts-post-date">12/05/2017</span><span class="jp-relatedposts-post-context">Em "Front-end"</span></p><p class="jp-relatedposts-post jp-relatedposts-post1" data-post-id="10296" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://blog.caelum.com.br/programacao-funcional-no-python/" title="Programação funcional no Python" data-origin="10407" data-position="1">Programação funcional no Python</a></span><span class="jp-relatedposts-post-date">23/05/2018</span><span class="jp-relatedposts-post-context">Em "Programação"</span></p><p class="jp-relatedposts-post jp-relatedposts-post2" data-post-id="7915" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://blog.caelum.com.br/5-duvidas-de-quem-quer-iniciar-na-carreira-de-programacao/" title="5 dúvidas de quem quer iniciar na carreira de programação" data-origin="10407" data-position="2">5 dúvidas de quem quer iniciar na carreira de programação</a></span><span class="jp-relatedposts-post-date">05/12/2016</span><span class="jp-relatedposts-post-context">Em "Programação"</span></p></div></div>					
+							<p>E agora temos o código ideal para esse tipo de situação!</p>
+							<h2 id="conclusao">Conclusão</h2>
+							<p>Nesse post, pudemos ver algumas das principais diferenças entre as versões 2 e 3 do
+								Python, entendendo o porquê dessas diferenças e o que elas afetam.</p>
+							<p>Além disso, discutimos qual versão devemos priorizar, concluindo que, no geral, Python 3
+								é preferível daqui pra frente.</p>
+							<p>Também pudemos trabalhar algumas técnicas para aprimorar a compatibilidade de nosso
+								código, tornando-o usável com as duas versões.</p>
+							<p>E aí, gostou do conteúdo? Me diga aí qual sua opinião sobre isso e qual versão você
+								costuma usar nos comentários!</p>
+							<div class="mailmunch-forms-after-post" style="display: none !important;"></div>
+							<div class="sharedaddy sd-sharing-enabled">
+								<div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
+									<h3 class="sd-title">Compartilhe isso:</h3>
+									<div class="sd-content">
+										<ul>
+											<li class="share-twitter"><a rel="nofollow noopener noreferrer"
+													data-shared="sharing-twitter-10407"
+													class="share-twitter sd-button share-icon no-text"
+													href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/?share=twitter"
+													target="_blank"
+													title="Clique para compartilhar no Twitter"><span></span><span
+														class="sharing-screen-reader-text">Clique para compartilhar no
+														Twitter(abre em nova janela)</span></a></li>
+											<li class="share-facebook"><a rel="nofollow noopener noreferrer"
+													data-shared="sharing-facebook-10407"
+													class="share-facebook sd-button share-icon no-text"
+													href="https://blog.caelum.com.br/quais-as-diferencas-entre-python-2-e-python-3/?share=facebook"
+													target="_blank"
+													title="Clique para compartilhar no Facebook"><span></span><span
+														class="sharing-screen-reader-text">Clique para compartilhar no
+														Facebook(abre em nova janela)</span></a></li>
+											<li class="share-end"></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
+								<h3 class="jp-relatedposts-headline"><em>Relacionado</em></h3>
+								<div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid ">
+									<p class="jp-relatedposts-post jp-relatedposts-post0" data-post-id="5742"
+										data-post-format="false"><span class="jp-relatedposts-post-title"><a
+												class="jp-relatedposts-post-a"
+												href="https://blog.caelum.com.br/comecar-a-programar-e-com-javascript/"
+												title="Começar a programar é com JavaScript" data-origin="10407"
+												data-position="0">Começar a programar é com JavaScript</a></span><span
+											class="jp-relatedposts-post-date">12/05/2017</span><span
+											class="jp-relatedposts-post-context">Em "Front-end"</span></p>
+									<p class="jp-relatedposts-post jp-relatedposts-post1" data-post-id="10296"
+										data-post-format="false"><span class="jp-relatedposts-post-title"><a
+												class="jp-relatedposts-post-a"
+												href="https://blog.caelum.com.br/programacao-funcional-no-python/"
+												title="Programação funcional no Python" data-origin="10407"
+												data-position="1">Programação funcional no Python</a></span><span
+											class="jp-relatedposts-post-date">23/05/2018</span><span
+											class="jp-relatedposts-post-context">Em "Programação"</span></p>
+									<p class="jp-relatedposts-post jp-relatedposts-post2" data-post-id="7915"
+										data-post-format="false"><span class="jp-relatedposts-post-title"><a
+												class="jp-relatedposts-post-a"
+												href="https://blog.caelum.com.br/5-duvidas-de-quem-quer-iniciar-na-carreira-de-programacao/"
+												title="5 dúvidas de quem quer iniciar na carreira de programação"
+												data-origin="10407" data-position="2">5 dúvidas de quem quer iniciar na
+												carreira de programação</a></span><span
+											class="jp-relatedposts-post-date">05/12/2016</span><span
+											class="jp-relatedposts-post-context">Em "Programação"</span></p>
+								</div>
+							</div>
 
 
-<a class="share-social" href="https://www.alura.com.br/" style="padding: 16px">
-<img src="./python_3_&amp;_2_differences_files/alura-logo.1465499610.svg" alt="Alura" style="margin-right: 16px">
-<strong style="">Estude online na Alura</strong>
-<p style="margin: 12px 0 0 0">Programação, Mobile, Front-end, Design &amp; UX, Infraestrutura e Business</p>
-</a>
+							<a class="share-social" href="https://www.alura.com.br/" style="padding: 16px">
+								<img src="./python_3_&amp;_2_differences_files/alura-logo.1465499610.svg" alt="Alura"
+									style="margin-right: 16px">
+								<strong style="">Estude online na Alura</strong>
+								<p style="margin: 12px 0 0 0">Programação, Mobile, Front-end, Design &amp; UX,
+									Infraestrutura e Business</p>
+							</a>
 
-					
+
+						</section>
+
+					</article><!-- .post -->
+
+					<aside id="post-author" class="fix">
+						<div class="profile-image">
+							<img alt="" src="./python_3_&amp;_2_differences_files/5ec17c8a1987776b1bcf33c6dcb8927e.jpg"
+								srcset="https://secure.gravatar.com/avatar/5ec17c8a1987776b1bcf33c6dcb8927e?s=180&amp;r=g 2x"
+								class="avatar avatar-90 photo" height="90" width="90" loading="lazy">
+						</div>
+						<div class="profile-content">
+							<h3 class="title">
+								Yan Orestes
+							</h3>
+
+						</div><!-- .post-entries -->
+					</aside><!-- .post-author-box -->
+
+
+
+
+
+					<!-- You can start editing here. -->
+
+
+					<div id="comments">
+
+						<h3>15 Comentários</h3>
+
+						<ol class="commentlist">
+
+
+							<li class="comment even thread-even depth-1">
+
+								<a name="comment-380295"></a>
+
+								<div id="li-comment-380295" class="comment-container">
+
+									<div class="comment-avatar"><img alt=""
+											src="./python_3_&amp;_2_differences_files/7b0fbbbc2f7a3616543eed040e93618d.jpg"
+											srcset="https://secure.gravatar.com/avatar/7b0fbbbc2f7a3616543eed040e93618d?s=100&amp;r=g 2x"
+											class="photo avatar avatar-50 photo" height="50" width="50" loading="lazy">
+									</div>
+
+									<div class="comment-head">
+
+										<span class="name">
+
+
+
+											<meta name="viewport" content="width=device-width">
+											<meta name="robots" content="noindex,follow">
+											<title>Erro › WordPress</title>
+											<style type="text/css">
+												html {
+													background: #f1f1f1;
+												}
+
+												body {
+													background: #fff;
+													color: #444;
+													font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+													margin: 2em auto;
+													padding: 1em 2em;
+													max-width: 700px;
+													-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
+													box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
+												}
+
+												h1 {
+													border-bottom: 1px solid #dadada;
+													clear: both;
+													color: #666;
+													font-size: 24px;
+													margin: 30px 0 0 0;
+													padding: 0;
+													padding-bottom: 7px;
+												}
+
+												#error-page {
+													margin-top: 50px;
+												}
+
+												#error-page p,
+												#error-page .wp-die-message {
+													font-size: 14px;
+													line-height: 1.5;
+													margin: 25px 0 20px;
+												}
+
+												#error-page code {
+													font-family: Consolas, Monaco, monospace;
+												}
+
+												ul li {
+													margin-bottom: 10px;
+													font-size: 14px;
+												}
+
+												a {
+													color: #0073aa;
+												}
+
+												a:hover,
+												a:active {
+													color: #006799;
+												}
+
+												a:focus {
+													color: #124964;
+													-webkit-box-shadow:
+														0 0 0 1px #5b9dd9,
+														0 0 2px 1px rgba(30, 140, 190, 0.8);
+													box-shadow:
+														0 0 0 1px #5b9dd9,
+														0 0 2px 1px rgba(30, 140, 190, 0.8);
+													outline: none;
+												}
+
+												.button {
+													background: #f7f7f7;
+													border: 1px solid #ccc;
+													color: #555;
+													display: inline-block;
+													text-decoration: none;
+													font-size: 13px;
+													line-height: 2;
+													height: 28px;
+													margin: 0;
+													padding: 0 10px 1px;
+													cursor: pointer;
+													-webkit-border-radius: 3px;
+													-webkit-appearance: none;
+													border-radius: 3px;
+													white-space: nowrap;
+													-webkit-box-sizing: border-box;
+													-moz-box-sizing: border-box;
+													box-sizing: border-box;
+
+													-webkit-box-shadow: 0 1px 0 #ccc;
+													box-shadow: 0 1px 0 #ccc;
+													vertical-align: top;
+												}
+
+												.button.button-large {
+													height: 30px;
+													line-height: 2.15384615;
+													padding: 0 12px 2px;
+												}
+
+												.button:hover,
+												.button:focus {
+													background: #fafafa;
+													border-color: #999;
+													color: #23282d;
+												}
+
+												.button:focus {
+													border-color: #5b9dd9;
+													-webkit-box-shadow: 0 0 3px rgba(0, 115, 170, 0.8);
+													box-shadow: 0 0 3px rgba(0, 115, 170, 0.8);
+													outline: none;
+												}
+
+												.button:active {
+													background: #eee;
+													border-color: #999;
+													-webkit-box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
+													box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
+												}
+											</style>
+
+
+											<div class="wp-die-message">
+												<p>Há um erro crítico no seu site.</p>
+												<p><a
+														href="https://wordpress.org/support/article/debugging-in-wordpress/">Aprenda
+														mais sobre depuração no WordPress.</a></p>
+											</div>
+
+										</span>
+									</div>
+								</div>
+							</li>
+						</ol>
+					</div>
 				</section>
+			</div>
+		</div>
+	</div><iframe src="./python_3_&amp;_2_differences_files/iframe.html" width="1" height="1"
+		style="visibility: hidden; display: none;"></iframe>
+</body>
 
-            </article><!-- .post -->
-
-						<aside id="post-author" class="fix">
-				<div class="profile-image">
-					<img alt="" src="./python_3_&amp;_2_differences_files/5ec17c8a1987776b1bcf33c6dcb8927e.jpg" srcset="https://secure.gravatar.com/avatar/5ec17c8a1987776b1bcf33c6dcb8927e?s=180&amp;r=g 2x" class="avatar avatar-90 photo" height="90" width="90" loading="lazy">				</div>
-				<div class="profile-content">
-					<h3 class="title">
-						Yan Orestes						
-											</h3>
-
-									</div><!-- .post-entries -->
-			</aside><!-- .post-author-box -->
-			
-			
-				
-            
-
-<!-- You can start editing here. -->
-
-
-<div id="comments">
-
-			<h3>15 Comentários</h3>
-
-		<ol class="commentlist">
-
-			
-		<li class="comment even thread-even depth-1">
-
-	    	<a name="comment-380295"></a>
-
-	      	<div id="li-comment-380295" class="comment-container">
-
-					                <div class="comment-avatar"><img alt="" src="./python_3_&amp;_2_differences_files/7b0fbbbc2f7a3616543eed040e93618d.jpg" srcset="https://secure.gravatar.com/avatar/7b0fbbbc2f7a3616543eed040e93618d?s=100&amp;r=g 2x" class="photo avatar avatar-50 photo" height="50" width="50" loading="lazy"></div>
-	            
-		      	<div class="comment-head">
-
-	                <span class="name">
-
-
-	
-	<meta name="viewport" content="width=device-width">
-		<meta name="robots" content="noindex,follow">
-	<title>Erro › WordPress</title>
-	<style type="text/css">
-		html {
-			background: #f1f1f1;
-		}
-		body {
-			background: #fff;
-			color: #444;
-			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-			margin: 2em auto;
-			padding: 1em 2em;
-			max-width: 700px;
-			-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
-			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
-		}
-		h1 {
-			border-bottom: 1px solid #dadada;
-			clear: both;
-			color: #666;
-			font-size: 24px;
-			margin: 30px 0 0 0;
-			padding: 0;
-			padding-bottom: 7px;
-		}
-		#error-page {
-			margin-top: 50px;
-		}
-		#error-page p,
-		#error-page .wp-die-message {
-			font-size: 14px;
-			line-height: 1.5;
-			margin: 25px 0 20px;
-		}
-		#error-page code {
-			font-family: Consolas, Monaco, monospace;
-		}
-		ul li {
-			margin-bottom: 10px;
-			font-size: 14px ;
-		}
-		a {
-			color: #0073aa;
-		}
-		a:hover,
-		a:active {
-			color: #006799;
-		}
-		a:focus {
-			color: #124964;
-			-webkit-box-shadow:
-				0 0 0 1px #5b9dd9,
-				0 0 2px 1px rgba(30, 140, 190, 0.8);
-			box-shadow:
-				0 0 0 1px #5b9dd9,
-				0 0 2px 1px rgba(30, 140, 190, 0.8);
-			outline: none;
-		}
-		.button {
-			background: #f7f7f7;
-			border: 1px solid #ccc;
-			color: #555;
-			display: inline-block;
-			text-decoration: none;
-			font-size: 13px;
-			line-height: 2;
-			height: 28px;
-			margin: 0;
-			padding: 0 10px 1px;
-			cursor: pointer;
-			-webkit-border-radius: 3px;
-			-webkit-appearance: none;
-			border-radius: 3px;
-			white-space: nowrap;
-			-webkit-box-sizing: border-box;
-			-moz-box-sizing:    border-box;
-			box-sizing:         border-box;
-
-			-webkit-box-shadow: 0 1px 0 #ccc;
-			box-shadow: 0 1px 0 #ccc;
-			vertical-align: top;
-		}
-
-		.button.button-large {
-			height: 30px;
-			line-height: 2.15384615;
-			padding: 0 12px 2px;
-		}
-
-		.button:hover,
-		.button:focus {
-			background: #fafafa;
-			border-color: #999;
-			color: #23282d;
-		}
-
-		.button:focus {
-			border-color: #5b9dd9;
-			-webkit-box-shadow: 0 0 3px rgba(0, 115, 170, 0.8);
-			box-shadow: 0 0 3px rgba(0, 115, 170, 0.8);
-			outline: none;
-		}
-
-		.button:active {
-			background: #eee;
-			border-color: #999;
-			-webkit-box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
-			box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
-		}
-
-			</style>
-
-
-	<div class="wp-die-message"><p>Há um erro crítico no seu site.</p><p><a href="https://wordpress.org/support/article/debugging-in-wordpress/">Aprenda mais sobre depuração no WordPress.</a></p></div>
-
-	</span></div></div></li></ol></div></section></div></div></div><iframe src="./python_3_&amp;_2_differences_files/iframe.html" width="1" height="1" style="visibility: hidden; display: none;"></iframe></body></html>
+</html>
