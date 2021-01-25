@@ -7,6 +7,18 @@ class ExtratorArgumentosUrl:
         else:
             raise LookupError("Url invalida!")
 
+    def __len__(self):
+        return len(self.url)
+
+    def __str__(self):
+        moeda_origem, moeda_destino = self.retorna_moedas()
+        valor = self.retorna_valor()
+        representacao_string = "Valor: {}\nMoeda Origem: {}\nMoeda Destino: {}".format(valor, moeda_origem, moeda_destino)
+        return representacao_string
+
+    def __eq__(self, objeto):
+        return self.url == objeto.url
+
     @staticmethod
     def url_eh_valida(url):
         if url:

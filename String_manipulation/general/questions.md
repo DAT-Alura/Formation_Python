@@ -3,7 +3,7 @@
 Nesta aula aprendemos como retirar partes de uma string utilizando slice (fatiamento). Com esse conhecimento veja o código abaixo:
 
 ```py
-texto = “Izuku Midoriya”
+texto = "Izuku Midoriya"
 texto[0:10]
 texto2 = texto[:4]
 print( texto2)
@@ -43,7 +43,7 @@ indiceFinalCodigoArea   = y
 print (celular[indiceInicialCodigoArea:indiceFinalCodigoArea])
 ```
 
-Com o objetivo de retirar o código de área sem os “()”, os valores de x e y podem ser substituídos por:
+Com o objetivo de retirar o código de área sem os "()", os valores de x e y podem ser substituídos por:
 
 __A__ -
 ```py
@@ -107,7 +107,7 @@ print(nome[indice:tamanho])
 Qual será a saída desse código
 
 __A__ - 11 Eren Yeager
-> Correto! O tamanho da string é um inteiro maior que o último índice da mesma, então o “r” no final vai aparecer.
+> Correto! O tamanho da string é um inteiro maior que o último índice da mesma, então o "r" no final vai aparecer.
 
 B - 11 Yeager
 
@@ -133,7 +133,7 @@ Qual será a saída?
 A - boku no hero academia - s1, e12
 
 __B__ - BOKU NO HERO - TEMPORADA 1, EP12
-> Correto! O upper() deixou todas as letras maiúsculas e o segundo replace() não encontrou “temporada”.
+> Correto! O upper() deixou todas as letras maiúsculas e o segundo replace() não encontrou "temporada".
 
 C - BOKU NO HERO - S2, EP12
 
@@ -147,7 +147,7 @@ filme = "Os quase Vingadores - End Game"
 filme = "Detonadores  - Os Vingadores"
 ```
 
-Uma forma de saber se os filmes listados são dos “Vingadores” ou não é verificando se o nome do filme começa com a palavra “Vingadores”, analise as sugestões de códigos para resolver esse problema e marque a alternativa que retornaria a resposta __incorreta__ para os itens listados acima
+Uma forma de saber se os filmes listados são dos "Vingadores" ou não é verificando se o nome do filme começa com a palavra "Vingadores", analise as sugestões de códigos para resolver esse problema e marque a alternativa que retornaria a resposta __incorreta__ para os itens listados acima
 
 A -
 ```py
@@ -204,7 +204,7 @@ __A__ - "e02 t2"
 B - "ep4 t5"
 
 __C__ - "e2 s3"
-> Correto! É possível identificar “t” ou “s” dentro do padrão buscado
+> Correto! É possível identificar "t" ou "s" dentro do padrão buscado
 
 D - "episódio 9 temporada 2"
 
@@ -237,3 +237,53 @@ C -
 ```py
 padrao = "[a]{1,20}[ ] [0-9]{3}"
 ```
+
+# Aula 5
+
+Suponha a classe abaixo:
+
+```py
+class Quadrado:
+    def __init__(self,nome,lado):
+        self.nome = nome
+        self.lado = lado
+    def __str__(self):
+        return "Nome = {} Lado ={}".format(self.lado,self.nome)
+```
+
+Caso você crie a seguinte instância dessa classe:
+
+```py
+quadradinho = Quadrado("Meu Quadrado",2)
+print(quadradinho)
+```
+
+Qual seria o resultado na tela?
+
+A - "Quadrado object at 0x00000197A08142E8"
+
+B - "Meu Quadrado Lado = 2"
+
+__C__ - "Nome = 2 Lado = Meu Quadrado"
+> Correto! Nossa classe possui um método str e os valores estão sendo mostrados em locais incorretos.
+
+---
+
+Vimos nessa aula os métodos especiais do Python, também chamado de métodos mágicos, esses métodos fazem parte das classes padrões do Python, como int ou str dando funcionalidades para tais classes.
+
+Analise o código abaixo:
+
+```py
+nome = “Rodrigo Siqueira”
+print (nome)
+print (len(nome))
+```
+
+Com base no que vimos qual método especial não influencia no funcionamento do código acima?
+
+__A__ - O método eq()
+> Correto! Esse método é responsável por comparar duas strings diferentes, e o código acima não faz isso.
+
+B - O método str()
+
+C - O método len()
