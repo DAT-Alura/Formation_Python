@@ -3,7 +3,7 @@ class ExtratorArgumentosUrl:
 
     def __init__(self, url):
         if self.url_eh_valida(url):
-            self.url = url
+            self.url = url.lower()
         else:
             raise LookupError("Url invalida!")
 
@@ -19,14 +19,29 @@ class ExtratorArgumentosUrl:
         busca_moeda_destino = "moedadestino"
 
         inicio_substring_moeda_origem = self.encontra_indice_inicio_substring(busca_moeda_origem)
-        finalSubstringMoedaOrigem = self.url.find("&")
-        moedaOrigem = self.url[inicio_substring_moeda_origem:finalSubstringMoedaOrigem]
+        final_substring_moeda_origem = self.url.find("&")
+        moeda_origem = self.url[inicio_substring_moeda_origem:final_substring_moeda_origem]
+
+        if moeda_origem == "moedadestino":
+            moeda_origem = self.verifica_moeda_origem(busca_moeda_origem)
 
         inicio_substring_moeda_destino = self.encontra_indice_inicio_substring(busca_moeda_destino)
         final_substring_moeda_destino = self.url.find("&valor")
-        moedaDestino = self.url[inicio_substring_moeda_destino:final_substring_moeda_destino]
+        moeda_destino = self.url[inicio_substring_moeda_destino:final_substring_moeda_destino]
 
-        return moedaOrigem, moedaDestino
+        return moeda_origem, moeda_destino
 
     def encontra_indice_inicio_substring(self, moeda_ou_valor):
             return self.url.find(moeda_ou_valor) + len(moeda_ou_valor) + 1
+
+    def verifica_moeda_origem(self, busca_moeda_origem):
+        self.url = self.url.replace("moedadestino", "real", 1)
+        inicio_substring_moeda_origem = self.encontra_indice_inicio_substring(busca_moeda_origem)
+        final_substring_moeda_origem = self.url.find("&")
+        return self.url[inicio_substring_moeda_origem:final_substring_moeda_origem]
+
+    def retorna_valor(self):
+        busca_valor = "Valor".lower()
+        inicio_substring_valor = self.encontra_indice_inicio_substring(busca_valor)
+        valor = self.url[inicio_substring_valor:]
+        return valor

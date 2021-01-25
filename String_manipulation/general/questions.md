@@ -112,3 +112,67 @@ __A__ - 11 Eren Yeager
 B - 11 Yeager
 
 C - 11 Eren Yeage
+
+# Aula 3
+
+Lembre-se do conteúdo do capítulo e analise o código abaixo:
+
+```py
+episodio = "Boku no hero - TEmporada 1, episódio 12"
+episodioFormatado = episodio\
+.lower()\
+.replace("episódio ","ep")\
+.upper()\
+.replace("temporada ", "s")
+
+print(episodioFormatado)
+```
+
+Qual será a saída?
+
+A - boku no hero academia - s1, e12
+
+__B__ - BOKU NO HERO - TEMPORADA 1, EP12
+> Correto! O upper() deixou todas as letras maiúsculas e o segundo replace() não encontrou “temporada”.
+
+C - BOKU NO HERO - S2, EP12
+
+---
+
+Nessa aula vimos duas formas diferentes de verificar se uma string começa com algum texto que queremos ou não, com isso em mente dê uma olhada no código abaixo.
+
+```py
+filme = "Vingadores - Era de Ulton"
+filme = "Os quase Vingadores - End Game"
+filme = "Detonadores  - Os Vingadores"
+```
+
+Uma forma de saber se os filmes listados são dos “Vingadores” ou não é verificando se o nome do filme começa com a palavra “Vingadores”, analise as sugestões de códigos para resolver esse problema e marque a alternativa que retornaria a resposta __incorreta__ para os itens listados acima
+
+A -
+```py
+filmeEhVingadores = filme.find("Vingadores")
+if filmeEhVingadores == 0:
+    print("Esse filme é dos vingadores")
+else:
+    print("Esse filme não é dos vingadores")
+```
+
+__B__ -
+```py
+filmeEhVingadores = filme.find("Vingadores")
+if filmeEhVingadores:
+    print("Esse filme é do vingadores")
+else:
+    print("Esse filme não é dos vingadores")
+```
+> Correto! Esse código não estaria certo para nenhum dos itens acima, no filme1 o find retorna 0 sendo assim a variável filmeEhVingadores iria para condição else, e nesse caso o filme é sim dos vingadores.
+
+C -
+```py
+filmeEhVingadores = filme.startswith("Vingadores")
+if filmeEhVingadores:
+    print("Esse filme é dos vingadores")
+else:
+    print("Esse filme não é dos vingadores")
+```
