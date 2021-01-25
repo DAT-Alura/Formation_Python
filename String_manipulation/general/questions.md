@@ -176,3 +176,64 @@ if filmeEhVingadores:
 else:
     print("Esse filme não é dos vingadores")
 ```
+
+# Aula 4
+
+O padrão abaixo identifica o episódio e a temporada de uma série que alguém está assistindo.
+
+```py
+[e][0-9]{1,2} [s,t][0-9]{1,2}
+```
+
+Vamos testá-la nas seguintes conversas:
+
+```py
+padrao = "e[0-9]{1,2} [s,t][0-9]{1,2}"
+conversa1 = "Estou no e 1 t 3 de Naruto"
+conversa2 = "O e02 t2 é o melhor de Rick and Morty"
+conversa3 = "Eu parei GOT no e2 s3"
+conversa4 = "Não gostei do ep4 t5 de Vikings"
+conversa5 = "O melhor episódio de Boku no Hero é o e011 s02"
+```
+
+Marque a alternativa que o padrão correto foi retornado. A ordem está da conversa1 até a conversa5.
+
+__A__ - "e02 t2"
+> Correto! O padrão pode identificar 1 ou 2 números para episódios e para temporada.
+
+B - "ep4 t5"
+
+__C__ - "e2 s3"
+> Correto! É possível identificar “t” ou “s” dentro do padrão buscado
+
+D - "episódio 9 temporada 2"
+
+E - "e011 s02"
+
+---
+
+Aprendemos o que é e como usar uma expressão regular em Python, com tudo que você viu em mente analise as frases abaixo.
+
+```py
+frase1 = "podemos marcar de sair sabado 23h"
+frase2 = "acho que quinta 21h é a melhor hora para a gente ir lá"
+frase3 = "terca 19h é um bom momento para sairmos"
+```
+
+Das expressões listadas abaixo qual consegue capturar o dia e o horário nas frases.
+
+A -
+```py
+padrao = "[a-z]{20}[ ][0-9]{1,2}[h]"
+```
+
+__B__ -
+```py
+padrao = "[a-z]{1,20}[ ][0-9]{1,2}[h]"
+```
+> Correto! Essa expressão regular funciona de pega todas as possibilidades de "a" até "z" repetidos até 20 vezes, pega um espaço em branco e após isso pega 2 número em seguida a letra "h"
+
+C -
+```py
+padrao = "[a]{1,20}[ ] [0-9]{3}"
+```
