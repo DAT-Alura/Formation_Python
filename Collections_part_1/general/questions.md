@@ -48,3 +48,29 @@ __A__ - Para que o array do Python funcione, temos que passar o tipo dele.
 B - Podemos passar qualquer tipo de valor no array.
 
 C - Não precisamos passar o tipo do array para o Python, pois ele detecta de maneira automática.
+
+# Aula 4
+
+No banco onde Guilherme trabalha está acontecendo um problema: está acontecendo a comparação de duas contas com os mesmos atributos. Observe o seguinte código:
+
+```py
+conta_do_gui = ContaCorrente(15)
+
+conta_da_dani = ContaCorrente(15)
+
+if(conta_do_gui == conta_da_dani):
+    print(“São iguais”)
+else:
+    print(“São diferentes”)
+```
+
+Quando fazemos a comparação com o __if__, está retornando False, quando deveria retornar True.
+
+O que Guilherme pode fazer para que o retorno seja True?
+
+A - Ele precisa fazer com que ambas as contas tenham o mesmo nome de instância.
+
+B - Ele precisa fazer a instância de ambas as contas na mesma hora.
+
+__C__ - Implementar o método eq, onde comparamos o que está vindo como parâmetro ao invés do objeto inteiro.
+> Com o método eq podemos fazer a comparação que desejamos.
