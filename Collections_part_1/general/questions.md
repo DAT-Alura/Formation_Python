@@ -35,3 +35,16 @@ __B__ - Utilizando tupla e lista agencia = (10,22,33,44) saldo = [1000,2000,3000
 C - Utilizando lista e tupla agencia = [10,22,33,44] saldo= (1000,2000,3000,4000)
 
 D - Utilizando lista para ambos agencia = [10,22,33,44] saldo = [1000,2000,3000,4000]
+
+# Aula 3
+
+Mayra é do setor de desenvolvimento de uma empresa. Foi pedido para que ela fizesse um array numérico em Python, utilizando a biblioteca arr, para guardar as notas dadas pelos clientes no aplicativo da empresa, mas Mayra não sabe quais são as características do arr do Python para criação de array.
+
+Quais seriam as características de criação deste array no Python?
+
+__A__ - Para que o array do Python funcione, temos que passar o tipo dele.
+> Precisamos passar o tipo do Array para que ele fique mais eficiente.
+
+B - Podemos passar qualquer tipo de valor no array.
+
+C - Não precisamos passar o tipo do array para o Python, pois ele detecta de maneira automática.
