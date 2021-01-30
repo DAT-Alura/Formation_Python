@@ -74,3 +74,24 @@ B - Ele precisa fazer a instância de ambas as contas na mesma hora.
 
 __C__ - Implementar o método eq, onde comparamos o que está vindo como parâmetro ao invés do objeto inteiro.
 > Com o método eq podemos fazer a comparação que desejamos.
+
+# Aula 5
+
+Gabriela está revisando um código em Python que contém uma lista de idade, que está percorrendo esta lista e mostrando o índice e a idade:
+
+```py
+idades = [15,87,37,45,56,32,49,37]
+for i in range(len(idades)):
+    print(i,idades[i])
+```
+
+Este código faz a numeração da idade e a põe um index ao lado de cada idade, mas isto é muito trabalhoso de se fazer.
+
+Como o código pode ser melhorado, de modo a facilitar a implementação ?
+
+A - Utilizando a função de extends.
+
+__B__ - Utilizando o enumerate para percorrer nossa lista e numerar cada valor.
+> Quando utilizamos o enumerate, ele faz a enumeração dos valores automaticamente, assim evitaremos código a mais.
+
+C - Temos que fazer uma lista auxiliar e percorrer ambas para que a numeração seja feita.
