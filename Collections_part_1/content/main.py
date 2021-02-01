@@ -466,3 +466,21 @@ for nome, idade, nascimento in usuarios: # ja desempacotando
 
 for nome, _, _ in usuarios: # ja desempacotando, ignorando o resto
   print(nome)
+
+idades
+
+sorted(idades)
+
+15 < 32
+
+list(reversed(idades))
+
+sorted(idades, reverse=True)
+
+list(reversed(sorted(idades)))
+
+idades
+
+idades.sort()
+
+idades

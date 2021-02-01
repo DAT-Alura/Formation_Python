@@ -95,3 +95,20 @@ __B__ - Utilizando o enumerate para percorrer nossa lista e numerar cada valor.
 > Quando utilizamos o enumerate, ele faz a enumeração dos valores automaticamente, assim evitaremos código a mais.
 
 C - Temos que fazer uma lista auxiliar e percorrer ambas para que a numeração seja feita.
+
+# Aula 6
+
+Conforme foi passado na aula, aprendemos a ordenar a lista usando idades.sort(). Porém, podemos não querer alterar a lista original, mas visualizar os valores da lista em ordem crescente.
+
+```py
+idades = [12,90,1,8,10,25,32,31,40,50]
+```
+
+Como podemos fazer isso com Python?
+
+A - Utilizaremos o reversed para reverter a lista em uma lista ordenada list(reversed(idades)).
+
+__B__ - Utilizaremos o sorted para retornar uma nova lista ordenada: sorted(idades).
+> Exatamente! Caso utilizássemos o idades.sort(), a lista original seria alterada, pois esse comando, além de ordenar, atribui o valor à lista original.
+
+C - Utilizaremos o sort mesmo para deixar a lista ordenada, pois ele já faz a atribuição automaticamente: idades.sort().
