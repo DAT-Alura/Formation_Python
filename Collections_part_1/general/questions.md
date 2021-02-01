@@ -143,4 +143,52 @@ __A__ - Temos que importar o attrgetter e passar o valor do saldo por parâmetro
 
 B - Temos que fazer uma função def extrai_saldo(conta), que retorna o saldo da conta. def extrai_saldo(conta): return conta._saldo
 
-C - Temos que implementar na função __init__ dentro dela vamos retornar o saldo da conta def __init__(self,codigo): self._codigo = codigo self._saldo = 0 return “saldo:self._saldo”.
+C - Temos que implementar na função \_\_init__ dentro dela vamos retornar o saldo da conta def \_\_init__(self,codigo): self._codigo = codigo self._saldo = 0 return “saldo:self._saldo”.
+
+# Aula 8
+
+Uma empresa está desenvolvendo um sistema para conta de bancos fazendo a implementação lógica em um dos modelos de conta salário.
+
+```py
+class ContaSalario:
+
+  def __init__(self, codigo):
+    self._codigo = codigo
+    self._saldo = 0
+
+  def __eq__(self, outro):
+    if type(outro) != ContaSalario:
+      return False
+
+    return self._codigo == outro._codigo and self._saldo == outro._saldo
+
+  def __lt__(self, outro):
+    if self._saldo != outro._saldo:
+      return self._saldo < outro._saldo
+
+    return self._codigo < outro._codigo
+```
+
+Até agora foram implementados os métodos \_\_eq__() e \_\_lt__() , que comparam valores dos salários, então foram criadas três contas para teste de comparação entre elas.
+
+```py
+conta_do_guilherme = ContaSalario(1700)
+conta_do_guilherme.deposita(500)
+
+conta_da_daniela = ContaSalario(3)
+conta_da_daniela.deposita(1000)
+
+conta_do_paulo = ContaSalario(133)
+conta_do_paulo.deposita(500)
+```
+
+O banco quer comparar se o valor contido na conta do cliente é maior ou igual ou menor ou igual de outro cliente.
+
+Como podemos fazer isto?
+
+A - Temos que criar str para pode fazer este tipo de comparações.
+
+__B__ - Podemos fazer uma anotação e fazer a importação da biblioteca total_ordering.
+> Com isto não implementamos métodos de comparação, mas temos que ter os métodos eq e o lt.
+
+C - Temos que fazer vários métodos para fazer as comparações.
