@@ -112,3 +112,35 @@ __B__ - Utilizaremos o sorted para retornar uma nova lista ordenada: sorted(idad
 > Exatamente! Caso utilizássemos o idades.sort(), a lista original seria alterada, pois esse comando, além de ordenar, atribui o valor à lista original.
 
 C - Utilizaremos o sort mesmo para deixar a lista ordenada, pois ele já faz a atribuição automaticamente: idades.sort().
+
+# Aula 7
+
+Estamos desenvolvendo um projeto para o banco digital Bytebank que trabalha com contas salário. Na nossa classe de conta salário, implementamos os seguintes métodos :
+
+```py
+class ContaSalario:
+  def __init__(self,codigo):
+    self._codigo = codigo
+    self._saldo = 0
+
+  def __eq__(self,outro):
+    if(type(outro) != ContaSalario):
+      return False
+    return self._codigo == outro._codigo and self._saldo == outro._saldo
+
+  def deposita(self, valor):
+    self._saldo += valor
+  def __str__(self):
+    return "[>>> codigo: {} Saldo: {}]".format(self._codigo, self._saldo)
+```
+
+Nenhum desses métodos retorna o saldo da conta salário e sabemos que, para manter as boas práticas, não podemos acessar diretamente o atributo da classe para obter o saldo que precisamos.
+
+Qual é a melhor maneira para se obter o saldo?
+
+__A__ - Temos que importar o attrgetter e passar o valor do saldo por parâmetro key=attrgetter("_saldo").
+> Quando importamos o attrgetter, temos que passar a chave do valor que queremos, pois assim não acessamos o atributo diretamente.
+
+B - Temos que fazer uma função def extrai_saldo(conta), que retorna o saldo da conta. def extrai_saldo(conta): return conta._saldo
+
+C - Temos que implementar na função __init__ dentro dela vamos retornar o saldo da conta def __init__(self,codigo): self._codigo = codigo self._saldo = 0 return “saldo:self._saldo”.
