@@ -48,3 +48,22 @@ __A__ - Ele pode utilizar a função get para verificar os clientes.
 B - Ele pode utilizar a função keys para ver os valores do dicionário.
 
 C - Ele pode utilizar a função dict para fazer a filtragem desses clientes.
+
+# Aula 4
+
+Conforme aprendemos em aula, é possível fazer a contagem de palavras, utilizando o default dict e o Counter para contar valores.
+
+Como podemos contar as aparições de cada palavra da seguinte frase?
+
+```py
+texto = "Bem vindo meu nome é Elias irei falar sobre os meus gostos eu gosto muito de cachorros e gatos eu gosto também de beber café"
+
+texto = texto.lower()
+```
+
+A - Atribuímos o texto em uma lista e percorremos a lista para mostrar os valores
+
+B - Utilizando o default dict para fazer a contagem dos valores.
+
+__C__ - Ele vai utilizar utilizar o seguinte aparicoes = Counter(texto.split()) , para fazer a contagem das aparições.
+> Assim nós estamos separando as letras e fazendo a contagem dos valores.
