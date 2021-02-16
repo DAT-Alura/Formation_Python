@@ -35,3 +35,16 @@ B - Usando a função append para adicionar o ID 7 ao seu conjunto.
 
 __C__ - Usando a função add para adicionar o ID 7 ao seu conjunto.
 > A função add é nativa do Python para utilizar com conjuntos, sendo podemos usar ela para inserir o ID ao conjunto.
+
+# Aula 3
+
+Sérgio precisa implementar um dicionário que tenha o nome e a idade de seus clientes, para saber a faixa etária deles. Esta implementação terá mil registros. Após fazer isto, ele deve verificar alguns clientes.
+
+Como ele pode fazer isto?
+
+__A__ - Ele pode utilizar a função get para verificar os clientes.
+> Utilizar a função GET, verificando se o cliente está contido no dicionário.
+
+B - Ele pode utilizar a função keys para ver os valores do dicionário.
+
+C - Ele pode utilizar a função dict para fazer a filtragem desses clientes.

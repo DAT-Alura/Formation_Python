@@ -72,3 +72,73 @@ meu_texto = "Bem vindo meu nome é Guilherme eu gosto muito de nomes e tenho o m
 meu_texto.split()
 
 set(meu_texto.split())
+
+"""# Dicionário (Mapa etc)"""
+
+aparicoes = {
+  "Guilherme" : 1,
+  "cachorro" : 2,
+  "nome" : 2,
+  "vindo" : 1
+}
+
+type(aparicoes)
+
+aparicoes["Guilherme"]
+
+aparicoes["cachorro"]
+
+aparicoes["xpto"]
+
+aparicoes.get("xpto", 0)
+
+aparicoes.get("cachorro", 0)
+
+aparicoes = dict(Guilherme = 2, cachorro = 1)
+aparicoes
+
+aparicoes = {
+  "Guilherme" : 1,
+  "cachorro" : 2,
+  "nome" : 2,
+  "vindo" : 1
+}
+
+aparicoes["Carlos"] = 1
+
+aparicoes
+
+aparicoes["Carlos"] = 2
+
+aparicoes
+
+del aparicoes["Carlos"]
+
+aparicoes
+
+"cachorro" in aparicoes
+
+"Carlos" in aparicoes
+
+for elemento in aparicoes:
+  print(elemento)
+
+for elemento in aparicoes.keys():
+  print(elemento)
+
+for elemento in aparicoes.values():
+  print(elemento)
+
+1 in aparicoes.values()
+
+for elemento in aparicoes.keys():
+  valor = aparicoes[elemento]
+  print(elemento, valor)
+
+for elemento in aparicoes.items():
+  print(elemento)
+
+for chave, valor in aparicoes.items():
+  print(chave, "=", valor)
+
+["palavra {}".format(chave) for chave in aparicoes.keys()]
