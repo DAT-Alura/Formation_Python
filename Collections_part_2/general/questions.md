@@ -67,3 +67,37 @@ B - Utilizando o default dict para fazer a contagem dos valores.
 
 __C__ - Ele vai utilizar utilizar o seguinte aparicoes = Counter(texto.split()) , para fazer a contagem das aparições.
 > Assim nós estamos separando as letras e fazendo a contagem dos valores.
+
+# Aula 5
+
+Nós estamos implementando uma nova funcionalidade (feature) no sistema de uma livraria. Este setor está inserindo uma função para contar a frequência de cada letra nos textos cadastrados. Temos então o seguinte código:
+
+```py
+def analisa_frequencia_de_letras(texto):
+  aparicoes = Counter(texto.lower())
+  total_de_caracteres = sum(aparicoes.values())
+
+  proporcoes = [(letra, frequencia / total_de_caracteres) for letra, frequencia in aparicoes.items()]
+  proporcoes = Counter(dict(proporcoes))
+  print("{} => {:.2f}%".format(caractere, proporcao * 100))
+```
+
+Mas isso ainda não é o suficiente, queremos também mostrar as dez letras mais frequentes.
+
+De qual maneira nós podemos implementar isto?
+
+__A__ -
+Temos que usar a função most_common(10) para pegar as dez letras mais frequentes, fazer a atribuição dele em uma variável e percorrê-la, vendo a proporção e os caracteres.
+
+```py
+mais_comuns = proporcoes.most_common(10)
+ for caractere, proporcao in mais_comuns:
+    print("{} => {:.2f}%".format(caractere, proporcao * 100))
+```
+> Usando ```most_common``` passamos por parâmetro o número de elementos que queremos, no nosso caso foi 10. Ele vai nos retornar uma lista de tuplas com os elementos e suas devidas proporções.
+
+B -
+Usando a função keys para fazer a contagem das chaves que temos assim ela vai nos retornar as dez primeiras chaves.
+
+C -
+Usando a função values para fazer a contagem dos valores que temos.
