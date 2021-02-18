@@ -33,3 +33,18 @@ B - PPodemos isolar o código repetido criando um método e chamando-ô antes no
 C - PNão existe como isolar o cenário de criação. Como cada teste verifica a execução de um caso de uso específico, não tem como isolar esses cenários.
 
 D - PCom o método set_up. Esse método é invocado uma única vez e compartilha o mesmo objeto em todos os testes.
+
+# Aula 3
+
+Quando estamos escrevendo testes, é comum que estes nos deem feedbacks sobre o design do código testado. Geralmente, códigos difíceis de serem testados são códigos que não estão muito bem modelados.
+
+Na aula, vimos que a forma que adicionávamos um lance a lista de lances (leilao.lances.append(lance)). Apesar de ser uma abordagem que funciona, ela contém alguns problemas. Quais são esses problemas?
+
+A - Não há problema nessa implementação. Pelo contrário, se tentarmos trocar a implementação da classe Leilao o código das classes clientes podem falhar, o que nos faria arrumá-las.
+
+__B__ - Estamos muito acoplados da implementação da classe Leilao. Ou seja, sempre que a implementação da classe for trocada, os códigos clientes são afetados.
+> Resposta certa! Utilizando essa abordagem, ficamos muito acoplados a classe. Uma melhor abordagem seria encapsular a forma de adicionar um lance à lista.
+
+C - Não existe nenhum problema nessa forma de implementação. Essa é a forma correta de se adicionar um lance.
+
+D - O problema dessa implementação é que estamos utilizando uma lista. O correto seria utilizar uma tupla ou outra estrutura imutável.
