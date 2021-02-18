@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://www.alura.com.br/artigos/ordenando-listas-no-python -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0"><title>Ordenando listas no Python  | Alura Cursos Online</title><meta name="description" content="Aprenda a ordernar listas de números, strings e objetos no Python. Veja também como é possível realizar uma ordenação reversa."><link rel="amphtml" href="https://www.alura.com.br/artigos/ordenando-listas-no-python--amp"><link rel="canonical" href="https://www.alura.com.br/artigos/ordenando-listas-no-python"><link href="./sort_files/css" rel="stylesheet" crossorigin=""><link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""><link rel="stylesheet" href="./sort_files/titulos.1606791285.css"><link rel="stylesheet" href="./sort_files/artigos.1594155989.css"><link rel="stylesheet" href="./sort_files/highlight.1605199830.css"><meta property="og:locale" content="pt_BR"><meta property="og:description" content="Aprenda a ordernar listas de números, strings e objetos no Python. Veja também como é possível realizar uma ordenação reversa."><meta property="og:title" content="Ordenando listas no Python  | Alura Cursos Online"><meta property="og:site_name" content="Alura"><meta property="og:url" content="https://www.alura.com.br/artigos/ordenando-listas-no-python"><meta property="og:image" content="https://www.alura.com.br/artigos/assets/code/ordenando-listas-no-python.1613604006.png"><meta property="og:image:alt" content="Alura logo"><meta property="fb:app_id" content="140078819399376"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#2A7AE4"><meta name="thumbnail" content="https://www.alura.com.br/artigos/assets/code/ordenando-listas-no-python.1613604006.png"> <script id="sm_addon" type="text/javascript" src="./sort_files/custom.js.download"></script><script id="sm_crawler" type="text/javascript" src="./sort_files/crawler.js.download"></script><script type="text/javascript" async="" src="./sort_files/f.txt"></script><script type="text/javascript" async="" src="./sort_files/analytics.js.download"></script><script type="text/javascript" async="" src="./sort_files/insight.min.js.download"></script><script src="./sort_files/1067810189950610" async=""></script><script async="" src="./sort_files/fbevents.js.download"></script><script src="./sort_files/all.min.js.download"></script><script async="" src="./sort_files/gtm.js.download"></script><script>;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-TN542JN');</script> <script>!function (a) { var b, c = "soclminer-jssdk", d = a.getElementsByTagName("script")[0]; a.getElementById(c) || (b = a.createElement("script"), b.src = "https://plugins.soclminer.com.br/v3/sdk/all.min.js", d.parentNode.insertBefore(b, d)) }(document), window.soclInit = function () { socl.start("49a525fa-18fe-4032-ab66-f63315c9b1a6") };</script> <script>window.setTimeout(function(){var e=/(smcid|smid_|smpid_|smpushoptin_|smtp|soclId|onsiteview_).*/g;function t(e){for(var t=e+"=",i=decodeURIComponent(document.cookie).split(";"),o=0;o<i.length;o++){for(var a=i[o];" "==a.charAt(0);)a=a.substring(1);if(0==a.indexOf(t))return a.substring(t.length,a.length)}return""}function i(e,i,o){var a="",n=new Date;n.setTime(n.getTime()+864e5*o);var r=t(e);if(""==r)a=e+"="+i+";path=/;expires="+n.toGMTString()+";domain="+/\..*/.exec(window.location.host)[0];else{var s=JSON.parse(r),c=JSON.parse(i),m=Object.assign(s,c);a=e+"="+JSON.stringify(m)+";path=/;expires="+n.toGMTString()+";domain="+/\..*/.exec(window.location.host)[0]}document.cookie=a}var o={};try{for(var a=0,n=localStorage.length;a<n;a++){var r=localStorage.key(a);r.match(e)&&(o[r]=localStorage[r])}}catch(e){o={}}var s={};try{var c=document.cookie.match(/(^|;) ?(smClosedOnSite_.*?|smClickOnSite_.*?|pagesview_.*?|onsiteview_.*?|onsiteview_.*?|onsiteview_.*?|smViewOnSite|smClickOnSite|smViewedPushOptin|smClosedPushOptin|smpushoptin_.*?)=([^;]*)(;|$)/g);c&&(s=c.map(function(e){return[e.match(/(^|;) ?.*=/)[0].replace(/^; /,"").replace(/=$/,""),e.match(/=.*/)[0].replace(/;$/,"").replace(/^=/,"")]}).reduce(function(e,t){return e[t[0]]=t[1],e},{}))}catch(e){s={}}i("smDataLocalStorageCart",JSON.stringify(o),2),i("smDataCookieCart",JSON.stringify(s),2),function(e){var i=JSON.parse(t(e));if(i)for(var o in i)localStorage.getItem(o)||localStorage.setItem(o,i[o])}("smDataLocalStorageCart")},2e3);</script> <script src="./sort_files/embed.js.download" data-timestamp="1613607095181"></script><script src="./sort_files/sha256.min.js.download"></script><script src="./sort_files/f(1).txt"></script><link rel="prefetch" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.4a251b79c005f7a6da462eb85b7e7daf.css"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.38ea27189bdb723eae3dabf5bc7b8c0b.js"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.7bf1d101409e2e3b869d93912e0de2a6.js"><link rel="prefetch" as="script" href="https://disqus.com/next/config.js"><script src="./sort_files/alfie_v4.63f1ab6d6b9d5807dc0c94ef3fe0b851.js.download" async="" charset="UTF-8"></script></head><body class=""><div id="sm-push-tracking" style="display: none;"><iframe frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="1" height="1" src="./sort_files/index.min.html" id="social-push-tracking" class="socl-iframe" name="social-push-tracking"></iframe></div><div id="sm-tracking" style="display: none;"><iframe frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="1" height="1" src="./sort_files/view.min.html" id="sm-tracking-iframe" name="sm-tracking-iframe"></iframe></div><div id="sm-onsite-sales" style="display: none;"></div>
+<noscript><iframe
+src="https://www.googletagmanager.com/ns.html?id=GTM-TN542JN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> <script>!function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1067810189950610'); fbq('track', 'PageView');</script>  <script type="application/ld+json">{
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://www.alura.com.br",
+          "name": "Alura"
+        }
+      }   
+              ,{
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": "https://www.alura.com.br/artigos",
+            "name": "Artigos"
+          }
+        }
+              ,{
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@id": "https://www.alura.com.br/artigos/programacao",
+            "name": "Programação"
+          }
+        }
+              ,{
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@id": "https://www.alura.com.br/artigos/ordenando-listas-no-python",
+            "name": "Ordenando listas no Python "
+          }
+        }
+            ]
+    }</script> <link rel="stylesheet" href="./sort_files/header.1606791285.css"><link rel="stylesheet" href="./sort_files/dia-do-programador.1600110482.css"><link rel="stylesheet" href="./sort_files/countdown.1600110482.css"><link rel="stylesheet" href="./sort_files/header.1606791285.css"><header class="header"><div class="container"><nav class="header__nav ">
+<a href="https://www.alura.com.br/" class="header__nav__link header__nav__link--logo">
+<img class="header__nav__link__logo" alt="Alura" src="./sort_files/alura-logo.1570550707.svg">
+</a><div class="header__nav__wrapper header__nav__wrapper--ctas">
+<a href="https://www.alura.com.br/busca" class="header-utilitario-busca" aria-label="Busca">
+<svg class="header-utilitario-busca-icone" xmlns:xlink="http://www.w3.org/1999/xlink">
+<use xlink:href="/svg,1605191409/header#icon-header-busca"></use>
+</svg>
+</a>
+<a href="https://cursos.alura.com.br/loginForm?urlAfterLogin=https://cursos.alura.com.br/dashboard" class="header__nav__link header__nav__link--entrar">Entrar</a>
+<a href="https://www.alura.com.br/planos-cursos-online" class="header__nav__link header__nav__link--cta">Matricule-se</a></div><div class="header__nav__wrapper header__nav__wrapper--menu"><div class="header-barraBusca"><div class="container"><form action="https://www.alura.com.br/busca" class="header-barraBusca-form">
+<label for="header-barraBusca-form-campoBusca">Qual curso procura?</label>
+<input type="search" id="header-barraBusca-form-campoBusca" name="query" class="header-barraBusca-form-serch-input" placeholder="O que você quer aprender?">
+<button class="header-barraBusca-form-submit" type="submit">Buscar</button></form></div></div><div href="/cursos-online-tecnologia" class="nav__courses__link header-navegacao-cursos">
+<svg class="header-navegacao-cursos-icone" xmlns:xlink="http://www.w3.org/1999/xlink">
+<use xlink:href="/svg,1605191409/header#icon-header-icon-arrow"></use>
+</svg>
+<span>Todos os</span>
+<span>Cursos</span></div>
+<a href="https://www.alura.com.br/formacoes" class="nav__courses__link">
+<span>Formações</span></a>
+<a href="https://www.alura.com.br/empresas" class="nav__courses__link">
+<span>Para</span>
+<span>Empresas</span>
+</a>
+<a href="https://www.alura.com.br/dev-em-t" class="nav__courses__link">
+<span>Dev</span>
+<span>em  &lt;T&gt;</span>
+</a></div></nav></div><div class="--border-header-top"><div class="container"><ul class="header-navegacao-cursos-lista"><li class="header-cursos-lista-categoria " style="color:#ffba05;">
+<a href="https://www.alura.com.br/cursos-online-mobile" class="unlinkify"><div class="header-lista-categoria-nome">
+<span>Mobile</span></div>
+</a></li><li class="header-cursos-lista-categoria " style="color:#00c86f;">
+<a href="https://www.alura.com.br/cursos-online-programacao" class="unlinkify"><div class="header-lista-categoria-nome">
+<span>Programação</span></div>
+</a></li><li class="header-cursos-lista-categoria " style="color:#6bd1ff;">
+<a href="https://www.alura.com.br/cursos-online-front-end" class="unlinkify"><div class="header-lista-categoria-nome">
+<span>Front-end</span></div>
+</a></li><li class="header-cursos-lista-categoria " style="color:#f16165;">
+<a href="https://www.alura.com.br/cursos-online-devops" class="unlinkify"><div class="header-lista-categoria-nome">
+<span>DevOps</span></div>
+</a></li><li class="header-cursos-lista-categoria " style="color:#dc6ebe;">
+<a href="https://www.alura.com.br/cursos-online-design-ux" class="unlinkify"><div class="header-lista-categoria-nome">
+<span>Design &amp; UX</span></div>
+</a></li><li class="header-cursos-lista-categoria " style="color:#6b5be2;">
+<a href="https://www.alura.com.br/cursos-online-marketing-digital" class="unlinkify"><div class="header-lista-categoria-nome">
+<span>Marketing Digital</span></div>
+</a></li><li class="header-cursos-lista-categoria " style="color:#9cd33b;">
+<a href="https://www.alura.com.br/cursos-online-data-science" class="unlinkify"><div class="header-lista-categoria-nome">
+<span>Data Science</span></div>
+</a></li><li class="header-cursos-lista-categoria " style="color:#ff8c2a;">
+<a href="https://www.alura.com.br/cursos-online-inovacao-gestao" class="unlinkify"><div class="header-lista-categoria-nome">
+<span>Inovação &amp; Gestão</span></div>
+</a></li></ul></div></div></header><div class="artigos-topo"><div class="container">
+<a href="https://www.alura.com.br/artigos" class="artigos-topo__label">
+Artigos
+</a>
+&gt;
+<a class="artigos-topo__label" href="https://www.alura.com.br/artigos/programacao">Programação</a></div></div> <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.alura.com.br/artigos/ordenando-listas-no-python"
+  },
+  "headline": "Ordenando listas no Python ",
+  "description": "Aprenda a ordernar listas de números, strings e objetos no Python. Veja também como é possível realizar uma ordenação reversa.",
+  "image": "https://www.alura.com.br/artigos/assets/code/ordenando-listas-no-python.1613604006.png",
+  "datePublished": "2017-02-07",
+    "dateModified": "2017-02-07",
+    "author": {
+        "@type": "Organization",
+    "name": "Alura"
+      },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Alura",
+    "url": "https://www.alura.com.br",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.alura.com.br/assets/img/amp/logo-publisher.1570550707.png",
+      "height" : 60, 
+      "width" : 600 
+    }
+  }
+}</script> <div class="cosmos-container cosmos-header"><h1>Ordenando listas no Python</h1><div class="cosmos-header-info"><div class="cosmos-author">
+<img class="cosmos-author-img" src="./sort_files/70a7eac4a9659c14438d60d549f813b7.jpeg" alt="Alex Felipe"><div class="cosmos-author-name">Alex Felipe</div>
+<time class="cosmos-author-date" datetime="2017-02-07 21:11">07/02/2017</time></div></div></div><div class="cosmos-container cosmos-content"><p>No meu sistema de cadastro de produtos para um mercado, recebi uma lista com alguns produtos:</p><pre><code class="hljs python">
+ [nome:chocolate valor:<span class="hljs-number"><span class="hljs-number">3.45</span></span>, 
+ nome:biscoito valor:<span class="hljs-number"><span class="hljs-number">2.49</span></span>, 
+ nome:cafe valor:<span class="hljs-number"><span class="hljs-number">3.45</span></span>, 
+ nome:suco valor:<span class="hljs-number"><span class="hljs-number">4.3</span></span>, 
+ nome:feijao valor:<span class="hljs-number"><span class="hljs-number">10.0</span></span>, 
+ nome:arroz valor:<span class="hljs-number"><span class="hljs-number">8.5</span></span>]
+</code></pre><p>Cada produto é um objeto do tipo <code>Produto</code>, que é representado pela seguinte classe:</p><pre><code class="hljs python">
+<span class="hljs-class"><span class="hljs-keyword"><span class="hljs-class"><span class="hljs-keyword">class</span></span></span><span class="hljs-class"> </span><span class="hljs-title"><span class="hljs-class"><span class="hljs-title">Produto</span></span></span><span class="hljs-params"><span class="hljs-class">(<span class="hljs-params"><span class="hljs-built_in">object</span></span>)</span></span><span class="hljs-class">:</span></span> 
+  <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">def</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">__init__</span></span></span><span class="hljs-params"><span class="hljs-function">(<span class="hljs-params">self, nome, valor</span>)</span></span><span class="hljs-function">:</span></span> 
+    self.__nome = nome 
+    self.__valor = valor 
+
+  <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">def</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">__repr__</span></span></span><span class="hljs-params"><span class="hljs-function">(<span class="hljs-params">self</span>)</span></span><span class="hljs-function">:</span></span> 
+    <span class="hljs-keyword"><span class="hljs-keyword">return</span></span> <span class="hljs-string"><span class="hljs-string">"nome:%s valor:%s"</span></span> % (self.__nome, self.__valor)
+
+  <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">def</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">get_nome</span></span></span><span class="hljs-params"><span class="hljs-function">(<span class="hljs-params">self</span>)</span></span><span class="hljs-function">:</span></span> 
+    <span class="hljs-keyword"><span class="hljs-keyword">return</span></span> self.__nome
+
+  <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">def</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">get_valor</span></span></span><span class="hljs-params"><span class="hljs-function">(<span class="hljs-params">self</span>)</span></span><span class="hljs-function">:</span></span> 
+    <span class="hljs-keyword"><span class="hljs-keyword">return</span></span> self.__valor
+</code></pre><p>Note que a lista contém produtos em uma ordem aleatória. Porém, preciso ordená-los, isto é, saber quais são os produtos mais caros ou mais baratos, ou então, ordenar pelo nome para facilitar a visualização dos produtos. Então como podemos fazer isso?</p><h3>Ordenando lista de números no Python</h3><p>No <strong>Python</strong>, quando precisamos ordenar listas, podemos utilizar a função <a href="https://wiki.python.org/moin/HowTo/Sorting" target="_blank" rel="noopener">sorted</a>, por exemplo, para uma lista de números:</p><pre><code class="hljs python">
+numeros = [<span class="hljs-number"><span class="hljs-number">4</span></span>,<span class="hljs-number"><span class="hljs-number">2</span></span>,<span class="hljs-number"><span class="hljs-number">6</span></span>,<span class="hljs-number"><span class="hljs-number">1</span></span>,<span class="hljs-number"><span class="hljs-number">3</span></span>] 
+numeros_ordenados = <span class="hljs-built_in">sorted</span>(numeros)
+
+<span class="hljs-keyword"><span class="hljs-built_in">print</span></span> numeros 
+<span class="hljs-keyword"><span class="hljs-built_in">print</span></span> numeros_ordenados
+</code></pre><p>Temos o seguinte resultado:</p><pre><code class="hljs python"> [<span class="hljs-number"><span class="hljs-number">4</span></span>, <span class="hljs-number"><span class="hljs-number">2</span></span>, <span class="hljs-number"><span class="hljs-number">6</span></span>, <span class="hljs-number"><span class="hljs-number">1</span></span>, <span class="hljs-number"><span class="hljs-number">3</span></span>] 
+ [<span class="hljs-number"><span class="hljs-number">1</span></span>, <span class="hljs-number"><span class="hljs-number">2</span></span>, <span class="hljs-number"><span class="hljs-number">3</span></span>, <span class="hljs-number"><span class="hljs-number">4</span></span>, <span class="hljs-number"><span class="hljs-number">6</span></span>]
+</code></pre><h3>Ordenando lista de strings no Python</h3><p>Funciona perfeitamente! Mas será que para textos também funciona? Vejamos:</p><pre><code class="hljs python">
+palavras = [<span class="hljs-string"><span class="hljs-string">"chocolate"</span></span>,<span class="hljs-string"><span class="hljs-string">"biscoito"</span></span>, <span class="hljs-string"><span class="hljs-string">"cafe"</span></span>, <span class="hljs-string"><span class="hljs-string">"suco"</span></span>, <span class="hljs-string"><span class="hljs-string">"feijao"</span></span>, <span class="hljs-string"><span class="hljs-string">"arroz"</span></span>] 
+palavras_ordenadas = <span class="hljs-built_in">sorted</span>(palavras)
+
+<span class="hljs-keyword"><span class="hljs-built_in">print</span></span> palavras 
+<span class="hljs-keyword"><span class="hljs-built_in">print</span></span> palavras_ordenadas
+</code></pre><p>Então temos o seguinte o resultado:</p><pre><code class="hljs python">[<span class="hljs-string"><span class="hljs-string">'chocolate'</span></span>, <span class="hljs-string"><span class="hljs-string">'biscoito'</span></span>, <span class="hljs-string"><span class="hljs-string">'cafe'</span></span>, <span class="hljs-string"><span class="hljs-string">'suco'</span></span>, <span class="hljs-string"><span class="hljs-string">'feijao'</span></span>, <span class="hljs-string"><span class="hljs-string">'arroz'</span></span>] 
+[<span class="hljs-string"><span class="hljs-string">'arroz'</span></span>, <span class="hljs-string"><span class="hljs-string">'biscoito'</span></span>, <span class="hljs-string"><span class="hljs-string">'cafe'</span></span>, <span class="hljs-string"><span class="hljs-string">'chocolate'</span></span>, <span class="hljs-string"><span class="hljs-string">'feijao'</span></span>, <span class="hljs-string"><span class="hljs-string">'suco'</span></span>]
+</code></pre><h3>Ordenando lista de objetos no Python</h3><p>Aparentemente, funciona para tudo! Então podemos utilizá-lo para objetos também:</p><pre><code class="hljs python">
+produtos = lista_produtos() 
+produtos_ordenados = <span class="hljs-built_in">sorted</span>(produtos)
+
+<span class="hljs-keyword"><span class="hljs-built_in">print</span></span> produtos 
+<span class="hljs-keyword"><span class="hljs-built_in">print</span></span> produtos_ordenados
+</code></pre><p>Vejamos o resultado:</p><pre><code class="hljs python">
+[nome:chocolate valor:<span class="hljs-number"><span class="hljs-number">3.45</span></span>, 
+nome:biscoito valor:<span class="hljs-number"><span class="hljs-number">2.49</span></span>, 
+nome:cafe valor:<span class="hljs-number"><span class="hljs-number">3.45</span></span>, 
+nome:suco valor:<span class="hljs-number"><span class="hljs-number">4.3</span></span>, 
+nome:feijao valor:<span class="hljs-number"><span class="hljs-number">10.0</span></span>, 
+nome:arroz valor:<span class="hljs-number"><span class="hljs-number">8.5</span></span>]
+
+[nome:chocolate valor:<span class="hljs-number"><span class="hljs-number">3.45</span></span>, 
+nome:biscoito valor:<span class="hljs-number"><span class="hljs-number">2.49</span></span>, 
+nome:cafe valor:<span class="hljs-number"><span class="hljs-number">3.45</span></span>, 
+nome:suco valor:<span class="hljs-number"><span class="hljs-number">4.3</span></span>, 
+nome:feijao valor:<span class="hljs-number"><span class="hljs-number">10.0</span></span>, 
+nome:arroz valor:<span class="hljs-number"><span class="hljs-number">8.5</span></span>]
+</code></pre><h4>Critério de ordenação de objetos</h4><p>Ué, não deveria ordenar? Deveria, mas precisamos primeiro pensar nas seguintes questões:</p><ul><li>Como ordenamos um objeto do tipo <code>Produto</code>?</li><li>Pelo atributo <code>nome</code>? Ou pelo <code>valor</code>?</li></ul><p>Observe que inicialmente não sabemos, pois em determinados momentos, podemos querer ordenar por <code>nome</code> ou por <code>valor</code>. Em outras palavras, o <code>sorted</code>, inicialmente, também não sabe como ordenar o nosso objeto!</p><p>Suponhamos que queremos ordenar por <code>nome</code>, como o <code>sorted</code> saberia disso? Não informamos em nenhum momento!</p><p>Portanto, quando <strong>queremos ordenar um objeto</strong> do tipo <code>Produto</code>, <strong>precisamos informar por qual atributo ele será ordenado!</strong></p><h4>Definindo critério de ordenação do objeto</h4><p>Para informar ao <code>sorted</code> por qual atributo desejamos que ele ordene, precisamos enviar o parâmetro <code>key</code> com o valor do atributo da classe desejada. Vamos tentar pelo atributo <code>valor</code>:</p><pre><code class="hljs python">
+produtos_ordenados = <span class="hljs-built_in">sorted</span>(produtos, key = Produto.get_valor)
+</code></pre><p>Observe que nesse caso, estamos utilizando o <code>get_valor</code> justamente por estarmos escondendo o atributo. Vejamos agora o resultado:</p><pre><code class="hljs python">[nome:chocolate valor:<span class="hljs-number"><span class="hljs-number">3.45</span></span>, 
+nome:biscoito valor:<span class="hljs-number"><span class="hljs-number">2.49</span></span>, 
+nome:cafe valor:<span class="hljs-number"><span class="hljs-number">3.45</span></span>,
+nome:suco valor:<span class="hljs-number"><span class="hljs-number">4.3</span></span>,
+nome:feijao valor:<span class="hljs-number"><span class="hljs-number">10.0</span></span>,
+nome:arroz valor:<span class="hljs-number"><span class="hljs-number">8.5</span></span>] 
+
+[nome:biscoito valor:<span class="hljs-number"><span class="hljs-number">2.49</span></span>,
+nome:chocolate valor:<span class="hljs-number"><span class="hljs-number">3.45</span></span>,
+nome:cafe valor:<span class="hljs-number"><span class="hljs-number">3.45</span></span>,
+nome:suco valor:<span class="hljs-number"><span class="hljs-number">4.3</span></span>,
+nome:arroz valor:<span class="hljs-number"><span class="hljs-number">8.5</span></span>, 
+nome:feijao valor:<span class="hljs-number"><span class="hljs-number">10.0</span></span>]
+</code></pre><p>Veja que agora os nossos objetos foram ordenados pelo valor! Em outras palavras, agora estão ordenados dos mais baratos para os mais caros :D</p><p>Vamos tentar pelo <code>nome</code> também? Bora alterar e verificar se dá certo:</p><pre><code class="hljs python">
+produtos_ordenados = <span class="hljs-built_in">sorted</span>(produtos, key = Produto.get_nome)
+</code></pre><p>Então temos o seguinte resultado:</p><pre><code class="hljs python">
+[nome:chocolate valor:<span class="hljs-number"><span class="hljs-number">3.45</span></span>,
+nome:biscoito valor:<span class="hljs-number"><span class="hljs-number">2.49</span></span>,
+nome:cafe valor:<span class="hljs-number"><span class="hljs-number">3.45</span></span>,
+nome:suco valor:<span class="hljs-number"><span class="hljs-number">4.3</span></span>,
+nome:feijao valor:<span class="hljs-number"><span class="hljs-number">10.0</span></span>,
+nome:arroz valor:<span class="hljs-number"><span class="hljs-number">8.5</span></span>] 
+
+[nome:arroz valor:<span class="hljs-number"><span class="hljs-number">8.5</span></span>,
+nome:biscoito valor:<span class="hljs-number"><span class="hljs-number">2.49</span></span>,
+nome:cafe valor:<span class="hljs-number"><span class="hljs-number">3.45</span></span>,
+nome:chocolate valor:<span class="hljs-number"><span class="hljs-number">3.45</span></span>,
+nome:feijao valor:<span class="hljs-number"><span class="hljs-number">10.0</span></span>,
+nome:suco valor:<span class="hljs-number"><span class="hljs-number">4.3</span></span>]
+</code></pre><h3>Realizando ordenação reversa no Python</h3><p>Maravilha! Funcionou como o esperado! Entretanto, e se eu quiser da ordem inversa? Ou seja, do mais caro para o mais barato, ou então, da letra "z" para "a", como faremos isso?</p><p>Simples! basta adicionar o parâmetro <code>reverse</code> com o valor <code>True</code>. Vejamos o resultado ordenando pelo <code>valor</code>:</p><pre><code class="hljs python">
+produtos_ordenados = <span class="hljs-built_in">sorted</span>(produtos, key = Produto.get_valor, reverse=<span class="hljs-literal"><span class="hljs-literal">True</span></span>)
+</code></pre><p>Temos o seguinte resultado:</p><pre><code class="hljs python">[nome:chocolate valor:<span class="hljs-number"><span class="hljs-number">3.45</span></span>,
+nome:biscoito valor:<span class="hljs-number"><span class="hljs-number">2.49</span></span>,
+nome:cafe valor:<span class="hljs-number"><span class="hljs-number">3.45</span></span>,
+nome:suco valor:<span class="hljs-number"><span class="hljs-number">4.3</span></span>,
+nome:feijao valor:<span class="hljs-number"><span class="hljs-number">10.0</span></span>,
+nome:arroz valor:<span class="hljs-number"><span class="hljs-number">8.5</span></span>]
+
+[nome:feijao valor:<span class="hljs-number"><span class="hljs-number">10.0</span></span>,
+nome:arroz valor:<span class="hljs-number"><span class="hljs-number">8.5</span></span>,
+nome:suco valor:<span class="hljs-number"><span class="hljs-number">4.3</span></span>,
+nome:chocolate valor:<span class="hljs-number"><span class="hljs-number">3.45</span></span>,
+nome:cafe valor:<span class="hljs-number"><span class="hljs-number">3.45</span></span>,
+nome:biscoito valor:<span class="hljs-number"><span class="hljs-number">2.49</span></span>]
+</code></pre><p>Agora com o <code>nome</code>:</p><pre><code class="hljs python">
+produtos_ordenados = <span class="hljs-built_in">sorted</span>(produtos, key = Produto.get_nome, reverse=<span class="hljs-literal"><span class="hljs-literal">True</span></span>)
+</code></pre><p>Testando o código novamente:</p><pre><code class="hljs python">[nome:chocolate valor:<span class="hljs-number"><span class="hljs-number">3.45</span></span>,
+nome:biscoito valor:<span class="hljs-number"><span class="hljs-number">2.49</span></span>,
+nome:cafe valor:<span class="hljs-number"><span class="hljs-number">3.45</span></span>,
+nome:suco valor:<span class="hljs-number"><span class="hljs-number">4.3</span></span>,
+nome:feijao valor:<span class="hljs-number"><span class="hljs-number">10.0</span></span>,
+nome:arroz valor:<span class="hljs-number"><span class="hljs-number">8.5</span></span>]
+
+[nome:suco valor:<span class="hljs-number"><span class="hljs-number">4.3</span></span>,
+nome:feijao valor:<span class="hljs-number"><span class="hljs-number">10.0</span></span>,
+nome:chocolate valor:<span class="hljs-number"><span class="hljs-number">3.45</span></span>,
+nome:cafe valor:<span class="hljs-number"><span class="hljs-number">3.45</span></span>,
+nome:biscoito valor:<span class="hljs-number"><span class="hljs-number">2.49</span></span>,
+nome:arroz valor:<span class="hljs-number"><span class="hljs-number">8.5</span></span>]
+</code></pre><p>Funciona perfeitamente! Um recurso bem fácil que não exige inúmeras implementações para funcionar :)</p><p>Vimos nesse post que quando queremos <strong>ordenar listas no Python</strong>, podemos utilizar a função <code>sorted</code>. Vimos, também, que ela funciona perfeitamente para strings ou números, entretanto, quando queremos ordenar objetos, precisamos informar como ela deve ordenar o objeto, ou seja, enviando um atributo do objeto por meio do parâmetro <code>key</code>.</p><p>O que achou da <strong>ordenação de listas no Python</strong>? Fácil né? Que tal aprender mais sobre o Python e seus diversos recursos? Então dê uma olha nos nossos <a href="https://www.alura.com.br/cursos-online-programacao#python"><strong>cursos online de Python</strong></a> aqui na Alura!</p><p>Leia também:</p><ul><li><a href="https://www.alura.com.br/artigos/como-comparar-objetos-no-python">Como comparar objetos no Python?</a></li><li><a href="https://www.alura.com.br/artigos/trabalhando-com-o-dicionario-no-python">Python: Trabalhando com dicionários</a></li><li><a href="https://www.alura.com.br/artigos/adicionando-elementos-na-lista-do-python-append-ou-extend">Python: Append ou Extend? Adicionando elementos na lista</a></li><li><a href="https://www.alura.com.br/artigos/o-que-sao-iteradores-no-python">Python: Saiba o que são iteradores</a></li><li><a href="https://www.alura.com.br/artigos/formatando-moeda-no-python">Python: Formatação de moeda e internacionalização</a></li><li><a href="https://www.alura.com.br/artigos/conhecendo-as-tuplas-no-python">Conhecendo as tuplas no Python </a></li><li><a href="https://www.alura.com.br/artigos/simplicando-o-processamento-com-compreensao-de-lista-do-python">Compreensão de listas no Python </a></li></ul></div><div class="cosmos-container cosmos-header"><div class="cosmos-related-item cosmos-related-item__formacao">
+<a href="https://www.alura.com.br/formacao-programacao">
+<img src="./sort_files/programacao.svg">
+<span class="cosmos-related-item-title">Formação Iniciante em Programação</span>
+</a></div><div class="cosmos-related-item cosmos-related-item__formacao">
+<a href="https://www.alura.com.br/cursos-online-programacao">
+<span class="cosmos-related-item-title">Cursos de Programação</span>
+</a></div></div><div class="cosmos-container"><link rel="stylesheet" href="./sort_files/subscribeNewsletterCard.1611160071.css"><form class="subscribeNewsletterCard-form" action="https://www.alura.com.br/api/activecampaign" method="POST">
+<input type="hidden" name="retorno" value="/imersao/obrigada">
+<input type="hidden" name="list" value="14"><div class="subscribeNewsletterCard-tittle-wrapper"><p>Quer mergulhar em tecnologia e aprendizagem?</p></div><div><p class="subscribeNewsletterCard-subtitle">Receba a newsletter que o nosso CEO escreve pessoalmente,
+com insights do mercado de trabalho, ciência e desenvolvimento de software</p></div><div class="subscribeNewsletterCard-fields">
+<input class="activecampaign-input subscribeNewsletterCard-input" id="activecampaing-email" type="email" placeholder="Escreva seu email" name="email" required="">
+<button class="activecampaign-button subscribeNewsletterCard-button" type="submit">Me inscreva</button></div></form> <script>(function() {
+            function criaCampo(nome, valor, form) {
+                if (valor === null) return;
+                let input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = nome;
+                input.value = valor;
+                form.appendChild(input);
+            }
+
+            let forms = document.querySelectorAll('.subscribeNewsletterCard-form');
+            for (let i = 0; i < forms.length; i++) {
+                let form = forms[i];
+                criaCampo('utm_source',, form);
+                criaCampo('utm_campaign',, form);
+                criaCampo('utm_medium',, form);
+                criaCampo('utm_term',, form);
+                criaCampo('utm_content',, form);
+                criaCampo('full_url', location.href, form);
+                criaCampo('user_agent', navigator.userAgent, form);
+                criaCampo('referral', document.referrer, form);
+            }
+        })();</script> </div><div class="cosmos-container cosmos-content"><div id="disqus_thread"><iframe id="dsq-app1884" name="dsq-app1884" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./sort_files/saved_resource(1).html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 667px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div></div> <script>/**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://blogalura.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();</script> <div class="artigos-topo"><div class="container"><a href="https://www.alura.com.br/artigos" class="artigos-topo__label">
+Artigos
+</a>
+&gt;
+<a class="artigos-topo__label" href="https://www.alura.com.br/artigos/programacao">Programação</a></div></div><link rel="stylesheet" href="./sort_files/planosPagamentoOld.1606865286.css"><section class="planos-pagamento" id="planos-cursos-online"><h2 class="planos-pagamento__titulo">
+Cursos profissionais de Programação é na Alura, comece agora!</h2><div class="container"><div class="planos-pagamento__planos "><ul class="planos-pagamento__vantagens-mobile"><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">1266 cursos</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Cursos de programação, UX, agilidade, data science, transformação digital, mobile, front-end, marketing e infra.</p></div></div></li><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">Certificado de participação</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Certificado de que assistiu o curso e finalizou as atividades</p></div></div></li><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">App para Android e iPhone/iPad</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Estude até mesmo offline através das nossas apps Android e iOS em smartphones e tablets</p></div></div></li><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">Projeto avaliado pelos instrutores</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Projeto práticos para entrega e avaliação dos professores da Alura com certificado de aprovação diferenciado</p></div></div></li><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">Acesso à Alura Start</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Cursos de introdução a tecnologia através de games, apps e ciência</p></div></div></li><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">Acesso à Alura Língua</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Reforço online de inglês e espanhol para aprimorar seu conhecimento</p></div></div></li></ul><div class="planos-pagamento__plano planos-pagamento__plano--premium" data-payment-plan="" data-payment-plan-price="900"><div class="planos-pagamento__header"><h4 class="planos-pagamento__nome">Premium</h4></div><ul class="planos-pagamento__vantagens"><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">1266 cursos</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Cursos de programação, UX, agilidade, data science, transformação digital, mobile, front-end, marketing e infra.</p></div></div><div class="planos-pagamento__checkmark planos-pagamento__checkmark--ativo">
+<svg><use xlink:href="/svg,1603222522/planosPagamento#icon-planosPagamento-checked"></use></svg></div></li><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">Certificado de participação</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Certificado de que assistiu o curso e finalizou as atividades</p></div></div><div class="planos-pagamento__checkmark planos-pagamento__checkmark--ativo">
+<svg><use xlink:href="/svg,1603222522/planosPagamento#icon-planosPagamento-checked"></use></svg></div></li><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">App para Android e iPhone/iPad</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Estude até mesmo offline através das nossas apps Android e iOS em smartphones e tablets</p></div></div><div class="planos-pagamento__checkmark planos-pagamento__checkmark--ativo">
+<svg><use xlink:href="/svg,1603222522/planosPagamento#icon-planosPagamento-checked"></use></svg></div></li><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">Projeto avaliado pelos instrutores</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Projeto práticos para entrega e avaliação dos professores da Alura com certificado de aprovação diferenciado</p></div></div><div class="planos-pagamento__checkmark ">
+<svg><use xlink:href="/svg,1603222522/planosPagamento#icon-planosPagamento-checked"></use></svg></div></li><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">Acesso à Alura Start</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Cursos de introdução a tecnologia através de games, apps e ciência</p></div></div><div class="planos-pagamento__checkmark ">
+<svg><use xlink:href="/svg,1603222522/planosPagamento#icon-planosPagamento-checked"></use></svg></div></li><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">Acesso à Alura Língua</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Reforço online de inglês e espanhol para aprimorar seu conhecimento</p></div></div><div class="planos-pagamento__checkmark ">
+<svg><use xlink:href="/svg,1603222522/planosPagamento#icon-planosPagamento-checked"></use></svg></div></li></ul><div class="planos-pagamento__precos ">
+<span class="planos-pagamento__numero-parcelas">
+12X
+</span><div class="planos-pagamento__preco-parcela
+">
+<span class="planos-pagamento__valor-parcela">R$75</span></div><div class="planos-pagamento__preco-vista">
+<span class="planos-pagamento__label-vista">à vista</span>
+<span class="planos-pagamento__valor-vista">R$900</span></div></div><a class="planos-pagamento__cta" href="https://www.alura.com.br/compra/premium/">
+Matricule-se
+</a></div><div class="planos-pagamento__plano planos-pagamento__plano--premiumplus" data-payment-plan="" data-payment-plan-price="1.200"><div class="planos-pagamento__header"><h4 class="planos-pagamento__nome">Premium Plus</h4></div><ul class="planos-pagamento__vantagens"><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">1266 cursos</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Cursos de programação, UX, agilidade, data science, transformação digital, mobile, front-end, marketing e infra.</p></div></div><div class="planos-pagamento__checkmark planos-pagamento__checkmark--ativo">
+<svg><use xlink:href="/svg,1603222522/planosPagamento#icon-planosPagamento-checked"></use></svg></div></li><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">Certificado de participação</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Certificado de que assistiu o curso e finalizou as atividades</p></div></div><div class="planos-pagamento__checkmark planos-pagamento__checkmark--ativo">
+<svg><use xlink:href="/svg,1603222522/planosPagamento#icon-planosPagamento-checked"></use></svg></div></li><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">App para Android e iPhone/iPad</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Estude até mesmo offline através das nossas apps Android e iOS em smartphones e tablets</p></div></div><div class="planos-pagamento__checkmark planos-pagamento__checkmark--ativo">
+<svg><use xlink:href="/svg,1603222522/planosPagamento#icon-planosPagamento-checked"></use></svg></div></li><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">Projeto avaliado pelos instrutores</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Projeto práticos para entrega e avaliação dos professores da Alura com certificado de aprovação diferenciado</p></div></div><div class="planos-pagamento__checkmark planos-pagamento__checkmark--ativo">
+<svg><use xlink:href="/svg,1603222522/planosPagamento#icon-planosPagamento-checked"></use></svg></div></li><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">Acesso à Alura Start</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Cursos de introdução a tecnologia através de games, apps e ciência</p></div></div><div class="planos-pagamento__checkmark planos-pagamento__checkmark--ativo">
+<svg><use xlink:href="/svg,1603222522/planosPagamento#icon-planosPagamento-checked"></use></svg></div></li><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">Acesso à Alura Língua</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Reforço online de inglês e espanhol para aprimorar seu conhecimento</p></div></div><div class="planos-pagamento__checkmark ">
+<svg><use xlink:href="/svg,1603222522/planosPagamento#icon-planosPagamento-checked"></use></svg></div></li></ul><div class="planos-pagamento__precos ">
+<span class="planos-pagamento__numero-parcelas">
+12X
+</span><div class="planos-pagamento__preco-parcela
+">
+<span class="planos-pagamento__valor-parcela">R$100</span></div><div class="planos-pagamento__preco-vista">
+<span class="planos-pagamento__label-vista">à vista</span>
+<span class="planos-pagamento__valor-vista">R$1.200</span></div></div><a class="planos-pagamento__cta" href="https://www.alura.com.br/compra/premiumplus/">
+Matricule-se
+</a></div><div class="planos-pagamento__plano planos-pagamento__plano--max" data-payment-plan="" data-payment-plan-price="1.440"><div class="planos-pagamento__header"><h4 class="planos-pagamento__nome">Max</h4></div><ul class="planos-pagamento__vantagens"><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">1266 cursos</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Cursos de programação, UX, agilidade, data science, transformação digital, mobile, front-end, marketing e infra.</p></div></div><div class="planos-pagamento__checkmark planos-pagamento__checkmark--ativo">
+<svg><use xlink:href="/svg,1603222522/planosPagamento#icon-planosPagamento-checked"></use></svg></div></li><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">Certificado de participação</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Certificado de que assistiu o curso e finalizou as atividades</p></div></div><div class="planos-pagamento__checkmark planos-pagamento__checkmark--ativo">
+<svg><use xlink:href="/svg,1603222522/planosPagamento#icon-planosPagamento-checked"></use></svg></div></li><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">App para Android e iPhone/iPad</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Estude até mesmo offline através das nossas apps Android e iOS em smartphones e tablets</p></div></div><div class="planos-pagamento__checkmark planos-pagamento__checkmark--ativo">
+<svg><use xlink:href="/svg,1603222522/planosPagamento#icon-planosPagamento-checked"></use></svg></div></li><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">Projeto avaliado pelos instrutores</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Projeto práticos para entrega e avaliação dos professores da Alura com certificado de aprovação diferenciado</p></div></div><div class="planos-pagamento__checkmark planos-pagamento__checkmark--ativo">
+<svg><use xlink:href="/svg,1603222522/planosPagamento#icon-planosPagamento-checked"></use></svg></div></li><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">Acesso à Alura Start</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Cursos de introdução a tecnologia através de games, apps e ciência</p></div></div><div class="planos-pagamento__checkmark planos-pagamento__checkmark--ativo">
+<svg><use xlink:href="/svg,1603222522/planosPagamento#icon-planosPagamento-checked"></use></svg></div></li><li class="planos-pagamento__vantagem"><div class="planos-pagamento__wrapper planos-pagamento__wrapper--com-descricao">
+<span class="planos-pagamento__label">Acesso à Alura Língua</span><div class="planos-pagamento__legenda-tooltip"><p class="planos-pagamento__legenda-descricao">Reforço online de inglês e espanhol para aprimorar seu conhecimento</p></div></div><div class="planos-pagamento__checkmark planos-pagamento__checkmark--ativo">
+<svg><use xlink:href="/svg,1603222522/planosPagamento#icon-planosPagamento-checked"></use></svg></div></li></ul><div class="planos-pagamento__precos ">
+<span class="planos-pagamento__numero-parcelas">
+12X
+</span><div class="planos-pagamento__preco-parcela
+">
+<span class="planos-pagamento__valor-parcela">R$120</span></div><div class="planos-pagamento__preco-vista">
+<span class="planos-pagamento__label-vista">à vista</span>
+<span class="planos-pagamento__valor-vista">R$1.440</span></div></div><a class="planos-pagamento__cta" href="https://www.alura.com.br/compra/max/">
+Matricule-se
+</a></div></div></div><a class="planos-pagamento__b2b" href="https://www.alura.com.br/empresas">
+<span>Conheça os <strong>Planos para Empresas</strong></span> →
+</a><div class="planosPagamento-vantagens"><div class="container"><div class="planosPagamento-vantagens-vantagem acesso">
+<img src="./sort_files/icon-plan-calendar.1599249626.svg"><p>Acesso por 1 ano</p></div><div class="planosPagamento-vantagens-vantagem horas">
+<img src="./sort_files/icon-plan-moon.1599249626.svg"><p>Estude 24h/dia onde e quando quiser</p></div><div class="planosPagamento-vantagens-vantagem novos">
+<img src="./sort_files/icon-plan-reload.1599249626.svg"><p>Novos cursos todas as semanas</p></div></div></div></section> <script src="./sort_files/planosPagamentoOld.1570550707.js.download"></script> <link rel="stylesheet" href="./sort_files/footer.1607371447.css"><footer class="footer"><div class="container"><div class="footer-navegue"><h2 class="footer-navegacao-titulo">Navegação</h2><ul class="footer-navegue-lista"><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/planos-cursos-online" gtm-data="footer_primeira_secao_053">Planos</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/cursos-online-tecnologia" gtm-data="footer_primeira_secao_054">Todos os cursos</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/guias">Guias de empresas</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/instrutores" gtm-data="footer_primeira_secao_056">Instrutores</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/quero-ser-instrutor" gtm-data="footer_primeira_secao_057">Como virar instrutor</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/artigos" gtm-data="footer_primeira_secao_059">Artigos</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/escolas">Para Escolas</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/imersao">Imersões</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/podcasts">Podcasts</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/politica-de-privacidade" gtm-data="footer_primeira_secao_061">Política de Privacidade</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/termos-de-uso" gtm-data="footer_primeira_secao_062">Termos de Uso</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/sobre" gtm-data="footer_primeira_secao_063">Sobre nós</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/como-funciona" gtm-data="footer_primeira_secao_064">Como Funciona</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/dev-em-t" gtm-data="footer_primeira_secao_065">Dev em &lt;T&gt;</a></li><li class="footer-navegue-lista-link"><a href="https://suporte.alura.com.br/" gtm-data="footer_primeira_secao_066">Perguntas frequentes</a></li><li class="footer-navegue-lista-link"><a href="https://status.alura.com.br/">Status</a></li></ul></div><div class="footer-card-hotLinks social-mobile"><h2 class="footer-card-hotLinks-titulo">Nossas redes e apps</h2><div class="footer-card-hotLinks-info footer-card-redes">
+<a href="https://www.youtube.com/alura" gtm-data="footer_primeira_secao_065" class="footer-card-hotLinks-link" target="_blank" title="YouTube da Alura">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-youtube"><use xlink:href="/svg,1606865286/footer#icon-footer-youtube"></use></svg>
+<span>YouTube</span>
+</a>
+<a href="https://www.facebook.com/AluraCursosOnline/" gtm-data="footer_primeira_secao_066" class="footer-card-hotLinks-link" target="_blank" title="Facebook da Alura">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-facebook"><use xlink:href="/svg,1606865286/footer#icon-footer-facebook"></use></svg>
+<span>Facebook</span>
+</a>
+<a href="https://twitter.com/aluraonline" gtm-data="footer_primeira_secao_067" class="footer-card-hotLinks-link" target="_blank" title="Twitter da Alura">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-twitter"><use xlink:href="/svg,1606865286/footer#icon-footer-twitter"></use></svg>
+<span>Twitter</span>
+</a>
+<a href="https://instagram.com/aluraonline" class="footer-card-hotLinks-link" gtm-data="footer_primeira_secao_073" target="_blank" title="Instagram da Alura">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-instagram"><use xlink:href="/svg,1606865286/footer#icon-footer-instagram"></use></svg>
+<span>Instagram</span>
+</a></div><div class="footer-card-hotLinks-info footer-card-mobile">
+<a href="https://play.google.com/store/apps/details?id=br.com.alura.mobi&amp;hl=pt_BR" gtm-data="footer_primeira_secao_069" class="footer-card-hotLinks-link" target="_blank" title="Baixar na Google Play Store">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-mobile"><use xlink:href="/svg,1606865286/footer#icon-footer-googleplay"></use></svg>
+<span>Google Play Store</span>
+</a>
+<a href="https://itunes.apple.com/br/app/alura-cursos-online/id1225776635" gtm-data="footer_primeira_secao_070" class="footer-card-hotLinks-link" target="_blank" title="Baixar na AppStore">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-mobile"><use xlink:href="/svg,1606865286/footer#icon-footer-appstore"></use></svg>
+<span>AppStore</span>
+</a></div></div><div class="footer-column footer-column-cards"><link rel="stylesheet" href="./sort_files/activeCampaignNewsletterForm.1607371447.css"><div class="newsletter"><h2 class="newsletter-titulo">Novidades e Lançamentos</h2><form id="newsletter-form__activecampaign" class="newsletter-form" action="https://www.alura.com.br/api/activecampaign" method="POST"><input type="hidden" name="list" value="14">
+<input type="hidden" name="retorno" value="/newsletter-cadastrado"><label for="email-newsletter">Email</label>
+<input type="email" name="email" class="newsletter-input" placeholder="Seu e-mail" id="email-newsletter"><button type="submit" class="newsletter-button buttonForm">Receber</button>
+<span class="newsletter-message-error newsletter-message-error--disabled">Não foi possível assinar a newsletter</span><input type="hidden" name="full_url" value="https://www.alura.com.br/artigos/ordenando-listas-no-python"><input type="hidden" name="user_agent" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36"><input type="hidden" name="referral" value="https://cursos.alura.com.br/"></form></div> <script>(function() {
+            function criaCampo(nome, valor, form) {
+                if (valor === null) return;
+
+                var input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = nome;
+                input.value = valor;
+
+                form.appendChild(input);
+            }
+
+            function param(name) {
+                var url = location.href;
+                name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+                var regexS = "[\\?&]"+name+"=([^&#]*)";
+                var regex = new RegExp( regexS );
+                var results = regex.exec( url );
+                return results == null ? null : results[1];
+            }
+
+            function showNewsletterError() {
+                document.querySelector('.newsletter-message-error').classList.remove('newsletter-message-error--disabled');
+            }
+
+            function valida() {
+                var isValid = true;
+                var inputList = document.querySelector('#newsletter-form__activecampaign')['list'];
+                var inputEmail = document.querySelector('#newsletter-form__activecampaign')['email'];
+
+                isValid = validaEmail(inputEmail.value) && validaList(inputList.value);
+
+                if(!isValid) {
+                    showNewsletterError();
+                }
+
+                return isValid;
+            }
+
+            function validaList(list) {
+                return list != '-1';
+            }
+
+            function validaEmail(email) {
+                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(email);
+            }
+
+            var form = document.querySelector('#newsletter-form__activecampaign');
+            if(!form) return;
+
+            criaCampo('utm_source', param('utm_source'), form);
+            criaCampo('utm_campaign', param('utm_campaign'), form);
+            criaCampo('utm_medium', param('utm_medium'), form);
+            criaCampo('utm_term', param('utm_term'), form);
+            criaCampo('utm_content', param('utm_content'), form);
+            criaCampo('full_url', location.href, form);
+            criaCampo('user_agent', navigator.userAgent, form);
+            criaCampo('referral', document.referrer, form);
+
+            form.onsubmit = valida;
+
+        })();</script> <div class="footer-navegue fale-conosco"><h2 class="footer-navegacao-titulo">Fale com a gente</h2><ul class="footer-navegue-lista"><li class="footer-navegue-lista-link whatsapp-icon"><a href="https://api.whatsapp.com/send?phone=5511984510286">Whatsapp</a></li><li class="footer-navegue-lista-link"><a href="https://www.alura.com.br/contato">Outros Canais</a></li></ul></div><div class="footer-navegue empresa-governo"><h2 class="footer-navegacao-titulo">Empresa/Governo?</h2><ul class="footer-navegue-lista"><li class="footer-navegue-lista-link alura-empresas">Planos Corporativos para a Sua Equipe.</li><li class="footer-navegue-lista-link alura-empresas"><a href="https://www.alura.com.br/empresas">Alura para Empresas</a></li></ul></div></div><div class="footer-info"><div class="footer-logos">
+<a class="footer-logos-home" gtm-data="footer_primeira_secao_050" href="https://www.alura.com.br/">
+<img src="./sort_files/alura-logo.1570550707(1).svg" alt="Alura" class="footer-logo">
+</a></div><div class="footer-card-hotLinks social-desktop"><h2 class="footer-card-hotLinks-titulo">Nossas redes e apps</h2><div class="footer-card-hotLinks-info footer-card-redes">
+<a href="https://www.youtube.com/alura" gtm-data="footer_primeira_secao_065" class="footer-card-hotLinks-link" target="_blank" title="YouTube da Alura">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-youtube"><use xlink:href="/svg,1606865286/footer#icon-footer-youtube"></use></svg>
+<span>YouTube</span>
+</a>
+<a href="https://www.facebook.com/AluraCursosOnline/" gtm-data="footer_primeira_secao_066" class="footer-card-hotLinks-link" target="_blank" title="Facebook da Alura">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-facebook"><use xlink:href="/svg,1606865286/footer#icon-footer-facebook"></use></svg>
+<span>Facebook</span>
+</a>
+<a href="https://twitter.com/aluraonline" gtm-data="footer_primeira_secao_067" class="footer-card-hotLinks-link" target="_blank" title="Twitter da Alura">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-twitter"><use xlink:href="/svg,1606865286/footer#icon-footer-twitter"></use></svg>
+<span>Twitter</span>
+</a>
+<a href="https://instagram.com/aluraonline" class="footer-card-hotLinks-link" gtm-data="footer_primeira_secao_073" target="_blank" title="Instagram da Alura">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-instagram"><use xlink:href="/svg,1606865286/footer#icon-footer-instagram"></use></svg>
+<span>Instagram</span>
+</a></div><div class="footer-card-hotLinks-info footer-card-mobile">
+<a href="https://play.google.com/store/apps/details?id=br.com.alura.mobi&amp;hl=pt_BR" gtm-data="footer_primeira_secao_069" class="footer-card-hotLinks-link" target="_blank" title="Baixar na Google Play Store">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-mobile"><use xlink:href="/svg,1606865286/footer#icon-footer-googleplay"></use></svg>
+<span>Google Play Store</span>
+</a>
+<a href="https://itunes.apple.com/br/app/alura-cursos-online/id1225776635" gtm-data="footer_primeira_secao_070" class="footer-card-hotLinks-link" target="_blank" title="Baixar na AppStore">
+<svg class="footer-card-hotLinks-icon footer-card-hotLinks-mobile"><use xlink:href="/svg,1606865286/footer#icon-footer-appstore"></use></svg>
+<span>AppStore</span>
+</a></div></div></div></div></footer><section class="footer_categorias-formacoes"><div class="container"><div class="footer_categorias_wrapper"><h2 class="footer_categorias_title">Cursos</h2><div class="footer_categorias_categorias footer-navegue-lista-link"><div class="footer_categorias_categoria">
+<a href="https://www.alura.com.br/cursos-online-mobile">Cursos de Mobile</a><div class="footer_categorias_subcategorias">
+<a href="https://www.alura.com.br/cursos-online-mobile/multiplataforma">
+Flutter, React Native                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-mobile/ios">
+iOS e Swift                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-mobile/android">
+Android, Kotlin                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-mobile/jogos">
+Jogos                                                                            </a></div></div><div class="footer_categorias_categoria">
+<a href="https://www.alura.com.br/cursos-online-programacao">Cursos de Programação</a><div class="footer_categorias_subcategorias">
+<a href="https://www.alura.com.br/cursos-online-programacao/logica">
+Lógica                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-programacao/python">
+Python                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-programacao/php">
+PHP                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-programacao/java">
+Java                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-programacao/dotnet">
+.NET                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-programacao/node-js">
+Node JS                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-programacao/ruby">
+Ruby &amp; Rails                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-programacao/linguagem-c">
+C                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-programacao/computacao">
+Computação                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-programacao/jogos">
+Jogos                                                                            </a></div></div><div class="footer_categorias_categoria">
+<a href="https://www.alura.com.br/cursos-online-front-end">Cursos de Front-end</a><div class="footer_categorias_subcategorias">
+<a href="https://www.alura.com.br/cursos-online-front-end/front-end">
+HTML, CSS                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-front-end/reactjs">
+React                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-front-end/angular">
+Angular                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-front-end/javascript">
+JavaScript                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-front-end/jquery">
+jQuery                                                                            </a></div></div><div class="footer_categorias_categoria">
+<a href="https://www.alura.com.br/cursos-online-devops">Cursos de DevOps</a><div class="footer_categorias_subcategorias">
+<a href="https://www.alura.com.br/cursos-online-devops/seguranca">
+Segurança                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-devops/cloud-computing">
+Cloud                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-devops/linux-comandos-e-processos">
+Linux                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-devops/internet-das-coisas">
+IoT                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-devops/redes">
+Redes                                                                            </a></div></div><div class="footer_categorias_categoria">
+<a href="https://www.alura.com.br/cursos-online-design-ux">Cursos de Design &amp; UX</a><div class="footer_categorias_subcategorias">
+<a href="https://www.alura.com.br/cursos-online-design-ux/wwww">
+Photoshop e Illustrator                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-design-ux/ux">
+Usabilidade e UX                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-design-ux/video">
+Vídeo e Motion                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-design-ux/3d">
+3D                                                                            </a></div></div><div class="footer_categorias_categoria">
+<a href="https://www.alura.com.br/cursos-online-marketing-digital">Cursos de Marketing Digital</a><div class="footer_categorias_subcategorias">
+<a href="https://www.alura.com.br/cursos-online-marketing-digital/ads">
+Ads                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-marketing-digital/marketing-digital">
+Marketing                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-marketing-digital/seo">
+SEO                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-marketing-digital/e-commerce">
+E-commerce                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-marketing-digital/social-media">
+Social Media                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-marketing-digital/youtube">
+YouTube                                                                            </a></div></div><div class="footer_categorias_categoria">
+<a href="https://www.alura.com.br/cursos-online-data-science">Cursos de Data Science</a><div class="footer_categorias_subcategorias">
+<a href="https://www.alura.com.br/cursos-online-data-science/sql">
+SQL e Banco de Dados                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-data-science/nosql">
+NoSQL                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-data-science/data-science">
+Data Science                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-data-science/machine-learning">
+Machine Learning                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-data-science/business-intelligence">
+BI                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-data-science/estatistica">
+Estatística                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-data-science/excel">
+Excel                                                                            </a></div></div><div class="footer_categorias_categoria">
+<a href="https://www.alura.com.br/cursos-online-inovacao-gestao">Cursos de Inovação &amp; Gestão</a><div class="footer_categorias_subcategorias">
+<a href="https://www.alura.com.br/cursos-online-inovacao-gestao/agilidade">
+Métodos Ágeis                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-inovacao-gestao/softskills-carreira">
+Softskills                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-inovacao-gestao/gestao-corporativa">
+Liderança e Gestão                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-inovacao-gestao/startup-empreendedorismo">
+Startups                                        |                                    </a>
+<a href="https://www.alura.com.br/cursos-online-inovacao-gestao/vendas">
+Vendas                                                                            </a></div></div></div></div></div></section><style>@media not all and (min-width: 1000px){
+		.grupoCaelum{
+			display: none;
+		}
+	}
+
+	.grupoCaelum{
+		background: #fff;
+		height: 240px;
+		border-top: 1px solid #EBEBEE;
+	}
+
+	.grupoCaelum .container{
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		padding-top: 0;
+		padding-bottom: 0;
+		height: 100%;
+	}
+
+		.grupoCaelum-list{
+			display: flex;
+			list-style: none;
+			width: 60%;
+			justify-content: space-between;
+			align-items: flex-start;
+			margin-top: 20px;
+		}
+
+		.grupoCaelum-title{
+			width: 20%;
+		}
+
+		.grupoCaelum-column {
+			display: inline-block;
+			padding-left: 19px;
+			width: 240px;
+			height: 210px;
+			min-width: 160px;
+		}
+			.grupoCaelum-column-title {
+				font-size: 10px;
+				color: #d7e0e5;
+				text-transform: uppercase;
+				font-weight: 600;
+				margin-bottom: 19px;
+			}
+
+			.grupoCaelum-column-list {
+				list-style: none;
+			}
+
+			.column-item-title {
+				font-size: 11px;
+				text-align: center;
+				vertical-align: middle;
+				display: inline-block;
+				margin-left: 6.5px;
+			}
+
+		.grupoCaelum-column:not(:first-child) {
+			border-left: solid 1px #e3e9ed;
+		}
+
+		.grupoCaelum-title {
+			display: inline-block;
+			text-decoration: none;
+			color: #657176;
+			letter-spacing: normal;
+			font-size: 18px;
+			margin-top: 54px;
+		}
+
+	.column-item-logo {
+		width: 30px;
+		height: 30px;
+		vertical-align: middle;
+		display: inline-block;
+	}
+
+	.column-item {
+		margin-bottom: 17px;
+	}
+
+	.column-item a{
+		text-decoration: none;
+		color: #657176;
+	}</style><footer class="caelum-footer"><div class="grupoCaelum"><div class="container"><p class="grupoCaelum-title">Grupo Alura</p><ul class="grupoCaelum-list"><li class="grupoCaelum-column"><p class="grupoCaelum-column-title">Educação</p><ul class="grupoCaelum-column-list"><li class="column-item">
+<a target="_blank" href="https://www.caelum.com.br/"><svg class="column-item-logo"><use xlink:href="/svg,1580229429/caelumFooter#icon-caelumFooter-novo-logo-caelum"></use></svg><span class="column-item-title">Caelum</span>
+</a></li><li class="column-item">
+<a target="_blank" href="https://www.casadocodigo.com.br/">
+<svg class="column-item-logo"><use xlink:href="/svg,1580229429/caelumFooter#icon-caelumFooter-cdc"></use></svg><span class="column-item-title">Casa do Código</span>
+</a></li></ul></li><li class="grupoCaelum-column"><p class="grupoCaelum-column-title">Educação Online</p><ul class="grupoCaelum-column-list"><li class="column-item">
+<a target="_blank" href="https://www.alura.com.br/">
+<svg class="column-item-logo"><use xlink:href="/svg,1580229429/caelumFooter#icon-caelumFooter-alura"></use></svg><span class="column-item-title">Alura</span>
+</a></li><li class="column-item">
+<a target="_blank" href="https://www.alurastart.com.br/">
+<svg class="column-item-logo"><use xlink:href="/svg,1580229429/caelumFooter#icon-caelumFooter-alurastart"></use></svg><span class="column-item-title">Alura Start</span>
+</a></li><li class="column-item">
+<a target="_blank" href="https://www.musicdot.com.br/">
+<svg class="column-item-logo"><use xlink:href="/svg,1580229429/caelumFooter#icon-caelumFooter-musicdot"></use></svg><span class="column-item-title">MusicDot</span>
+</a></li><li class="column-item">
+<a target="_blank" href="https://www.aluralingua.com.br/">
+<svg class="column-item-logo"><use xlink:href="/svg,1580229429/caelumFooter#icon-caelumFooter-aluralingua"></use></svg><span class="column-item-title">Alura Língua</span>
+</a></li></ul></li><li class="grupoCaelum-column"><p class="grupoCaelum-column-title">Comunidade</p><ul class="grupoCaelum-column-list"><li class="column-item">
+<a target="_blank" href="https://hipsters.tech/">
+<svg class="column-item-logo"><use xlink:href="/svg,1580229429/caelumFooter#icon-caelumFooter-hipsterstech"></use></svg><span class="column-item-title">Hipsters ponto Tech</span>
+</a></li><li class="column-item">
+<a target="_blank" href="https://hipsters.jobs/">
+<svg class="column-item-logo"><use xlink:href="/svg,1580229429/caelumFooter#icon-caelumFooter-hipstersjobs"></use></svg><span class="column-item-title">Hipsters ponto Jobs</span>
+</a></li><li class="column-item">
+<a target="_blank" href="https://www.guj.com.br/">
+<svg class="column-item-logo"><use xlink:href="/svg,1580229429/caelumFooter#icon-caelumFooter-guj"></use></svg><span class="column-item-title">GUJ</span>
+</a></li></ul></li></ul></div></div></footer> <script>(function(){
+    var match = location.pathname.match(/\/(bf-|black-?friday\/)([^\/]+)/);
+    if (match != null) {
+        var links = document.querySelectorAll('a[href]');
+        for (var i = 0; i < links.length; i++) {
+            var href = links[i].getAttribute('href');
+            if (href[0] === '/') {
+                links[i].setAttribute('href', '/bf-' + match[2] + href);
+            }
+        }
+    }
+})();</script> <script src="./sort_files/jquery.min.js.download"></script> <script src="./sort_files/svg4everybody.min.1570550707.js.download" async=""></script> <script src="./sort_files/menu.1570550707.js.download" async=""></script> <script src="./sort_files/busca.1570550707.js.download" async=""></script> <script src="./sort_files/cursos.1570550707.js.download" async=""></script> <script src="./sort_files/detect.1570550707.js.download" async=""></script> <script src="./sort_files/video.1571773177.js.download" async=""></script> <script src="./sort_files/Countdown.1599745598.js.download" async=""></script> <script>var userId = (document.cookie.match('alura.userId=([^;]+)')||[null,null])[1];
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+
+  	ga('create', 'UA-42101548-1', 'alura.com.br', 'tracker0', {'siteSpeedSampleRate': 50});
+
+	if (userId) ga('tracker0.set', 'userId', userId);
+
+	ga('tracker0.require', 'displayfeatures');
+	ga('tracker0.send', 'pageview');
+  	ga('create', 'UA-42101548-9', 'alura.com.br', 'tracker1', {'siteSpeedSampleRate': 50});
+
+	if (userId) ga('tracker1.set', 'userId', userId);
+
+	ga('tracker1.require', 'displayfeatures');
+	ga('tracker1.send', 'pageview');</script> <script async="" src="./sort_files/analytics.js.download"></script> <script src="./sort_files/footer.1607371447.js.download" async=""></script> <script src="./sort_files/highlight.min.js.download"></script> <script>hljs.initHighlightingOnLoad();</script> <script type="text/javascript">_linkedin_partner_id = "465017";
+			window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+			window._linkedin_data_partner_ids.push(_linkedin_partner_id);</script> <script type="text/javascript">(function(){var s = document.getElementsByTagName("script")[0];
+			var b = document.createElement("script");
+			b.type = "text/javascript";b.async = true;
+			b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+			s.parentNode.insertBefore(b, s);})();</script> <noscript>
+<img
+height="1" width="1" style="display:none;" alt=""
+src="https://dc.ads.linkedin.com/collect/?pid=465017&fmt=gif" />
+</noscript><script type="text/javascript" id="">elements=document.querySelectorAll("input, select");elements.forEach(function(b,c){b.addEventListener("change",function(a){a=this.getAttribute("name");dataLayer.push({event:"gaEvent",eventCategory:"Formul\u00e1rios",eventAction:"Altera\u00e7\u00e3o",eventLabel:a})})});</script>
+<script type="text/javascript" id="">var key="Think_Again45984$%";function log(a){console.log(a)}function getPars(){var a={};window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(b,c,d){a[c]=d});return a}function userId(a){a=sha256.hmac(key,a);dataLayer.push({event:"userId",userId:a})}var script=document.createElement("script");script.onload=function(){var a=getPars().e;a&&userId(a);a=document.querySelectorAll('[type\x3d"email"]');for(var b=0;b<a.length;b++)a[b].onchange=function(){userId(this.value)}};script.src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js";
+document.head.appendChild(script);</script><iframe style="display: none;" src="./sort_files/saved_resource(2).html"></iframe></body></html>
