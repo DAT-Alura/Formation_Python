@@ -72,3 +72,21 @@ B - [a-z]{2,50}@[a-z]{2,15}.[a-z]{2,3}.[a-z]{2,3}
 C - \w{2,50}@\w{2,15}.[a-z]{3}.[a-z]{2,3}
 
 D - \w{2,50}@[a-z]{2,15}.[a-z]{2,3}.[a-z]{2,3}
+
+# Aula 4
+
+Observe o código abaixo:
+
+```py
+agora = datetime.now()
+agora_formatado = agora.strftime(formatacao)
+print(agora_formatado)
+```
+Selecione o valor correto da variável formatacao para que o valor mostrado na tela tenha o seguinte formato: aaaa/mm/dd-hh:mm:ss.
+
+A - '%a/%m/%y-%H:%M:%S'
+
+B - "%y/%m/%d-%H:%M:%S"
+
+__C__ - "%Y/%m/%d-%H:%M:%S"
+> Correto! Os caracteres estão retornando tudo que foi solicitado e na ordem correta!
