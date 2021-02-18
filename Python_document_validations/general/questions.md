@@ -50,3 +50,25 @@ __B__ - A nova classe precisará ter todos os métodos com os mesmos nomes das o
 C - Não é possível inserir mais um documento, pois esse padrão de projeto só pode decidir entre instanciar no máximo duas classes diferentes.
 
 D - Será preciso passar mais um argumento quando chamarmos a Factory.
+
+# Aula 3
+
+Analise os emails abaixo:
+
+```py
+email_um = "rodrigo@gmail.com"
+email_dois = "rodrigao1993@4shared.org.uk"
+email_tres = "rodrigo@rodrigo.br"
+email_quatro = "rodrigo123@python.py.br"
+```
+
+Com base no que vimos durante a aula, qual dos padrões abaixo consegue identificar todos os emails listados acima?
+
+__A__ - \w{2,50}@\w{2,15}\.[a-z]{2,3}\.?([a-z]{2,3})?
+> Correto! Esse padrão serviria para todos os e-mails.
+
+B - [a-z]{2,50}@[a-z]{2,15}.[a-z]{2,3}.[a-z]{2,3}
+
+C - \w{2,50}@\w{2,15}.[a-z]{3}.[a-z]{2,3}
+
+D - \w{2,50}@[a-z]{2,15}.[a-z]{2,3}.[a-z]{2,3}
