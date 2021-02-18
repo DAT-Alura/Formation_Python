@@ -90,3 +90,26 @@ B - "%y/%m/%d-%H:%M:%S"
 
 __C__ - "%Y/%m/%d-%H:%M:%S"
 > Correto! Os caracteres estão retornando tudo que foi solicitado e na ordem correta!
+
+# Aula 5
+
+Nesta aula, utilizamos a biblioteca requests para fazermos requisições HTTP ao ViaCEP, uma API que retorna informações de endereço a partir do CEP. Com base nisso analise o código abaixo:
+
+```py
+import requests
+
+cep = “20040030”
+url =  'https://viacep.com.br/ws/{}/json'.format(cep)
+r = requests.<método_HTTP>(url)
+```
+
+Para requisitar informações sobre o CEP, qual seria o método HTTP correto?
+
+A - DELETE
+
+B - POST
+
+C - PUT
+
+__D__ - GET
+> Correto! O método GET retorna informações de algum recurso. Ele pode ser feito durante o envio de um formulário, mas sem alterar o banco de dados.
