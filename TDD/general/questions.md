@@ -48,3 +48,18 @@ __B__ - Estamos muito acoplados da implementação da classe Leilao. Ou seja, se
 C - Não existe nenhum problema nessa forma de implementação. Essa é a forma correta de se adicionar um lance.
 
 D - O problema dessa implementação é que estamos utilizando uma lista. O correto seria utilizar uma tupla ou outra estrutura imutável.
+
+# Aula 4
+
+Na aula, vimos algumas formas de passar feedbacks para os clientes do código que escrevemos. Dependendo da ação que é tomada, o código pode continuar a execução normalmente ou ir para fluxos alternativos. Como, por exemplo, não adicionar o lance na lista.
+
+O importante é que a pessoa que está usando a aplicação, ou o código cliente estejam a par do ocorrido. Ou seja, temos que passar esse feedback para o usuário. Qual uma boa forma de se passar um feedback para o usuário?
+
+A - A melhor forma de passar um feedback de uma operação é devolvendo um booleano. Retornamos True caso a operação seja bem sucedida e False caso contrário
+
+__B__ - Lançar uma exceção caso a operação seja inválida. Dessa forma, o código cliente consegue tratar essa exceção ou então, o sistema para de funcionar caso ela não seja tratada.
+> Isso mesmo! Ao utilizar exceções, fazemos com que o código cliente tenha que tratar essa exceção em algum ponto do código. Ou com blocos try/except ou de outras maneiras
+
+C - A melhor forma de passar um feedback para o usuário é devolvendo um número (número mágico) para caso a operação seja um sucesso e outro número para caso a operação falhe
+
+D - Não precisamos passar nenhum feedback. Quando a pessoa que estiver utilizando o sistema ver que o comportamento não foi esperado, ela saberá o que fazer
