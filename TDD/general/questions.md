@@ -78,3 +78,19 @@ B - Através da função is_correct da biblioteca pytest. Nela, passamos como pa
 C - Pelo fato de não herdar de nenhuma classe, não conseguimos conferir a execução do programa. Precisamos ainda utilizar a unittest para isso
 
 D - Pela função pytest.assertEqual() da biblioteca conseguimos conferir a execução do programa.
+
+# Aula 6
+
+Quando temos um código muito grande, ou com tendências a crescer, geralmente isolamos esse trecho de código em funções, métodos, classes.
+
+Quebrar o código tem alguns benefícios, entre eles, podemos citar:
+
+
+__A__ - O código fica mais legível. Logo, conseguimos identificar os pontos que precisam ser alterados mais facilmente, ajudando assim na manutenção do código.
+> Correto! Isolar o código é uma técnica de refatoração muito utilizada, já que conseguimos aumentar a legibilidade do código.
+
+B - O código fica menor. Quando isolamos um código, fazemos apenas a chamada da função, ou método, não precisamos saber a implementação.
+
+C - Ao isolar o código, ele fica mais complexo de ler e de manter. Já que ao fazer a chamada do método, não sabemos o que está implementado
+
+D - Não precisamos isolar as condições ou grandes trechos de código. Manter todos em um mesmo lugar facilita a manutenção no futuro.

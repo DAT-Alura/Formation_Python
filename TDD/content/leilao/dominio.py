@@ -1,5 +1,7 @@
 import sys
 
+from leilao.excecoes import LanceInvalido
+
 class Usuario:
 
     def __init__(self, nome, carteira):
@@ -7,12 +9,15 @@ class Usuario:
         self.__carteira = carteira
 
     def propoe_lance(self, leilao, valor):
-        if valor > self.__carteira:
-            raise ValueError("Nao pode propor um lance maior do que o valor da carteira")
+        if not self._valor_eh_valido(valor):
+            raise LanceInvalido("Nao pode propor um lance maior do que o valor da carteira")
 
         lance = Lance(self, valor)
         leilao.propoe(lance)
         self.__carteira -= valor
+
+    def _valor_eh_valido(self, valor):
+        return valor <= self.__carteira
 
     @property
     def nome(self):
@@ -39,17 +44,32 @@ class Leilao:
         self.__lances = []
 
     def propoe(self, lance: Lance):
-        if not self.__lances or self.__lances[-1].usuario != lance.usuario and lance.valor > self.maior_lance:
-
-            if lance.valor > self.maior_lance:
-                self.maior_lance = lance.valor
-
-            if lance.valor < self.menor_lance:
+        if self._lance_for_valido(lance):
+            if not self._tem_lances():
                 self.menor_lance = lance.valor
 
+            self.maior_lance = lance.valor
+
             self.__lances.append(lance)
-        else:
-            raise ValueError("Erro ao propor lance")
+
+    def _tem_lances(self):
+        return self.__lances
+
+    def _usuarios_diferentes(self, lance):
+        if self.__lances[-1].usuario != lance.usuario:
+            return True
+
+        raise LanceInvalido("O mesmo usuario nao pode dar dois lances seguidos")
+
+    def _valor_maor_que_o_lance_anterior(self, lance):
+        if lance.valor > self.maior_lance:
+            return True
+
+        raise LanceInvalido("O valor do lance deve ser maior que o lance anterior")
+
+    def _lance_for_valido(self, lance):
+        return not self._tem_lances() or (self._usuarios_diferentes(lance) and
+                                          self._valor_maor_que_o_lance_anterior(lance))
 
     @property
     def lances(self):
