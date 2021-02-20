@@ -7,12 +7,12 @@ from leilao.dominio import Lance, Leilao, Usuario
 class TestLeilao(TestCase):
 
     def setUp(self):
-        self.daniel = Usuario("Daniel")
+        self.daniel = Usuario("Daniel", 500.0)
         self.lance_do_daniel = Lance(self.daniel, 100.0)
         self.leilao = Leilao("Celular")
     
     def test_deve_retornar_o_maior_e_o_menor_valor_de_um_lance_quando_adicionados_em_ordem_crescente(self):
-        akio = Usuario("Akio")
+        akio = Usuario("Akio", 500)
         lance_do_akio = Lance(akio, 150.0)
         
         self.leilao.propoe(self.lance_do_daniel)
@@ -27,7 +27,7 @@ class TestLeilao(TestCase):
     def test_nao_deve_permitir_propor_um_lance_em_order_decrescente(self):
 
         with self.assertRaises(ValueError):
-            akio = Usuario("Akio")
+            akio = Usuario("Akio", 500)
             lance_do_akio = Lance(akio, 50.0)
             
             self.leilao.propoe(self.lance_do_daniel)
@@ -42,10 +42,10 @@ class TestLeilao(TestCase):
         self.assertEqual(valor_esperado, self.leilao.maior_lance)
 
     def teste_deve_retornar_o_maior_e_o_menor_valor_quando_o_leilao_tiver_tres_lances(self):
-        akio = Usuario("Akio")
+        akio = Usuario("Akio", 500)
         lance_do_akio = Lance(akio, 150.0)
         
-        teixeira = Usuario("Teixeira")
+        teixeira = Usuario("Teixeira", 500.0)
         lance_do_teixeira = Lance(teixeira, 200.0)
 
         self.leilao.propoe(self.lance_do_daniel)
@@ -65,7 +65,7 @@ class TestLeilao(TestCase):
         self.assertEqual(1, quantidade_de_lances_recebido)
 
     def test_deve_permitir_propor_um_lance_caso_o_ultimo_usuario_seja_diferente(self):
-        teixeira = Usuario("Teixeira")
+        teixeira = Usuario("Teixeira", 500.0)
         lance_do_teixeira = Lance(teixeira, 200.0)
 
         self.leilao.propoe(self.lance_do_daniel)

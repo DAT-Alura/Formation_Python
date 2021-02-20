@@ -63,3 +63,18 @@ __B__ - Lançar uma exceção caso a operação seja inválida. Dessa forma, o c
 C - A melhor forma de passar um feedback para o usuário é devolvendo um número (número mágico) para caso a operação seja um sucesso e outro número para caso a operação falhe
 
 D - Não precisamos passar nenhum feedback. Quando a pessoa que estiver utilizando o sistema ver que o comportamento não foi esperado, ela saberá o que fazer
+
+# Aula 5
+
+Quando executamos um teste, precisamos conferir os resultados obtidos com os resultados esperados. No caso, quando utilizamos a biblioteca unittest utilizamos o método self.assertEqual que é herdado da classe TestCase passando como parâmetros o resultado da execução e o resultado esperado.
+
+No caso da biblioteca pytest, não herdamos de nenhuma classe, então, como podemos conferir a execução dos testes?
+
+__A__ - Através da palavra reservada assert. Com ela, conseguimos passar uma condição para avaliar se é verdadeira ou não. Com isso, o teste pode passar ou falhar
+> Correto! Conseguimos utilizar a palavra reservada assert para conferir o resultado para gente. Com isso, a biblioteca pytest já consegue conferir se o teste passou ou não
+
+B - Através da função is_correct da biblioteca pytest. Nela, passamos como parâmetros o resultado da execução e o resultado esperado
+
+C - Pelo fato de não herdar de nenhuma classe, não conseguimos conferir a execução do programa. Precisamos ainda utilizar a unittest para isso
+
+D - Pela função pytest.assertEqual() da biblioteca conseguimos conferir a execução do programa.

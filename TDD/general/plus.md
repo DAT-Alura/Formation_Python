@@ -102,3 +102,52 @@ Quando já temos conhecimento claro das regras de negócio ou então quando já 
 Existe um debate na comunidade de como praticar o TDD realizando os baby steps e escrevendo primeiro os testes ajudam a escrever um código mais simples, com um melhor algoritmo. Porém, isso também é relativo.
 
 A verdade é que escrever o código é algo muito pessoal. Existem pessoas que começam pelo código e pessoas que começam pelos testes. Existem pessoas que fazem baby steps, outras que não. O importante é o código estar funcionando sem erros quando for solicitado.
+
+# Pytest Fixture e classes de teste
+
+No vídeo, vimos um pouco sobre as fixtures do pytest. Existem outras fixtures que podemos utilizar além daquelas. [Neste post](https://blog.alura.com.br/montando-cenarios-de-testes-com-o-pytest) são mostrados algumas outras fixtures.
+
+É interessante notar que utilizamos funções para escrever os testes. Porém, se quiséssemos, poderíamos utilizar classes de testes também. A implementação do mesmo módulo de testes como uma classe, ficaria parecida com essa:
+
+```py
+from src.leilao.dominio import Usuario, Leilao
+
+import pytest
+
+from src.leilao.excecoes import LanceInvalido
+
+class TestUsuario:
+
+    @pytest.fixture
+    def vini(self):
+        return Usuario('Vini', 100.0)
+
+
+    @pytest.fixture
+    def leilao(self):
+        return Leilao('Celular')
+
+
+    def test_deve_subtrair_valor_da_carteira_do_usuario_quando_este_propor_um_lance(self, vini, leilao):
+        vini.propoe_lance(leilao, 50.0)
+
+        assert vini.carteira == 50.0
+
+
+    def test_deve_permitir_propor_lance_quando_o_valor_eh_menor_que_o_valor_da_carteira(self, vini, leilao):
+        vini.propoe_lance(leilao, 1.0)
+
+        assert vini.carteira == 99.0
+
+
+    def test_deve_permitir_propor_lance_quando_o_valor_eh_igual_ao_valor_da_carteira(self, vini, leilao):
+        vini.propoe_lance(leilao, 100.0)
+
+        assert vini.carteira == 0.0
+
+
+    def test_nao_deve_permitir_propor_lance_com_valor_maior_que_o_da_carteira(self, vini, leilao):
+        with pytest.raises(LanceInvalido):
+
+            vini.propoe_lance(leilao, 200.0)
+```
